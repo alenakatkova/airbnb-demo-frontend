@@ -15,15 +15,13 @@ const Arrow = styled.img`
   margin: 0 8px;
 `;
 
-class SeeAll extends React.Component {
-  render() {
-    return (
-      <div>
-        <Text>See all</Text>
-        <Arrow src={arrowIcon} alt="Arrow" />
-      </div>
-    );
-  }
-}
+const Link = styled.a`text-decoration: none;`;
+
+const SeeAll = props => (
+  <Link href={props.link}>
+    <Text>See all</Text>
+    <Arrow src={arrowIcon} alt="Arrow" />
+  </Link>
+);
 
 export default SeeAll;
