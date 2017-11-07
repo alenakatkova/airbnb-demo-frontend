@@ -28,11 +28,15 @@ class Header extends React.Component {
     return (
       <PageHeader>
         <PageWrapper>
-          <Link href="#">
-            <Logo alt="Logo" src={logo} />
-          </Link>
-          <Search placeholder="Try “Miami”" type="text" />
-          <Menu link1="#" link2="#" link3="#" link4="#" />
+          <div className="row">
+            <div className="row">
+              <Link href="#">
+                <Logo alt="Logo" src={logo} />
+              </Link>
+              <Search placeholder="Try “Miami”" type="text" />
+            </div>
+            <Menu link1="#" link2="#" link3="#" link4="#" />
+          </div>
         </PageWrapper>
       </PageHeader>
     );

@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-const Nav = styled.nav`margin-left: auto;`;
-
 const List = styled.ul`
   margin: 0;
   padding: 0;
@@ -28,7 +26,7 @@ const Link = styled.a`
 `;
 
 const Menu = props => (
-  <Nav className="col-4">
+  <nav>
     <List>
       <Item>
         <Link href="{props.link1}">Become a host</Link>
@@ -43,7 +41,7 @@ const Menu = props => (
         <Link href="{props.link4}">Log In</Link>
       </Item>
     </List>
-  </Nav>
+  </nav>
 );
 
 export default Menu;
