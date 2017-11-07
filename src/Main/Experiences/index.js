@@ -9,12 +9,16 @@ import mountainLow from "./mountain.png";
 import mountainHigh from "./mountain@2x.png";
 import salsaLow from "./salsa.png";
 import salsaHigh from "./salsa@2x.png";
+import SeeAll from "../../common/SeeAll";
 
 class Explore extends React.Component {
   render() {
     return (
       <section>
-        <Heading2>Experiences</Heading2>
+        <div class="row">
+          <Heading2>Experiences</Heading2>
+          <SeeAll />
+        </div>
         <div class="row row-top">
           <Card
             lowRes={forestLow}
