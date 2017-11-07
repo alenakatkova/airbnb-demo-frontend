@@ -23,7 +23,7 @@ const Text = styled.a`
 `;
 
 const Picture = styled.img`
-  width: width: 96px;
+  width: 96px;
   height: 72px;
   position: absolute;
   top: -1px;
