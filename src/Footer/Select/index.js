@@ -4,7 +4,7 @@ import Item from "./Item";
 class Select extends React.Component {
   render() {
     return (
-      <div className="col-4">
+      <div className="col-lg-4">
         <Item name="language" option1="English" option2="Russian" />
         <Item
           name="currency"

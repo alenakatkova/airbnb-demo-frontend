@@ -6,7 +6,7 @@ import Item from "./Item";
 class Hosting extends React.Component {
   render() {
     return (
-      <div className="col-2">
+      <div className="col-lg-2">
         <Heading title="Hosting" />
         <List>
           <Item link="#" text="Why Host" />

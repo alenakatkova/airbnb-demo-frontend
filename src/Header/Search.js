@@ -25,6 +25,11 @@ const Input = styled.input`
     font-size: 16px;
     opacity: 0.64;
   }
+
+  @media (max-width: 768px) {
+    min-width: 432px;
+    padding-left: 49px;
+  }
 `;
 
 const Search = props => (

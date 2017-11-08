@@ -31,7 +31,7 @@ const Stats = styled.span`
 const Wrapper = styled.div`max-width: 229px;`;
 
 const Card = props => (
-  <div className="col-3">
+  <div className="col-lg-3 col-md-4">
     <Wrapper>
       <Picture src={props.highRes} alt={props.alt} />
       <Text>

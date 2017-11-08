@@ -17,7 +17,7 @@ const Subheading = styled.p`
 `;
 
 const Card = props => (
-  <div className="col-2">
+  <div className="col-lg-2 col-md-3">
     <Wrapper>
       <Picture src={props.highRes} alt={props.alt} />
       <Subheading>{props.subheading}</Subheading>

@@ -10,7 +10,17 @@ import styled from "styled-components";
 
 const Section = styled.section`margin-top: 25px;`;
 
-const Cards = styled.div`position: relative;`;
+const Cards = styled.div`
+  position: relative;
+
+  @media (max-width: 768px) {
+    overflow-x: scroll;
+    margin: 0 -8px;
+    padding: 0 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+`;
 
 class Homes extends React.Component {
   render() {

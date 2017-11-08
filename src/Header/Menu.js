@@ -6,6 +6,10 @@ const List = styled.ul`
   padding: 0;
   list-style: none;
   text-align: center;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Item = styled.li`

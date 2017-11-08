@@ -35,7 +35,7 @@ const Price = styled.p`
 `;
 
 const Card = props => (
-  <div className="col-3">
+  <div className="col-lg-3 col-md-4">
     <Wrapper>
       <Picture src={props.highRes} alt={props.alt} />
       <Subheading>{props.subheading}</Subheading>

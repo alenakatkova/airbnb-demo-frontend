@@ -6,7 +6,7 @@ import Item from "./Item";
 class Airbnb extends React.Component {
   render() {
     return (
-      <div className="col-2">
+      <div className="col-lg-2">
         <Heading title="Airbnb" />
         <List>
           <Item link="#" text="About us" />

@@ -15,6 +15,10 @@ const NextPage = styled.button.attrs({
   height: 40px;
   background: url(${nextIcon}) no-repeat 0 0;
   background-size: cover;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export default NextPage;

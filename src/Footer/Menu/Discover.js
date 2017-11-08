@@ -6,7 +6,7 @@ import Item from "./Item";
 class Discover extends React.Component {
   render() {
     return (
-      <div className="col-2">
+      <div className="col-lg-2">
         <Heading title="Discover" />
         <List>
           <Item link="#" text="Trust & Safety" />

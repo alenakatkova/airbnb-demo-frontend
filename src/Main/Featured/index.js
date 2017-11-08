@@ -14,7 +14,17 @@ const Section = styled.section`
   margin-bottom: 50px;
 `;
 
-const Cards = styled.div`position: relative;`;
+const Cards = styled.div`
+  position: relative;
+
+  @media (max-width: 768px) {
+    overflow-x: scroll;
+    margin: 0 -8px;
+    padding: 0 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+`;
 
 class Featured extends React.Component {
   render() {
