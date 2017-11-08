@@ -5,21 +5,30 @@ body {
 }
 
 /* rows */
-.row {
+.row-space,
+.row-for-cols,
+.row-left,
+.row-right {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
   flex-wrap: wrap;
 }
 
+.row-space,
 .row-for-cols {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+}
+
+.row-for-cols {
   margin: 0 -8px;
+}
+
+.row-left {
+  justify-content: flex-start;
+}
+
+.row-right {
+  justify-content: flex-end;
 }
 
 .vertically-centered {
