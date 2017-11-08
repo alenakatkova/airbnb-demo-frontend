@@ -7,11 +7,14 @@ import experiencesLow from "./experiences.png";
 import experiencesHigh from "./experiences@2x.png";
 import restaurantsLow from "./restaurants.png";
 import restaurantsHigh from "./restaurants@2x.png";
+import styled from "styled-components";
+
+const Section = styled.section`margin-top: 50px;`;
 
 class Explore extends React.Component {
   render() {
     return (
-      <section>
+      <Section>
         <Heading2>Explore Airbnb</Heading2>
         <div class="row-for-cols">
           <Card
@@ -36,7 +39,7 @@ class Explore extends React.Component {
             highRes={restaurantsHigh}
           />
         </div>
-      </section>
+      </Section>
     );
   }
 }

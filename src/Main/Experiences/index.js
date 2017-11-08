@@ -11,18 +11,17 @@ import salsaLow from "./salsa.png";
 import salsaHigh from "./salsa@2x.png";
 import SeeAll from "../../common/SeeAll";
 import NextPage from "../../common/NextPage";
-
 import styled from "styled-components";
 
 const Section = styled.section`margin-top: 35px;`;
 
 const Cards = styled.div`position: relative;`;
 
-class Explore extends React.Component {
+class Experiences extends React.Component {
   render() {
     return (
       <Section>
-        <div class="row">
+        <div class="row vertically-centered">
           <Heading2>Experiences</Heading2>
           <SeeAll link="#" />
         </div>
@@ -68,4 +67,4 @@ class Explore extends React.Component {
   }
 }
 
-export default Explore;
+export default Experiences;
