@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Content = styled.div`
   position: relative;
   padding-left: 120px;
+  padding-right: 10px;
   padding-top: 24px;
   padding-bottom: 24px;
   background: #ffffff;

@@ -28,8 +28,8 @@ class Header extends React.Component {
     return (
       <PageHeader>
         <PageWrapper>
-          <div className="row">
-            <div className="row">
+          <div className="row vertically-centered">
+            <div className="row vertically-centered">
               <Link href="#">
                 <Logo alt="Logo" src={logo} />
               </Link>

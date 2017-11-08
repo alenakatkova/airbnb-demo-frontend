@@ -13,7 +13,7 @@ class Explore extends React.Component {
     return (
       <section>
         <Heading2>Explore Airbnb</Heading2>
-        <div class="row">
+        <div class="row-for-cols">
           <Card
             alt="Airbnb Homes"
             lowRes={homesLow}

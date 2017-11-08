@@ -27,7 +27,7 @@ class Explore extends React.Component {
           <SeeAll link="#" />
         </div>
         <Cards>
-          <div class="row row-top">
+          <div class="row-for-cols">
             <Card
               lowRes={forestLow}
               highRes={forestHigh}

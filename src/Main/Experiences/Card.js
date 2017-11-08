@@ -31,16 +31,18 @@ const Stats = styled.span`
 const Wrapper = styled.div`max-width: 229px;`;
 
 const Card = props => (
-  <Wrapper>
-    <Picture src={props.lowRes} srcset={props.highRes} alt={props.alt} />
-    <Text>
-      <Price>{props.price}</Price> {props.text}
-    </Text>
-    <div>
-      <Rating />
-      <Stats>{props.stats}</Stats>
-    </div>
-  </Wrapper>
+  <div className="col-3">
+    <Wrapper>
+      <Picture src={props.lowRes} srcset={props.highRes} alt={props.alt} />
+      <Text>
+        <Price>{props.price}</Price> {props.text}
+      </Text>
+      <div>
+        <Rating />
+        <Stats>{props.stats}</Stats>
+      </div>
+    </Wrapper>
+  </div>
 );
 
 export default Card;
