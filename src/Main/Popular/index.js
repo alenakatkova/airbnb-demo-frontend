@@ -1,10 +1,10 @@
 import React from "react";
 import Heading2 from "../../common/Heading2";
 import Card from "./Card";
-import chumleyLow from "./chumley.png";
-import hanjanLow from "./hanjan.png";
-import seapriceLow from "./seaprice.png";
-import meatsLow from "./meats.png";
+import chumleyHigh from "./chumley@2x.png";
+import hanjanHigh from "./hanjan@2x.png";
+import seapriceHigh from "./seaprice@2x.png";
+import meatsHigh from "./meats@2x.png";
 import SeeAll from "../../common/SeeAll";
 import NextPage from "../../common/NextPage";
 import styled from "styled-components";
@@ -17,35 +17,35 @@ class Popular extends React.Component {
   render() {
     return (
       <Section>
-        <div class="row vertically-centered">
+        <div class="row-space vertically-centered">
           <Heading2>Popular reservations around the world</Heading2>
           <SeeAll link="#" />
         </div>
         <Cards>
           <div class="row-for-cols">
             <Card
-              lowRes={chumleyLow}
+              highRes={chumleyHigh}
               alt="Chumley's"
               subheading="Speakeasy"
               name="Chumley's"
               price="About $60 per person"
             />
             <Card
-              lowRes={hanjanLow}
+              highRes={hanjanHigh}
               alt="Hanjan"
               subheading="Korean gastropub"
               name="Hanjan"
               price="About $50 per person"
             />
             <Card
-              lowRes={meatsLow}
+              highRes={meatsHigh}
               alt="Prime Meats"
               subheading="German American"
               name="Prime Meats"
               price="About $55 per person"
             />
             <Card
-              lowRes={seapriceLow}
+              highRes={seapriceHigh}
               alt="Seaprice"
               subheading="Fine Seafood"
               name="Seaprice"

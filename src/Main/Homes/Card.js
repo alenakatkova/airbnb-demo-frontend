@@ -39,7 +39,7 @@ const Wrapper = styled.div`max-width: 310px;`;
 const Card = props => (
   <div className="col-4">
     <Wrapper>
-      <Picture src={props.lowRes} srcset={props.highRes} alt={props.alt} />
+      <Picture src={props.highRes} alt={props.alt} />
       <Heading>
         {props.price} {props.name}
       </Heading>

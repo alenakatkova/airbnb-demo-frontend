@@ -36,7 +36,7 @@ const Picture = styled.img`
 const Card = props => (
   <div className="col-4">
     <Content>
-      <Picture src={props.lowRes} srcset={props.highRes} alt={props.alt} />
+      <Picture src={props.highRes} alt={props.alt} />
       <Text href={props.link}>{props.text}</Text>
     </Content>
   </div>

@@ -29,16 +29,16 @@ const Menu = props => (
   <nav>
     <List>
       <Item>
-        <Link href="{props.link1}">Become a host</Link>
+        <Link href="#">Become a host</Link>
       </Item>
       <Item>
-        <Link href="{props.link2}">Help</Link>
+        <Link href="#">Help</Link>
       </Item>
       <Item>
-        <Link href="{props.link3}">Sign Up</Link>
+        <Link href="#">Sign Up</Link>
       </Item>
       <Item>
-        <Link href="{props.link4}">Log In</Link>
+        <Link href="#">Log In</Link>
       </Item>
     </List>
   </nav>

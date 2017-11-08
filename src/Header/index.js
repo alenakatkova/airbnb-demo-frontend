@@ -33,9 +33,9 @@ class Header extends React.Component {
               <Link href="#">
                 <Logo alt="Logo" src={logo} />
               </Link>
-              <Search placeholder="Try “Miami”" type="text" />
+              <Search />
             </div>
-            <Menu link1="#" link2="#" link3="#" link4="#" />
+            <Menu />
           </div>
         </PageWrapper>
       </PageHeader>

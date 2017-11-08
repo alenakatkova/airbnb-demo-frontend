@@ -29,7 +29,7 @@ const Input = styled.input`
 
 const Search = props => (
   <Div>
-    <Input placeholder={props.placeholder} type={props.type} />
+    <Input placeholder="Try “Miami”" type="text" />
   </Div>
 );
 
