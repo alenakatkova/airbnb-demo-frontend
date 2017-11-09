@@ -24,7 +24,7 @@ class Explore extends React.Component {
       <Section>
         <Heading2>Explore Airbnb</Heading2>
         <Wrapper>
-          <div class="row-for-cols">
+          <div className="row-for-cols">
             <Card
               alt="Airbnb Homes"
               highRes={homesHigh}

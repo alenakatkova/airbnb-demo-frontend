@@ -27,12 +27,12 @@ class Experiences extends React.Component {
   render() {
     return (
       <Section>
-        <div class="row-space vertically-centered">
+        <div className="row-space vertically-centered">
           <Heading2>Experiences</Heading2>
           <SeeAll link="#" />
         </div>
         <Cards>
-          <div class="row-for-cols">
+          <div className="row-for-cols">
             <Card
               highRes={forestHigh}
               price="$29"

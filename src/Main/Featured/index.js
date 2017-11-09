@@ -33,7 +33,7 @@ class Featured extends React.Component {
         <Heading2>Featured destinations</Heading2>
 
         <Cards>
-          <div class="row-for-cols">
+          <div className="row-for-cols">
             <Card highRes={parisHigh} alt="Paris" subheading="Paris" />
             <Card highRes={miamiHigh} alt="Miami" subheading="Miami" />
             <Card highRes={tokyoHigh} alt="Tokyo" subheading="Tokyo" />

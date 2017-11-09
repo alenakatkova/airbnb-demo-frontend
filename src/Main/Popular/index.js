@@ -27,12 +27,12 @@ class Popular extends React.Component {
   render() {
     return (
       <Section>
-        <div class="row-space vertically-centered">
+        <div className="row-space vertically-centered">
           <Heading2>Popular reservations around the world</Heading2>
           <SeeAll link="#" />
         </div>
         <Cards>
-          <div class="row-for-cols">
+          <div className="row-for-cols">
             <Card
               highRes={chumleyHigh}
               alt="Chumley's"
