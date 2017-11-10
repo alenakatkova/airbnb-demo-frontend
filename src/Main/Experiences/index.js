@@ -12,6 +12,10 @@ import CardsContainer from "../../common/CardsContainer";
 
 const Section = styled.section`margin-top: 35px;`;
 
+const Next = NextPage.extend`top: 155px;`;
+
+const CardsOuterContainer = styled.div`position: relative;`;
+
 class Experiences extends React.Component {
   render() {
     return (
@@ -20,39 +24,41 @@ class Experiences extends React.Component {
           <Heading2>Experiences</Heading2>
           <SeeAll link="#" />
         </div>
-        <CardsContainer>
-          <div className="row negative-indent-xs nowrap-xs wrap-lg">
-            <Card
-              highRes={forestHigh}
-              price="$29"
-              text="Forest theraphy"
-              alt="Forest theraphy"
-              stats="44 reviews"
-            />
-            <Card
-              highRes={whaleHigh}
-              price="$69"
-              text="Whale watching"
-              alt="Whale watching"
-              stats="46 reviews"
-            />
-            <Card
-              highRes={mountainHigh}
-              price="$69"
-              text="Table Mountain Summi, Cable Car Down"
-              alt="Table Mountain Summi, Cable Car Down"
-              stats="44 reviews"
-            />
-            <Card
-              highRes={salsaHigh}
-              price="$50"
-              text="Salsa Night"
-              alt="Salsa Night"
-              stats="44 reviews"
-            />
-          </div>
-          <NextPage top="155px" />
-        </CardsContainer>
+        <CardsOuterContainer>
+          <CardsContainer>
+            <div className="row negative-indent-xs nowrap-xs wrap-lg">
+              <Card
+                highRes={forestHigh}
+                price="$29"
+                text="Forest theraphy"
+                alt="Forest theraphy"
+                stats="44 reviews"
+              />
+              <Card
+                highRes={whaleHigh}
+                price="$69"
+                text="Whale watching"
+                alt="Whale watching"
+                stats="46 reviews"
+              />
+              <Card
+                highRes={mountainHigh}
+                price="$69"
+                text="Table Mountain Summi, Cable Car Down"
+                alt="Table Mountain Summi, Cable Car Down"
+                stats="44 reviews"
+              />
+              <Card
+                highRes={salsaHigh}
+                price="$50"
+                text="Salsa Night"
+                alt="Salsa Night"
+                stats="44 reviews"
+              />
+            </div>
+          </CardsContainer>
+          <Next />
+        </CardsOuterContainer>
       </Section>
     );
   }

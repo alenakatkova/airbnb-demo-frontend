@@ -12,6 +12,10 @@ import CardsContainer from "../../common/CardsContainer";
 
 const Section = styled.section`margin-top: 35px;`;
 
+const Next = NextPage.extend`top: 70px;`;
+
+const CardsOuterContainer = styled.div`position: relative;`;
+
 class Popular extends React.Component {
   render() {
     return (
@@ -20,39 +24,41 @@ class Popular extends React.Component {
           <Heading2>Popular reservations around the world</Heading2>
           <SeeAll link="#" />
         </div>
-        <CardsContainer>
-          <div className="row negative-indent-xs nowrap-xs wrap-lg">
-            <Card
-              highRes={chumleyHigh}
-              alt="Chumley's"
-              subheading="Speakeasy"
-              name="Chumley's"
-              price="About $60 per person"
-            />
-            <Card
-              highRes={hanjanHigh}
-              alt="Hanjan"
-              subheading="Korean gastropub"
-              name="Hanjan"
-              price="About $50 per person"
-            />
-            <Card
-              highRes={meatsHigh}
-              alt="Prime Meats"
-              subheading="German American"
-              name="Prime Meats"
-              price="About $55 per person"
-            />
-            <Card
-              highRes={seapriceHigh}
-              alt="Seaprice"
-              subheading="Fine Seafood"
-              name="Seaprice"
-              price="About $75 per person"
-            />
-          </div>
-          <NextPage top="70px" />
-        </CardsContainer>
+        <CardsOuterContainer>
+          <CardsContainer>
+            <div className="row negative-indent-xs nowrap-xs wrap-lg">
+              <Card
+                highRes={chumleyHigh}
+                alt="Chumley's"
+                subheading="Speakeasy"
+                name="Chumley's"
+                price="About $60 per person"
+              />
+              <Card
+                highRes={hanjanHigh}
+                alt="Hanjan"
+                subheading="Korean gastropub"
+                name="Hanjan"
+                price="About $50 per person"
+              />
+              <Card
+                highRes={meatsHigh}
+                alt="Prime Meats"
+                subheading="German American"
+                name="Prime Meats"
+                price="About $55 per person"
+              />
+              <Card
+                highRes={seapriceHigh}
+                alt="Seaprice"
+                subheading="Fine Seafood"
+                name="Seaprice"
+                price="About $75 per person"
+              />
+            </div>
+          </CardsContainer>
+          <Next />
+        </CardsOuterContainer>
       </Section>
     );
   }

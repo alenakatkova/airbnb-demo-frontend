@@ -38,11 +38,11 @@ const MenuBtn = styled.button`
   padding: 0;
   margin: 0;
   border: none;
-  width: 10px;
-  height: 5.55px;
+  width: 11px;
+  height: 6px;
   background: url(${arrow}) no-repeat 0 0;
   background-size: cover;
-  margin-right: 8.22px;
+  margin-right: 7.22px;
 
   @media (min-width: 768px) {
     display: block;

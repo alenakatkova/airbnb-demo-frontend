@@ -40,6 +40,13 @@ const Logo = styled.img`
   height: 21.99px;
 `;
 
+const Container = styled.div`
+  width: 100%;
+  @media (min-width: 768px) {
+    width: auto;
+  }
+`;
+
 class Footer extends React.Component {
   render() {
     return (
@@ -59,10 +66,12 @@ class Footer extends React.Component {
                 <Logo src={logo} />
                 <Copyright />
               </div>
-              <div className="row start-xs end-md middle-xs">
-                <BottomNav />
-                <Social />
-              </div>
+              <Container>
+                <div className="row start-xs end-md middle-xs">
+                  <BottomNav />
+                  <Social />
+                </div>
+              </Container>
             </div>
           </Bottom>
         </div>
