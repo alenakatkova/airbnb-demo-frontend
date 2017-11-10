@@ -9,12 +9,13 @@ import styled from "styled-components";
 const Section = styled.section`margin-top: 50px;`;
 
 const Wrapper = styled.div`
-  @media (max-width: 768px) {
-    overflow-x: scroll;
-    margin: 0 -8px;
-    padding: 0 8px;
-    width: 100%;
-    box-sizing: border-box;
+  overflow-x: scroll;
+  margin: 0 -8px;
+  padding: 0 8px;
+  box-sizing: border-box;
+
+  @media (min-width: 986px) {
+    overflow: hidden;
   }
 `;
 
@@ -24,7 +25,7 @@ class Explore extends React.Component {
       <Section>
         <Heading2>Explore Airbnb</Heading2>
         <Wrapper>
-          <div className="row-for-cols">
+          <div className="row negative-indent nowrap wrap-lg">
             <Card
               alt="Airbnb Homes"
               highRes={homesHigh}

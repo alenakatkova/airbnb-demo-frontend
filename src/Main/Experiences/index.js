@@ -8,31 +8,20 @@ import salsaHigh from "./salsa@2x.png";
 import SeeAll from "../../common/SeeAll";
 import NextPage from "../../common/NextPage";
 import styled from "styled-components";
+import CardsContainer from "../../common/CardsContainer";
 
 const Section = styled.section`margin-top: 35px;`;
-
-const Cards = styled.div`
-  position: relative;
-
-  @media (max-width: 768px) {
-    overflow-x: scroll;
-    margin: 0 -8px;
-    padding: 0 8px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-`;
 
 class Experiences extends React.Component {
   render() {
     return (
       <Section>
-        <div className="row-space vertically-centered">
+        <div className="row between middle">
           <Heading2>Experiences</Heading2>
           <SeeAll link="#" />
         </div>
-        <Cards>
-          <div className="row-for-cols">
+        <CardsContainer>
+          <div className="row negative-indent nowrap wrap-lg">
             <Card
               highRes={forestHigh}
               price="$29"
@@ -63,7 +52,7 @@ class Experiences extends React.Component {
             />
           </div>
           <NextPage top="155px" />
-        </Cards>
+        </CardsContainer>
       </Section>
     );
   }

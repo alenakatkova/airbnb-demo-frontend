@@ -8,31 +8,20 @@ import meatsHigh from "./meats@2x.png";
 import SeeAll from "../../common/SeeAll";
 import NextPage from "../../common/NextPage";
 import styled from "styled-components";
+import CardsContainer from "../../common/CardsContainer";
 
 const Section = styled.section`margin-top: 35px;`;
-
-const Cards = styled.div`
-  position: relative;
-
-  @media (max-width: 768px) {
-    overflow-x: scroll;
-    margin: 0 -8px;
-    padding: 0 8px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-`;
 
 class Popular extends React.Component {
   render() {
     return (
       <Section>
-        <div className="row-space vertically-centered">
+        <div className="row between middle">
           <Heading2>Popular reservations around the world</Heading2>
           <SeeAll link="#" />
         </div>
-        <Cards>
-          <div className="row-for-cols">
+        <CardsContainer>
+          <div className="row negative-indent nowrap wrap-lg">
             <Card
               highRes={chumleyHigh}
               alt="Chumley's"
@@ -63,7 +52,7 @@ class Popular extends React.Component {
             />
           </div>
           <NextPage top="70px" />
-        </Cards>
+        </CardsContainer>
       </Section>
     );
   }

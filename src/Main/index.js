@@ -1,5 +1,4 @@
 import React from "react";
-import PageWrapper from "../common/PageWrapper";
 import Explore from "./Explore";
 import Experiences from "./Experiences";
 import Homes from "./Homes";
@@ -10,13 +9,13 @@ class Main extends React.Component {
   render() {
     return (
       <main>
-        <PageWrapper>
+        <div className="container">
           <Explore />
           <Experiences />
           <Homes />
           <Popular />
           <Featured />
-        </PageWrapper>
+        </div>
       </main>
     );
   }

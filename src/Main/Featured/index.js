@@ -8,22 +8,11 @@ import capetownHigh from "./capetown@2x.png";
 import seoulHigh from "./seoul@2x.png";
 import losangelesHigh from "./losangeles@2x.png";
 import styled from "styled-components";
+import CardsContainer from "../../common/CardsContainer";
 
 const Section = styled.section`
   margin-top: 45px;
   margin-bottom: 50px;
-`;
-
-const Cards = styled.div`
-  position: relative;
-
-  @media (max-width: 768px) {
-    overflow-x: scroll;
-    margin: 0 -8px;
-    padding: 0 8px;
-    width: 100%;
-    box-sizing: border-box;
-  }
 `;
 
 class Featured extends React.Component {
@@ -31,9 +20,8 @@ class Featured extends React.Component {
     return (
       <Section>
         <Heading2>Featured destinations</Heading2>
-
-        <Cards>
-          <div className="row-for-cols">
+        <CardsContainer>
+          <div className="row negative-indent nowrap wrap-lg">
             <Card highRes={parisHigh} alt="Paris" subheading="Paris" />
             <Card highRes={miamiHigh} alt="Miami" subheading="Miami" />
             <Card highRes={tokyoHigh} alt="Tokyo" subheading="Tokyo" />
@@ -49,7 +37,7 @@ class Featured extends React.Component {
               subheading="Los Angeles"
             />
           </div>
-        </Cards>
+        </CardsContainer>
       </Section>
     );
   }

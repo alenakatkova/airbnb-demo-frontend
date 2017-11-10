@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PageWrapper from "../common/PageWrapper";
 import Search from "./Search";
 import Menu from "./Menu";
 import logo from "./logo.svg";
@@ -20,16 +19,22 @@ const Logo = styled.img`
 const Link = styled.a`
   display: inline-block;
   margin: 0;
-  margin-right: 51.2px;
+  margin-right: 4.98px;
   padding: 0;
 
   @media (max-width: 768px) {
+  }
+
+  @media (min-width: 768px) {
     margin-right: 6.98px;
+  }
+
+  @media (min-width: 986px) {
+    margin-right: 51.2px;
   }
 `;
 
 const MenuBtn = styled.button`
-  display: none;
   padding: 0;
   margin: 0;
   border: none;
@@ -37,10 +42,15 @@ const MenuBtn = styled.button`
   height: 5.55px;
   background: url(${arrow}) no-repeat 0 0;
   background-size: cover;
-  margin-right: 17.22px;
+  margin-right: 8.22px;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     display: block;
+    margin-right: 17.22px;
+  }
+
+  @media (min-width: 986px) {
+    display: none;
   }
 `;
 
@@ -48,9 +58,9 @@ class Header extends React.Component {
   render() {
     return (
       <PageHeader>
-        <PageWrapper>
-          <div className="row-space vertically-centered">
-            <div className="row-space vertically-centered">
+        <div className="container">
+          <div className="row between middle">
+            <div className="row between middle">
               <Link href="#">
                 <Logo alt="Logo" src={logo} />
               </Link>
@@ -59,7 +69,7 @@ class Header extends React.Component {
             </div>
             <Menu />
           </div>
-        </PageWrapper>
+        </div>
       </PageHeader>
     );
   }

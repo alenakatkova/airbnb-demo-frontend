@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const List = styled.ul`
+  display: none;
   margin: 0;
   padding: 0;
   list-style: none;
   text-align: center;
 
-  @media (max-width: 768px) {
-    display: none;
+  @media (min-width: 986px) {
+    display: block;
   }
 `;
 

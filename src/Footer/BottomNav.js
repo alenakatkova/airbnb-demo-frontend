@@ -10,13 +10,12 @@ const List = styled.ul`
 
 const Item = styled.li`
   display: inline-block;
-
   padding: 0 8px;
 `;
 
 const Link = styled.a`
   color: #636363;
-  line-height: normal;
+  line-height: 18px;
   font-size: 15px;
   text-decoration: none;
 `;
