@@ -4,19 +4,27 @@ import fbIcon from "./fbIcon.svg";
 import igIcon from "./igIcon.svg";
 import twIcon from "./twIcon.svg";
 
-const List = styled.ul`
+const Container = styled.div`
   margin: 0;
   padding: 0;
-  list-style: none;
-  text-align: right;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    text-align: right;
+  }
 `;
 
-const Item = styled.li`
+const Link = styled.a`
   display: inline-block;
-  margin-left: 16px;
+  margin-right: 8px;
+  text-decoration: none;
+
+  @media (min-width: 768px) {
+    margin: 0;
+    margin-left: 16px;
+  }
 `;
 
-const Link = styled.a`text-decoration: none;`;
 const Icon = styled.img`
   width: 24px;
   height: 24px;
@@ -24,23 +32,17 @@ const Icon = styled.img`
 
 const Social = props => (
   <nav>
-    <List>
-      <Item>
-        <Link href="#">
-          <Icon src={fbIcon} />
-        </Link>
-      </Item>
-      <Item>
-        <Link href="#">
-          <Icon src={twIcon} />
-        </Link>
-      </Item>
-      <Item>
-        <Link href="#">
-          <Icon src={igIcon} />
-        </Link>
-      </Item>
-    </List>
+    <Container>
+      <Link href="#">
+        <Icon src={fbIcon} />
+      </Link>
+      <Link href="#">
+        <Icon src={twIcon} />
+      </Link>
+      <Link href="#">
+        <Icon src={igIcon} />
+      </Link>
+    </Container>
   </nav>
 );
 

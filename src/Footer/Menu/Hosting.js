@@ -1,7 +1,6 @@
 import React from "react";
-import List from "./List";
 import Heading from "./Heading";
-import Item from "./Item";
+import Link from "./Link";
 import Container from "./Container";
 
 class Hosting extends React.Component {
@@ -10,12 +9,12 @@ class Hosting extends React.Component {
       <div className="col-md-2 col-lg-2">
         <Container>
           <Heading title="Hosting" />
-          <List>
-            <Item link="#" text="Why Host" />
-            <Item link="#" text="Hospitality" />
-            <Item link="#" text="Responsible Hosting" />
-            <Item link="#" text="Community Center" />
-          </List>
+          <nav>
+            <Link link="#" text="Why Host" />
+            <Link link="#" text="Hospitality" />
+            <Link link="#" text="Responsible Hosting" />
+            <Link link="#" text="Community Center" />
+          </nav>
         </Container>
       </div>
     );

@@ -1,7 +1,6 @@
 import React from "react";
-import List from "./List";
 import Heading from "./Heading";
-import Item from "./Item";
+import Link from "./Link";
 import Container from "./Container";
 
 class Discover extends React.Component {
@@ -10,15 +9,15 @@ class Discover extends React.Component {
       <div className="col-md-2 col-lg-2">
         <Container>
           <Heading title="Discover" />
-          <List>
-            <Item link="#" text="Trust & Safety" />
-            <Item link="#" text="Travel Credit" />
-            <Item link="#" text="Gift Cards" />
-            <Item link="#" text="Airbnb Citizen" />
-            <Item link="#" text="Business Travel" />
-            <Item link="#" text="Guidebooks" />
-            <Item link="#" text="Airbnbmag" />
-          </List>
+          <nav>
+            <Link link="#" text="Trust & Safety" />
+            <Link link="#" text="Travel Credit" />
+            <Link link="#" text="Gift Cards" />
+            <Link link="#" text="Airbnb Citizen" />
+            <Link link="#" text="Business Travel" />
+            <Link link="#" text="Guidebooks" />
+            <Link link="#" text="Airbnbmag" />
+          </nav>
         </Container>
       </div>
     );

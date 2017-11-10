@@ -21,7 +21,7 @@ class Featured extends React.Component {
       <Section>
         <Heading2>Featured destinations</Heading2>
         <CardsContainer>
-          <div className="row negative-indent nowrap wrap-lg">
+          <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <Card highRes={parisHigh} alt="Paris" subheading="Paris" />
             <Card highRes={miamiHigh} alt="Miami" subheading="Miami" />
             <Card highRes={tokyoHigh} alt="Tokyo" subheading="Tokyo" />

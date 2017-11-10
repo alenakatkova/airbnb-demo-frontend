@@ -59,8 +59,8 @@ class Header extends React.Component {
     return (
       <PageHeader>
         <div className="container">
-          <div className="row between middle">
-            <div className="row between middle">
+          <div className="row between-xs middle-xs">
+            <div className="row between-xs middle-xs">
               <Link href="#">
                 <Logo alt="Logo" src={logo} />
               </Link>

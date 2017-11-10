@@ -15,8 +15,8 @@ const Content = styled.div`
 
   @media (min-width: 768px) {
     padding-left: 120px;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     width: 100%;
   }
 `;
@@ -48,6 +48,7 @@ const Picture = styled.img`
     height: 72px;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
+    border-top-right-radius: 0;
   }
 `;
 

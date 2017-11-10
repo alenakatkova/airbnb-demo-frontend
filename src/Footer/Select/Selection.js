@@ -5,15 +5,24 @@ import arrow from "./arrow.svg";
 const Container = styled.div`
   position: relative;
   width: 100%;
+
+  @media (min-width: 768px) {
+    margin-bottom: 16px;
+  }
 `;
 
 const Select = styled.select`
   opacity: 0;
   cursor: pointer;
   width: 100%;
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
 `;
 
-const Div = styled.div`
+const Fake = styled.div`
   position: absolute;
   z-index: 0;
   left: 0;
@@ -26,7 +35,6 @@ const Div = styled.div`
   border: 1px solid rgba(72, 72, 72, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
-  margin-bottom: 16px;
 
   font-family: "CircularAir-Book", "Arial", sans-serif;
   line-height: 14px;
@@ -35,7 +43,7 @@ const Div = styled.div`
 
   background: url(${arrow}) no-repeat;
   background-size: 11.37px 6.31px;
-  background-position: 124.63px 18px;
+  background-position: 96% 18px;
 
   @media (min-width: 768px) {
     line-height: 18px;
@@ -50,10 +58,10 @@ const Div = styled.div`
   }
 `;
 
-const Item = props => (
+const Selection = props => (
   <div className="col-xs-6 col-md-12 col-lg-12">
     <Container>
-      <Div>{props.option1}</Div>
+      <Fake>{props.option1}</Fake>
       <Select name={props.name}>
         <option>{props.option1}</option>
       </Select>
@@ -61,4 +69,4 @@ const Item = props => (
   </div>
 );
 
-export default Item;
+export default Selection;

@@ -25,7 +25,7 @@ class Explore extends React.Component {
       <Section>
         <Heading2>Explore Airbnb</Heading2>
         <Wrapper>
-          <div className="row negative-indent nowrap wrap-lg">
+          <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <Card
               alt="Airbnb Homes"
               highRes={homesHigh}

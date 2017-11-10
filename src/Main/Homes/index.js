@@ -29,12 +29,12 @@ class Homes extends React.Component {
   render() {
     return (
       <Section>
-        <div className="row between middle">
+        <div className="row between-xs middle-xs">
           <Heading2>Homes</Heading2>
           <SeeAll link="#" />
         </div>
         <CardsContainer>
-          <div className="row negative-indent nowrap wrap-lg">
+          <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <Card
               highRes={salentinaHigh}
               price="$82"

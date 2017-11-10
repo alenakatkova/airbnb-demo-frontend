@@ -1,38 +1,42 @@
 import React from "react";
 import styled from "styled-components";
 
-const List = styled.ul`
+const Container = styled.div`
   margin: 0;
   padding: 0;
-  list-style: none;
-  text-align: right;
-`;
+  text-align: left;
 
-const Item = styled.li`
-  display: inline-block;
-  padding: 0 8px;
+  @media (min-width: 768px) {
+    text-align: right;
+  }
 `;
 
 const Link = styled.a`
+  display: inline-block;
   color: #636363;
-  line-height: 18px;
-  font-size: 15px;
+  line-height: 14px;
+  font-size: 12px;
   text-decoration: none;
+  margin-right: 12px;
+
+  @media (min-width: 768px) {
+    margin: 0;
+    padding: 0 8px;
+  }
+
+  @media (min-width: 986px) {
+    line-height: 18px;
+    font-size: 15px;
+  }
 `;
 
 const BottomNav = props => (
   <nav>
-    <List>
-      <Item>
-        <Link href="#">Terms</Link>
-      </Item>
-      <Item>
-        <Link href="#">Privacy</Link>
-      </Item>
-      <Item>
-        <Link href="#">Site map</Link>
-      </Item>
-    </List>
+    <Container>
+      <Link href="#">Terms</Link>
+      <Link href="#">Privacy</Link>
+      <Link href="#">Site map</Link>
+    </Container>
   </nav>
 );
 
