@@ -19,6 +19,6 @@ const MenuLink = styled.a`
   }
 `;
 
-const Item = props => <MenuLink href={props.link}>{props.text}</MenuLink>;
+const Link = props => <MenuLink href={props.link}>{props.text}</MenuLink>;
 
-export default Item;
+export default Link;
