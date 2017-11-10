@@ -61,19 +61,17 @@ const Stats = styled.span`
 const Wrapper = styled.div`max-width: 310px;`;
 
 const Card = props => (
-  <div className="col-xs-8 col-md-5 col-lg-4">
-    <Wrapper>
-      <Picture src={props.highRes} alt={props.alt} />
-      <Heading>
-        {props.price} {props.name}
-      </Heading>
-      <Description>{props.description}</Description>
-      <div>
-        <Rating />
-        <Stats>{props.stats}</Stats>
-      </div>
-    </Wrapper>
-  </div>
+  <Wrapper>
+    <Picture src={props.highRes} alt={props.alt} />
+    <Heading>
+      {props.price} {props.name}
+    </Heading>
+    <Description>{props.description}</Description>
+    <div>
+      <Rating />
+      <Stats>{props.stats}</Stats>
+    </div>
+  </Wrapper>
 );
 
 export default Card;

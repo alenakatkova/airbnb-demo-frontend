@@ -32,12 +32,10 @@ const Subheading = styled.p`
 `;
 
 const Card = props => (
-  <div className="col-xs-4 col-md-3 col-lg-2">
-    <Wrapper>
-      <Picture src={props.highRes} alt={props.alt} />
-      <Subheading>{props.subheading}</Subheading>
-    </Wrapper>
-  </div>
+  <Wrapper>
+    <Picture src={props.highRes} alt={props.alt} />
+    <Subheading>{props.subheading}</Subheading>
+  </Wrapper>
 );
 
 export default Card;

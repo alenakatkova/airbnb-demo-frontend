@@ -53,12 +53,10 @@ const Picture = styled.img`
 `;
 
 const Card = props => (
-  <div className="col-xs-6 col-s-5 col-sm-4 col-md-5 col-lg-4">
-    <Content>
-      <Picture src={props.highRes} alt={props.alt} />
-      <Text href={props.link}>{props.text}</Text>
-    </Content>
-  </div>
+  <Content>
+    <Picture src={props.highRes} alt={props.alt} />
+    <Text href={props.link}>{props.text}</Text>
+  </Content>
 );
 
 export default Card;

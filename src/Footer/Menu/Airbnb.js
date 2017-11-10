@@ -6,19 +6,17 @@ import Container from "./Container";
 class Airbnb extends React.Component {
   render() {
     return (
-      <div className="col-md-2 col-lg-2">
-        <Container>
-          <Heading title="Airbnb" />
-          <nav>
-            <Link link="#" text="About us" />
-            <Link link="#" text="Careers" />
-            <Link link="#" text="Press" />
-            <Link link="#" text="Policies" />
-            <Link link="#" text="Help" />
-            <Link link="#" text="Diversity & Belogning" />
-          </nav>
-        </Container>
-      </div>
+      <Container>
+        <Heading title="Airbnb" />
+        <nav>
+          <Link link="#" text="About us" />
+          <Link link="#" text="Careers" />
+          <Link link="#" text="Press" />
+          <Link link="#" text="Policies" />
+          <Link link="#" text="Help" />
+          <Link link="#" text="Diversity & Belogning" />
+        </nav>
+      </Container>
     );
   }
 }

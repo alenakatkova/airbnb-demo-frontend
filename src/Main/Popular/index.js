@@ -27,34 +27,42 @@ class Popular extends React.Component {
         <CardsOuterContainer>
           <CardsContainer>
             <div className="row negative-indent-xs nowrap-xs wrap-lg">
-              <Card
-                highRes={chumleyHigh}
-                alt="Chumley's"
-                subheading="Speakeasy"
-                name="Chumley's"
-                price="About $60 per person"
-              />
-              <Card
-                highRes={hanjanHigh}
-                alt="Hanjan"
-                subheading="Korean gastropub"
-                name="Hanjan"
-                price="About $50 per person"
-              />
-              <Card
-                highRes={meatsHigh}
-                alt="Prime Meats"
-                subheading="German American"
-                name="Prime Meats"
-                price="About $55 per person"
-              />
-              <Card
-                highRes={seapriceHigh}
-                alt="Seaprice"
-                subheading="Fine Seafood"
-                name="Seaprice"
-                price="About $75 per person"
-              />
+              <div className="col-xs-6 col-md-4 col-lg-3">
+                <Card
+                  highRes={chumleyHigh}
+                  alt="Chumley's"
+                  subheading="Speakeasy"
+                  name="Chumley's"
+                  price="About $60 per person"
+                />
+              </div>
+              <div className="col-xs-6 col-md-4 col-lg-3">
+                <Card
+                  highRes={hanjanHigh}
+                  alt="Hanjan"
+                  subheading="Korean gastropub"
+                  name="Hanjan"
+                  price="About $50 per person"
+                />
+              </div>
+              <div className="col-xs-6 col-md-4 col-lg-3">
+                <Card
+                  highRes={meatsHigh}
+                  alt="Prime Meats"
+                  subheading="German American"
+                  name="Prime Meats"
+                  price="About $55 per person"
+                />
+              </div>
+              <div className="col-xs-6 col-md-4 col-lg-3">
+                <Card
+                  highRes={seapriceHigh}
+                  alt="Seaprice"
+                  subheading="Fine Seafood"
+                  name="Seaprice"
+                  price="About $75 per person"
+                />
+              </div>
             </div>
           </CardsContainer>
           <Next />

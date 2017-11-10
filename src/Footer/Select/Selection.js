@@ -59,14 +59,12 @@ const Fake = styled.div`
 `;
 
 const Selection = props => (
-  <div className="col-xs-6 col-md-12 col-lg-12">
-    <Container>
-      <Fake>{props.option1}</Fake>
-      <Select name={props.name}>
-        <option>{props.option1}</option>
-      </Select>
-    </Container>
-  </div>
+  <Container>
+    <Fake>{props.option1}</Fake>
+    <Select name={props.name}>
+      <option>{props.option1}</option>
+    </Select>
+  </Container>
 );
 
 export default Selection;

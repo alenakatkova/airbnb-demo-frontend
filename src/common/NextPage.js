@@ -13,7 +13,7 @@ const NextPage = styled.button`
   background: url(${nextIcon}) no-repeat 0 0;
   background-size: contain;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;

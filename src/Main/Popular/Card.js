@@ -61,14 +61,12 @@ const Price = styled.p`
 `;
 
 const Card = props => (
-  <div className="col-xs-6 col-md-4 col-lg-3">
-    <Wrapper>
-      <Picture src={props.highRes} alt={props.alt} />
-      <Subheading>{props.subheading}</Subheading>
-      <Name>{props.name}</Name>
-      <Price>{props.price}</Price>
-    </Wrapper>
-  </div>
+  <Wrapper>
+    <Picture src={props.highRes} alt={props.alt} />
+    <Subheading>{props.subheading}</Subheading>
+    <Name>{props.name}</Name>
+    <Price>{props.price}</Price>
+  </Wrapper>
 );
 
 export default Card;

@@ -27,34 +27,42 @@ class Experiences extends React.Component {
         <CardsOuterContainer>
           <CardsContainer>
             <div className="row negative-indent-xs nowrap-xs wrap-lg">
-              <Card
-                highRes={forestHigh}
-                price="$29"
-                text="Forest theraphy"
-                alt="Forest theraphy"
-                stats="44 reviews"
-              />
-              <Card
-                highRes={whaleHigh}
-                price="$69"
-                text="Whale watching"
-                alt="Whale watching"
-                stats="46 reviews"
-              />
-              <Card
-                highRes={mountainHigh}
-                price="$69"
-                text="Table Mountain Summi, Cable Car Down"
-                alt="Table Mountain Summi, Cable Car Down"
-                stats="44 reviews"
-              />
-              <Card
-                highRes={salsaHigh}
-                price="$50"
-                text="Salsa Night"
-                alt="Salsa Night"
-                stats="44 reviews"
-              />
+              <div className="col-xs-6 col-md-4 col-lg-3">
+                <Card
+                  highRes={forestHigh}
+                  price="$29"
+                  text="Forest theraphy"
+                  alt="Forest theraphy"
+                  stats="44 reviews"
+                />
+              </div>
+              <div className="col-xs-6 col-md-4 col-lg-3">
+                <Card
+                  highRes={whaleHigh}
+                  price="$69"
+                  text="Whale watching"
+                  alt="Whale watching"
+                  stats="46 reviews"
+                />
+              </div>
+              <div className="col-xs-6 col-md-4 col-lg-3">
+                <Card
+                  highRes={mountainHigh}
+                  price="$69"
+                  text="Table Mountain Summi, Cable Car Down"
+                  alt="Table Mountain Summi, Cable Car Down"
+                  stats="44 reviews"
+                />
+              </div>
+              <div className="col-xs-6 col-md-4 col-lg-3">
+                <Card
+                  highRes={salsaHigh}
+                  price="$50"
+                  text="Salsa Night"
+                  alt="Salsa Night"
+                  stats="44 reviews"
+                />
+              </div>
             </div>
           </CardsContainer>
           <Next />

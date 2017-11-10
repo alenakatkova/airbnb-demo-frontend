@@ -26,30 +26,36 @@ class Homes extends React.Component {
         <CardsOuterContainer>
           <CardsContainer>
             <div className="row negative-indent-xs nowrap-xs wrap-lg">
-              <Card
-                highRes={salentinaHigh}
-                price="$82"
-                name="La Salentina, see, nature & relax"
-                description="Entire house · 9 beds"
-                alt="La Salentina"
-                stats="97 · Superhost"
-              />
-              <Card
-                highRes={seeHigh}
-                price="$82"
-                name="Your private 3 bedr. riad and exclusive sth"
-                description="Entire house · 5 beds"
-                alt="3 bedr."
-                stats="161 · Superhost"
-              />
-              <Card
-                highRes={tropicalHigh}
-                price="$200"
-                name="Dreamy Tropical Tree House"
-                description="Entire treehouse · 1 beds"
-                alt="Tropical Tree House"
-                stats="364 · Superhost"
-              />
+              <div className="col-xs-8 col-md-5 col-lg-4">
+                <Card
+                  highRes={salentinaHigh}
+                  price="$82"
+                  name="La Salentina, see, nature & relax"
+                  description="Entire house · 9 beds"
+                  alt="La Salentina"
+                  stats="97 · Superhost"
+                />
+              </div>
+              <div className="col-xs-8 col-md-5 col-lg-4">
+                <Card
+                  highRes={seeHigh}
+                  price="$82"
+                  name="Your private 3 bedr. riad and exclusive sth"
+                  description="Entire house · 5 beds"
+                  alt="3 bedr."
+                  stats="161 · Superhost"
+                />
+              </div>
+              <div className="col-xs-8 col-md-5 col-lg-4">
+                <Card
+                  highRes={tropicalHigh}
+                  price="$200"
+                  name="Dreamy Tropical Tree House"
+                  description="Entire treehouse · 1 beds"
+                  alt="Tropical Tree House"
+                  stats="364 · Superhost"
+                />
+              </div>
             </div>
           </CardsContainer>
           <Next />
