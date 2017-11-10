@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Heading2 from "../../common/Heading2";
+import Heading2 from "../common/Heading2";
 import Card from "./Card";
 import parisHigh from "./paris@2x.png";
 import miamiHigh from "./miami@2x.png";
@@ -8,7 +8,7 @@ import tokyoHigh from "./tokyo@2x.png";
 import capetownHigh from "./capetown@2x.png";
 import seoulHigh from "./seoul@2x.png";
 import losangelesHigh from "./losangeles@2x.png";
-import CardsContainer from "../../common/CardsContainer";
+import CardsContainer from "../common/CardsContainer";
 
 const Section = styled.section`
   margin-top: 45px;

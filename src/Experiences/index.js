@@ -1,14 +1,14 @@
 import React from "react";
-import Heading2 from "../../common/Heading2";
+import styled from "styled-components";
+import Heading2 from "../common/Heading2";
 import Card from "./Card";
 import forestHigh from "./forest@2x.png";
 import whaleHigh from "./whale@2x.png";
 import mountainHigh from "./mountain@2x.png";
 import salsaHigh from "./salsa@2x.png";
-import SeeAll from "../../common/SeeAll";
-import NextPage from "../../common/NextPage";
-import styled from "styled-components";
-import CardsContainer from "../../common/CardsContainer";
+import SeeAll from "../common/SeeAll";
+import NextPage from "../common/NextPage";
+import CardsContainer from "../common/CardsContainer";
 
 const Section = styled.section`margin-top: 35px;`;
 

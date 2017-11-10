@@ -1,6 +1,11 @@
 import React from "react";
 import Header from "./Header";
-import Main from "./Main";
+import Explore from "./Explore";
+import Experiences from "./Experiences";
+import Homes from "./Homes";
+import Popular from "./Popular";
+import Featured from "./Featured";
+
 import Footer from "./Footer";
 
 class App extends React.Component {
@@ -8,7 +13,15 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <Main />
+        <main>
+          <div className="container">
+            <Explore />
+            <Experiences />
+            <Homes />
+            <Popular />
+            <Featured />
+          </div>
+        </main>
         <Footer />
       </div>
     );

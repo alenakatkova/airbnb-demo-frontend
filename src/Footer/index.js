@@ -5,9 +5,9 @@ import Airbnb from "./Menu/Airbnb";
 import Discover from "./Menu/Discover";
 import Hosting from "./Menu/Hosting";
 import logo from "./logo.svg";
+import Social from "./Social";
 import Copyright from "./Copyright";
 import BottomNav from "./BottomNav";
-import Social from "./Social";
 
 const PageFooter = styled.footer`
   width: 100%;

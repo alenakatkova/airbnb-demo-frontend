@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Rating from "../../common/Rating";
+import Rating from "../common/Rating";
 
 const Picture = styled.img`
   width: 144px;

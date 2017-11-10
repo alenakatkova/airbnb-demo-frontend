@@ -1,14 +1,14 @@
 import React from "react";
-import Heading2 from "../../common/Heading2";
+import Heading2 from "../common/Heading2";
 import Card from "./Card";
 import chumleyHigh from "./chumley@2x.png";
 import hanjanHigh from "./hanjan@2x.png";
 import seapriceHigh from "./seaprice@2x.png";
 import meatsHigh from "./meats@2x.png";
-import SeeAll from "../../common/SeeAll";
-import NextPage from "../../common/NextPage";
+import SeeAll from "../common/SeeAll";
+import NextPage from "../common/NextPage";
 import styled from "styled-components";
-import CardsContainer from "../../common/CardsContainer";
+import CardsContainer from "../common/CardsContainer";
 
 const Section = styled.section`margin-top: 35px;`;
 

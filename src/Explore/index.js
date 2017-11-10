@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Heading2 from "../../common/Heading2";
+import Heading2 from "../common/Heading2";
 import Card from "./Card";
 import homesHigh from "./homes@2x.png";
 import experiencesHigh from "./experiences@2x.png";

@@ -1,13 +1,13 @@
 import React from "react";
-import Heading2 from "../../common/Heading2";
+import Heading2 from "../common/Heading2";
 import Card from "./Card";
 import salentinaHigh from "./salentina@2x.png";
 import seeHigh from "./see@2x.png";
 import tropicalHigh from "./tropical@2x.png";
-import SeeAll from "../../common/SeeAll";
-import NextPage from "../../common/NextPage";
+import SeeAll from "../common/SeeAll";
+import NextPage from "../common/NextPage";
 import styled from "styled-components";
-import CardsContainer from "../../common/CardsContainer";
+import CardsContainer from "../common/CardsContainer";
 
 const Section = styled.section`margin-top: 25px;`;
 
