@@ -30,20 +30,24 @@ const Icon = styled.img`
   height: 24px;
 `;
 
-const Social = props => (
-  <nav>
-    <Container>
-      <Link href="#">
-        <Icon src={fbIcon} />
-      </Link>
-      <Link href="#">
-        <Icon src={twIcon} />
-      </Link>
-      <Link href="#">
-        <Icon src={igIcon} />
-      </Link>
-    </Container>
-  </nav>
-);
+class Social extends React.Component {
+  render() {
+    return (
+      <nav>
+        <Container>
+          <Link href="#">
+            <Icon src={fbIcon} />
+          </Link>
+          <Link href="#">
+            <Icon src={twIcon} />
+          </Link>
+          <Link href="#">
+            <Icon src={igIcon} />
+          </Link>
+        </Container>
+      </nav>
+    );
+  }
+}
 
 export default Social;

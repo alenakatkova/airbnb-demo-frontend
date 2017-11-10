@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const Title = styled.h3`
+const Heading = styled.h3`
   @media (min-width: 768px) {
     margin: 0;
     margin-bottom: 16px;
@@ -16,7 +15,5 @@ const Title = styled.h3`
     font-size: 15px;
   }
 `;
-
-const Heading = props => <Title>{props.title}</Title>;
 
 export default Heading;

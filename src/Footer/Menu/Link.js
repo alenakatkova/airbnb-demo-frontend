@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const MenuLink = styled.a`
+const Link = styled.a`
   @media (min-width: 768px) {
     display: block;
     font-family: "CircularAir-Book", "Arial", sans-serif;
@@ -18,7 +17,5 @@ const MenuLink = styled.a`
     margin-bottom: 8px;
   }
 `;
-
-const Link = props => <MenuLink href={props.link}>{props.text}</MenuLink>;
 
 export default Link;

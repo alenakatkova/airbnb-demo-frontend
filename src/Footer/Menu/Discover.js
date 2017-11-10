@@ -7,15 +7,15 @@ class Discover extends React.Component {
   render() {
     return (
       <Container>
-        <Heading title="Discover" />
+        <Heading>Discover</Heading>
         <nav>
-          <Link link="#" text="Trust & Safety" />
-          <Link link="#" text="Travel Credit" />
-          <Link link="#" text="Gift Cards" />
-          <Link link="#" text="Airbnb Citizen" />
-          <Link link="#" text="Business Travel" />
-          <Link link="#" text="Guidebooks" />
-          <Link link="#" text="Airbnbmag" />
+          <Link href="#">Trust & Safety</Link>
+          <Link href="#">Travel Credit</Link>
+          <Link href="#">Gift Cards</Link>
+          <Link href="#">Airbnb Citizen</Link>
+          <Link href="#">Business Travel</Link>
+          <Link href="#">Guidebooks</Link>
+          <Link href="#">Airbnbmag</Link>
         </nav>
       </Container>
     );

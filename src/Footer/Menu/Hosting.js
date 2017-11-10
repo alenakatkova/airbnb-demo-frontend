@@ -7,12 +7,12 @@ class Hosting extends React.Component {
   render() {
     return (
       <Container>
-        <Heading title="Hosting" />
+        <Heading>Hosting</Heading>
         <nav>
-          <Link link="#" text="Why Host" />
-          <Link link="#" text="Hospitality" />
-          <Link link="#" text="Responsible Hosting" />
-          <Link link="#" text="Community Center" />
+          <Link href="#">Why Host</Link>
+          <Link href="#">Hospitality</Link>
+          <Link href="#">Responsible Hosting</Link>
+          <Link href="#">Community Center</Link>
         </nav>
       </Container>
     );
