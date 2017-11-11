@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Heading2 = styled.h2`
+const SectionTitle = styled.h2`
   max-width: 246px;
   font-family: "CircularAir-Bold", "Arial-Bold", sans-serif;
   line-height: 28px;
@@ -19,4 +19,4 @@ const Heading2 = styled.h2`
   }
 `;
 
-export default Heading2;
+export default SectionTitle;

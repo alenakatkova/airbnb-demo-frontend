@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Heading2 from "../common/Heading2";
+import SectionTitle from "../common/SectionTitle";
 import Card from "./Card";
 import homesHigh from "./homes@2x.png";
 import experiencesHigh from "./experiences@2x.png";
@@ -23,7 +23,7 @@ class Explore extends React.Component {
   render() {
     return (
       <Section>
-        <Heading2>Explore Airbnb</Heading2>
+        <SectionTitle>Explore Airbnb</SectionTitle>
         <Wrapper>
           <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <div className="col-xs-6 col-sm-4 col-md-5 col-lg-4">

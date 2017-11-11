@@ -1,5 +1,5 @@
 import React from "react";
-import Heading2 from "../common/Heading2";
+import SectionTitle from "../common/SectionTitle";
 import Card from "./Card";
 import salentinaHigh from "./salentina@2x.png";
 import seeHigh from "./see@2x.png";
@@ -20,7 +20,7 @@ class Homes extends React.Component {
     return (
       <Section>
         <div className="row between-xs middle-xs">
-          <Heading2>Homes</Heading2>
+          <SectionTitle>Homes</SectionTitle>
           <SeeAll link="#" />
         </div>
         <CardsOuterContainer>

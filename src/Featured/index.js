@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Heading2 from "../common/Heading2";
+import SectionTitle from "../common/SectionTitle";
 import Card from "./Card";
 import parisHigh from "./paris@2x.png";
 import miamiHigh from "./miami@2x.png";
@@ -19,7 +19,7 @@ class Featured extends React.Component {
   render() {
     return (
       <Section>
-        <Heading2>Featured destinations</Heading2>
+        <SectionTitle>Featured destinations</SectionTitle>
         <CardsContainer>
           <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <div className="col-xs-4 col-md-3 col-lg-2">

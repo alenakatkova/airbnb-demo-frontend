@@ -6,6 +6,7 @@ const NextPage = styled.button`
 
   @media (min-width: 986px) {
     display: block;
+    border-radius: 50%;
     padding: 0;
     margin: 0;
     border: none;

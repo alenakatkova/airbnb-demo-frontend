@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Heading2 from "../common/Heading2";
+import SectionTitle from "../common/SectionTitle";
 import Card from "./Card";
 import forestHigh from "./forest@2x.png";
 import whaleHigh from "./whale@2x.png";
@@ -21,7 +21,7 @@ class Experiences extends React.Component {
     return (
       <Section>
         <div className="row between-xs middle-xs">
-          <Heading2>Experiences</Heading2>
+          <SectionTitle>Experiences</SectionTitle>
           <SeeAll link="#" />
         </div>
         <CardsOuterContainer>

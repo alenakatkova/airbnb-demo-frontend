@@ -1,5 +1,5 @@
 import React from "react";
-import Heading2 from "../common/Heading2";
+import SectionTitle from "../common/SectionTitle";
 import Card from "./Card";
 import chumleyHigh from "./chumley@2x.png";
 import hanjanHigh from "./hanjan@2x.png";
@@ -21,7 +21,7 @@ class Popular extends React.Component {
     return (
       <Section>
         <div className="row between-xs middle-xs">
-          <Heading2>Popular reservations around the world</Heading2>
+          <SectionTitle>Popular reservations around the world</SectionTitle>
           <SeeAll link="#" />
         </div>
         <CardsOuterContainer>
