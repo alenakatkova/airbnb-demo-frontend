@@ -20,7 +20,11 @@ const Arrow = styled.img`
   margin-right: 6px;
 `;
 
-const Link = styled.a`text-decoration: none;`;
+const Link = styled.a`
+  text-decoration: none;
+  display: block;
+  white-space: nowrap;
+`;
 
 const SeeAll = props => (
   <Link href={props.link}>

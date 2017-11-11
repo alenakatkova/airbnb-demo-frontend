@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React from "react";
 import starIcon from "./starIcon.svg";
 
-const Stars = styled.div`display: inline-block;`;
+const Container = styled.div`display: inline-block;`;
 
 const Star = styled.img`
   windth: 12px;
@@ -12,12 +12,12 @@ const Star = styled.img`
 
 export default () => {
   return (
-    <Stars>
+    <Container>
       <Star src={starIcon} alt="Rating Star" />
       <Star src={starIcon} alt="Rating Star" />
       <Star src={starIcon} alt="Rating Star" />
       <Star src={starIcon} alt="Rating Star" />
       <Star src={starIcon} alt="Rating Star" />
-    </Stars>
+    </Container>
   );
 };

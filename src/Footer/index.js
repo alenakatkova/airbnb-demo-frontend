@@ -71,7 +71,7 @@ export default () => {
           <div className="row start-xs between-md middle-xs">
             <div className="row start-xs middle-xs">
               <Logo src={logo} />
-              <Copyright />
+              <Copyright>© Airbnb Inc.</Copyright>
             </div>
             <Container>
               <div className="row start-xs end-md middle-xs">

@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const Text = styled.span`
+export default styled.span`
   font-family: "CircularAir-Book", "Arial", sans-serif;
   line-height: 14px;
   font-size: 12px;
@@ -14,7 +13,3 @@ const Text = styled.span`
     font-size: 15px;
   }
 `;
-
-export default () => {
-  return <Text>© Airbnb Inc.</Text>;
-};

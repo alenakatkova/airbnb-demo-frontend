@@ -1,20 +1,19 @@
 import React from "react";
-import styled from "styled-components";
-import SectionTitle from "../common/SectionTitle";
+import {
+  Section,
+  SectionTitle,
+  CardsContainer,
+  CardsOuterContainer,
+  NextPage
+} from "../styled";
+import SeeAll from "../SeeAll";
 import Card from "./Card";
 import forestHigh from "./forest@2x.png";
 import whaleHigh from "./whale@2x.png";
 import mountainHigh from "./mountain@2x.png";
 import salsaHigh from "./salsa@2x.png";
-import SeeAll from "../common/SeeAll";
-import NextPage from "../common/NextPage";
-import CardsContainer from "../common/CardsContainer";
-
-const Section = styled.section`margin-top: 35px;`;
 
 const Next = NextPage.extend`top: 155px;`;
-
-const CardsOuterContainer = styled.div`position: relative;`;
 
 export default () => {
   return (

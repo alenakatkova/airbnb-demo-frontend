@@ -1,25 +1,24 @@
 import React from "react";
-import SectionTitle from "../common/SectionTitle";
+import {
+  Section,
+  SectionTitle,
+  NextPage,
+  CardsContainer,
+  CardsOuterContainer
+} from "../styled";
 import Card from "./Card";
 import chumleyHigh from "./chumley@2x.png";
 import hanjanHigh from "./hanjan@2x.png";
 import seapriceHigh from "./seaprice@2x.png";
 import meatsHigh from "./meats@2x.png";
-import SeeAll from "../common/SeeAll";
-import NextPage from "../common/NextPage";
-import styled from "styled-components";
-import CardsContainer from "../common/CardsContainer";
-
-const Section = styled.section`margin-top: 35px;`;
+import SeeAll from "../SeeAll";
 
 const Next = NextPage.extend`top: 70px;`;
-
-const CardsOuterContainer = styled.div`position: relative;`;
 
 export default () => {
   return (
     <Section>
-      <div className="row between-xs middle-xs">
+      <div className="row between-xs middle-xs nowrap-xs">
         <SectionTitle>Popular reservations around the world</SectionTitle>
         <SeeAll link="#" />
       </div>

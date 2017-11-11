@@ -1,19 +1,18 @@
 import React from "react";
-import SectionTitle from "../common/SectionTitle";
+import {
+  Section,
+  SectionTitle,
+  NextPage,
+  CardsContainer,
+  CardsOuterContainer
+} from "../styled";
 import Card from "./Card";
 import salentinaHigh from "./salentina@2x.png";
 import seeHigh from "./see@2x.png";
 import tropicalHigh from "./tropical@2x.png";
-import SeeAll from "../common/SeeAll";
-import NextPage from "../common/NextPage";
-import styled from "styled-components";
-import CardsContainer from "../common/CardsContainer";
-
-const Section = styled.section`margin-top: 25px;`;
+import SeeAll from "../SeeAll";
 
 const Next = NextPage.extend`top: 80px;`;
-
-const CardsOuterContainer = styled.div`position: relative;`;
 
 export default () => {
   return (
