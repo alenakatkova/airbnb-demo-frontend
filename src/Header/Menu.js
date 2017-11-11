@@ -20,13 +20,13 @@ const Link = styled.a`
   text-decoration: none;
 `;
 
-const Menu = props => (
-  <Navigation>
-    <Link href="#">Become a host</Link>
-    <Link href="#">Help</Link>
-    <Link href="#">Sign Up</Link>
-    <Link href="#">Log In</Link>
-  </Navigation>
-);
-
-export default Menu;
+export default () => {
+  return (
+    <Navigation>
+      <Link href="#">Become a host</Link>
+      <Link href="#">Help</Link>
+      <Link href="#">Sign Up</Link>
+      <Link href="#">Log In</Link>
+    </Navigation>
+  );
+};

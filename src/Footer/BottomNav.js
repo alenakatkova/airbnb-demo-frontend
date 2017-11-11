@@ -30,18 +30,14 @@ const Link = styled.a`
   }
 `;
 
-class BottomNav extends React.Component {
-  render() {
-    return (
-      <nav>
-        <Container>
-          <Link href="#">Terms</Link>
-          <Link href="#">Privacy</Link>
-          <Link href="#">Site map</Link>
-        </Container>
-      </nav>
-    );
-  }
-}
-
-export default BottomNav;
+export default () => {
+  return (
+    <nav>
+      <Container>
+        <Link href="#">Terms</Link>
+        <Link href="#">Privacy</Link>
+        <Link href="#">Site map</Link>
+      </Container>
+    </nav>
+  );
+};

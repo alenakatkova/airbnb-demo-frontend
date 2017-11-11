@@ -15,10 +15,6 @@ const Text = styled.span`
   }
 `;
 
-class Copyright extends React.Component {
-  render() {
-    return <Text>© Airbnb Inc.</Text>;
-  }
-}
-
-export default Copyright;
+export default () => {
+  return <Text>© Airbnb Inc.</Text>;
+};

@@ -15,44 +15,40 @@ const Section = styled.section`
   margin-bottom: 50px;
 `;
 
-class Featured extends React.Component {
-  render() {
-    return (
-      <Section>
-        <SectionTitle>Featured destinations</SectionTitle>
-        <CardsContainer>
-          <div className="row negative-indent-xs nowrap-xs wrap-lg">
-            <div className="col-xs-4 col-md-3 col-lg-2">
-              <Card highRes={parisHigh} alt="Paris" subheading="Paris" />
-            </div>
-            <div className="col-xs-4 col-md-3 col-lg-2">
-              <Card highRes={miamiHigh} alt="Miami" subheading="Miami" />
-            </div>
-            <div className="col-xs-4 col-md-3 col-lg-2">
-              <Card highRes={tokyoHigh} alt="Tokyo" subheading="Tokyo" />
-            </div>
-            <div className="col-xs-4 col-md-3 col-lg-2">
-              <Card
-                highRes={capetownHigh}
-                alt="Cape town"
-                subheading="Cape town"
-              />
-            </div>
-            <div className="col-xs-4 col-md-3 col-lg-2">
-              <Card highRes={seoulHigh} alt="Seoul" subheading="Seoul" />
-            </div>
-            <div className="col-xs-4 col-md-3 col-lg-2">
-              <Card
-                highRes={losangelesHigh}
-                alt="Los Angeles"
-                subheading="Los Angeles"
-              />
-            </div>
+export default () => {
+  return (
+    <Section>
+      <SectionTitle>Featured destinations</SectionTitle>
+      <CardsContainer>
+        <div className="row negative-indent-xs nowrap-xs wrap-lg">
+          <div className="col-xs-4 col-md-3 col-lg-2">
+            <Card highRes={parisHigh} alt="Paris" subheading="Paris" />
           </div>
-        </CardsContainer>
-      </Section>
-    );
-  }
-}
-
-export default Featured;
+          <div className="col-xs-4 col-md-3 col-lg-2">
+            <Card highRes={miamiHigh} alt="Miami" subheading="Miami" />
+          </div>
+          <div className="col-xs-4 col-md-3 col-lg-2">
+            <Card highRes={tokyoHigh} alt="Tokyo" subheading="Tokyo" />
+          </div>
+          <div className="col-xs-4 col-md-3 col-lg-2">
+            <Card
+              highRes={capetownHigh}
+              alt="Cape town"
+              subheading="Cape town"
+            />
+          </div>
+          <div className="col-xs-4 col-md-3 col-lg-2">
+            <Card highRes={seoulHigh} alt="Seoul" subheading="Seoul" />
+          </div>
+          <div className="col-xs-4 col-md-3 col-lg-2">
+            <Card
+              highRes={losangelesHigh}
+              alt="Los Angeles"
+              subheading="Los Angeles"
+            />
+          </div>
+        </div>
+      </CardsContainer>
+    </Section>
+  );
+};

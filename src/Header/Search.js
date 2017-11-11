@@ -17,7 +17,8 @@ const Container = styled.div`
 
 const Input = styled.input`
   background: #ffffff url(${searchIcon}) no-repeat;
-  background-position: 11.15px 12.15px;
+  background-size: 14.56px 15.38px;
+  background-position: 11.15px 16.15px;
   box-sizing: border-box;
   width: 100%;
   line-height: 24px;
@@ -29,28 +30,34 @@ const Input = styled.input`
   padding-top: 12px;
   padding-bottom: 12px;
 
-  ::placeholder {
-    font-family: "CircularAir-Book", "Arial", sans-serif;
-    color: #383838;
-    line-height: 24px;
-    font-size: 16px;
-    opacity: 0.64;
-  }
-
   @media (min-width: 768px) {
+    background-size: 20.02px 21.15px;
     padding-left: 49px;
+    background-position: 15.2px 12.2px;
   }
 
   @media (min-width: 986px) {
     padding-left: 53px;
     background-position: 15.2px 12.2px;
   }
+
+  ::placeholder {
+    font-family: "CircularAir-Book", "Arial", sans-serif;
+    color: #383838;
+    line-height: 24px;
+    font-size: 14px;
+    opacity: 0.64;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+    }
+  }
 `;
 
-const Search = props => (
-  <Container>
-    <Input placeholder="Try “Miami”" type="text" />
-  </Container>
-);
-
-export default Search;
+export default () => {
+  return (
+    <Container>
+      <Input placeholder="Try “Miami”" type="text" />
+    </Container>
+  );
+};

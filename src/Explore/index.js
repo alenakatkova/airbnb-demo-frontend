@@ -19,42 +19,38 @@ const Wrapper = styled.div`
   }
 `;
 
-class Explore extends React.Component {
-  render() {
-    return (
-      <Section>
-        <SectionTitle>Explore Airbnb</SectionTitle>
-        <Wrapper>
-          <div className="row negative-indent-xs nowrap-xs wrap-lg">
-            <div className="col-xs-6 col-sm-4 col-md-5 col-lg-4">
-              <Card
-                alt="Airbnb Homes"
-                highRes={homesHigh}
-                link="#"
-                text="Homes"
-              />
-            </div>
-            <div className="col-xs-6 col-sm-4 col-md-5 col-lg-4">
-              <Card
-                link="#"
-                text="Experiences"
-                alt="Airbnb Experiences"
-                highRes={experiencesHigh}
-              />
-            </div>
-            <div className="col-xs-6 col-sm-4 col-md-5 col-lg-4">
-              <Card
-                link="#"
-                text="Restaurants"
-                alt="Airbnb Restaurants"
-                highRes={restaurantsHigh}
-              />
-            </div>
+export default () => {
+  return (
+    <Section>
+      <SectionTitle>Explore Airbnb</SectionTitle>
+      <Wrapper>
+        <div className="row negative-indent-xs nowrap-xs wrap-lg">
+          <div className="col-xs-6 col-sm-4 col-md-5 col-lg-4">
+            <Card
+              alt="Airbnb Homes"
+              highRes={homesHigh}
+              link="#"
+              text="Homes"
+            />
           </div>
-        </Wrapper>
-      </Section>
-    );
-  }
-}
-
-export default Explore;
+          <div className="col-xs-6 col-sm-4 col-md-5 col-lg-4">
+            <Card
+              link="#"
+              text="Experiences"
+              alt="Airbnb Experiences"
+              highRes={experiencesHigh}
+            />
+          </div>
+          <div className="col-xs-6 col-sm-4 col-md-5 col-lg-4">
+            <Card
+              link="#"
+              text="Restaurants"
+              alt="Airbnb Restaurants"
+              highRes={restaurantsHigh}
+            />
+          </div>
+        </div>
+      </Wrapper>
+    </Section>
+  );
+};

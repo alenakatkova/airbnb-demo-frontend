@@ -47,45 +47,41 @@ const Container = styled.div`
   }
 `;
 
-class Footer extends React.Component {
-  render() {
-    return (
-      <PageFooter>
-        <div className="container">
-          <Top>
-            <div className="row between-md negative-indent-xs">
-              <div className="col-xs-12 col-md-3 col-lg-3">
-                <SelectForm />
-              </div>
-              <div className="col-md-2 col-lg-2">
-                <Airbnb />
-              </div>
-              <div className="col-md-2 col-lg-2">
-                <Discover />
-              </div>
-              <div className="col-md-2 col-lg-2">
-                <Hosting />
-              </div>
+export default () => {
+  return (
+    <PageFooter>
+      <div className="container">
+        <Top>
+          <div className="row between-md negative-indent-xs">
+            <div className="col-xs-12 col-md-3 col-lg-3">
+              <SelectForm />
             </div>
-          </Top>
-          <Bottom>
-            <div className="row start-xs between-md middle-xs">
-              <div className="row start-xs middle-xs">
-                <Logo src={logo} />
-                <Copyright />
-              </div>
-              <Container>
-                <div className="row start-xs end-md middle-xs">
-                  <BottomNav />
-                  <Social />
-                </div>
-              </Container>
+            <div className="col-md-2 col-lg-2">
+              <Airbnb />
             </div>
-          </Bottom>
-        </div>
-      </PageFooter>
-    );
-  }
-}
-
-export default Footer;
+            <div className="col-md-2 col-lg-2">
+              <Discover />
+            </div>
+            <div className="col-md-2 col-lg-2">
+              <Hosting />
+            </div>
+          </div>
+        </Top>
+        <Bottom>
+          <div className="row start-xs between-md middle-xs">
+            <div className="row start-xs middle-xs">
+              <Logo src={logo} />
+              <Copyright />
+            </div>
+            <Container>
+              <div className="row start-xs end-md middle-xs">
+                <BottomNav />
+                <Social />
+              </div>
+            </Container>
+          </div>
+        </Bottom>
+      </div>
+    </PageFooter>
+  );
+};

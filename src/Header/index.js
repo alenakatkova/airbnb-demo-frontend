@@ -54,25 +54,21 @@ const MenuBtn = styled.button`
   }
 `;
 
-class Header extends React.Component {
-  render() {
-    return (
-      <PageHeader>
-        <div className="container">
+export default () => {
+  return (
+    <PageHeader>
+      <div className="container">
+        <div className="row between-xs middle-xs">
           <div className="row between-xs middle-xs">
-            <div className="row between-xs middle-xs">
-              <Link href="#">
-                <Logo alt="Logo" src={logo} />
-              </Link>
-              <MenuBtn />
-              <Search />
-            </div>
-            <Menu />
+            <Link href="#">
+              <Logo alt="Logo" src={logo} />
+            </Link>
+            <MenuBtn />
+            <Search />
           </div>
+          <Menu />
         </div>
-      </PageHeader>
-    );
-  }
-}
-
-export default Header;
+      </div>
+    </PageHeader>
+  );
+};

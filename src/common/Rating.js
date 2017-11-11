@@ -10,18 +10,14 @@ const Star = styled.img`
   margin-right: 4px;
 `;
 
-class Rating extends React.Component {
-  render() {
-    return (
-      <Stars>
-        <Star src={starIcon} alt="Rating Star" />
-        <Star src={starIcon} alt="Rating Star" />
-        <Star src={starIcon} alt="Rating Star" />
-        <Star src={starIcon} alt="Rating Star" />
-        <Star src={starIcon} alt="Rating Star" />
-      </Stars>
-    );
-  }
-}
-
-export default Rating;
+export default () => {
+  return (
+    <Stars>
+      <Star src={starIcon} alt="Rating Star" />
+      <Star src={starIcon} alt="Rating Star" />
+      <Star src={starIcon} alt="Rating Star" />
+      <Star src={starIcon} alt="Rating Star" />
+      <Star src={starIcon} alt="Rating Star" />
+    </Stars>
+  );
+};

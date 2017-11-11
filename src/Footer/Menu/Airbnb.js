@@ -14,24 +14,20 @@ const Break = styled.br`
   }
 `;
 
-class Airbnb extends React.Component {
-  render() {
-    return (
-      <Container>
-        <Heading>Airbnb</Heading>
-        <nav>
-          <Link href="#">About us</Link>
-          <Link href="#">Careers</Link>
-          <Link href="#">Press</Link>
-          <Link href="#">Policies</Link>
-          <Link href="#">Help</Link>
-          <Link href="#">
-            Diversity & <Break />Belogning
-          </Link>
-        </nav>
-      </Container>
-    );
-  }
-}
-
-export default Airbnb;
+export default () => {
+  return (
+    <Container>
+      <Heading>Airbnb</Heading>
+      <nav>
+        <Link href="#">About us</Link>
+        <Link href="#">Careers</Link>
+        <Link href="#">Press</Link>
+        <Link href="#">Policies</Link>
+        <Link href="#">Help</Link>
+        <Link href="#">
+          Diversity & <Break />Belogning
+        </Link>
+      </nav>
+    </Container>
+  );
+};
