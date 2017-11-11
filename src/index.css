@@ -4,7 +4,6 @@ body {
   font-family: "CircularAir-Book", "Arial", sans-serif;
 }
 
-/* grid */
 .container {
   max-width: 100%;
   margin: 0 auto;
@@ -12,7 +11,6 @@ body {
   padding: 0 8px;
 }
 
-/* rows */
 .row {
   display: flex;
   flex-direction: row;
@@ -45,7 +43,6 @@ body {
   align-items: center;
 }
 
-/* columns */
 .col-xs-1,
 .col-xs-2,
 .col-xs-3,
