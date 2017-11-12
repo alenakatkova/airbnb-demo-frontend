@@ -4,7 +4,7 @@ import {
   SectionTitle,
   NextPage,
   CardsContainer,
-  CardsOuterContainer
+  NextContainer
 } from "../styled";
 import Card from "./Card";
 import salentinaHigh from "./salentina@2x.png";
@@ -21,7 +21,7 @@ export default () => {
         <SectionTitle>Homes</SectionTitle>
         <SeeAll link="#" />
       </div>
-      <CardsOuterContainer>
+      <NextContainer>
         <CardsContainer>
           <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <div className="col-xs-8 col-md-5 col-lg-4">
@@ -60,7 +60,7 @@ export default () => {
           </div>
         </CardsContainer>
         <Next />
-      </CardsOuterContainer>
+      </NextContainer>
     </Section>
   );
 };

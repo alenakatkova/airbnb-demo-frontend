@@ -34,7 +34,7 @@ export const Logo = styled.img`
 export const Container = styled.div`
   width: 100%;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     width: auto;
   }
 `;

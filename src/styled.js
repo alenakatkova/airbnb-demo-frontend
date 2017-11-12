@@ -61,4 +61,4 @@ export const NextPage = styled.button`
   }
 `;
 
-export const CardsOuterContainer = styled.div`position: relative;`;
+export const NextContainer = styled.div`position: relative;`;

@@ -7,11 +7,11 @@ const Container = styled.div`
   min-width: 251px;
   box-sizing: border-box;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     min-width: 432px;
   }
 
-  @media (min-width: 986px) {
+  @media screen and (min-width: 986px) {
     min-width: 392px;
   }
 `;

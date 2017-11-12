@@ -3,7 +3,7 @@ import {
   Section,
   SectionTitle,
   CardsContainer,
-  CardsOuterContainer,
+  NextContainer,
   NextPage
 } from "../styled";
 import SeeAll from "../SeeAll";
@@ -22,7 +22,7 @@ export default () => {
         <SectionTitle>Experiences</SectionTitle>
         <SeeAll link="#" />
       </div>
-      <CardsOuterContainer>
+      <NextContainer>
         <CardsContainer>
           <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <div className="col-xs-6 col-md-4 col-lg-3">
@@ -68,7 +68,7 @@ export default () => {
           </div>
         </CardsContainer>
         <Next />
-      </CardsOuterContainer>
+      </NextContainer>
     </Section>
   );
 };
