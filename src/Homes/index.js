@@ -26,6 +26,7 @@ export default () => {
           <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <div className="col-xs-8 col-md-5 col-lg-4">
               <Card
+                link="#"
                 highRes={salentinaHigh}
                 price="$82"
                 name="La Salentina, see, nature & relax"
@@ -36,6 +37,7 @@ export default () => {
             </div>
             <div className="col-xs-8 col-md-5 col-lg-4">
               <Card
+                link="#"
                 highRes={seeHigh}
                 price="$82"
                 name="Your private 3 bedr. riad and exclusive sth"
@@ -46,6 +48,7 @@ export default () => {
             </div>
             <div className="col-xs-8 col-md-5 col-lg-4">
               <Card
+                link="#"
                 highRes={tropicalHigh}
                 price="$200"
                 name="Dreamy Tropical Tree House"

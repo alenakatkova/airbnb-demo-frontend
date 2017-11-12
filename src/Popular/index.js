@@ -27,6 +27,7 @@ export default () => {
           <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
+                link="#"
                 highRes={chumleyHigh}
                 alt="Chumley's"
                 subheading="Speakeasy"
@@ -36,6 +37,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
+                link="#"
                 highRes={hanjanHigh}
                 alt="Hanjan"
                 subheading="Korean gastropub"
@@ -45,6 +47,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
+                link="#"
                 highRes={meatsHigh}
                 alt="Prime Meats"
                 subheading="German American"
@@ -54,6 +57,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
+                link="#"
                 highRes={seapriceHigh}
                 alt="Seaprice"
                 subheading="Fine Seafood"

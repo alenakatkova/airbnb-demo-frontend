@@ -27,6 +27,7 @@ export default () => {
           <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
+                link="#"
                 highRes={forestHigh}
                 price="$29"
                 text="Forest theraphy"
@@ -36,6 +37,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
+                link="#"
                 highRes={whaleHigh}
                 price="$69"
                 text="Whale watching"
@@ -45,6 +47,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
+                link="#"
                 highRes={mountainHigh}
                 price="$69"
                 text="Table Mountain Summi, Cable Car Down"
@@ -54,6 +57,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
+                link="#"
                 highRes={salsaHigh}
                 price="$50"
                 text="Salsa Night"

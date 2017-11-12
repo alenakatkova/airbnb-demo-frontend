@@ -25,8 +25,8 @@ const Picture = Image.extend`
 `;
 
 export default props => (
-  <Card>
+  <Card href={props.link}>
     <Picture src={props.highRes} alt={props.alt} />
-    <Text>{props.subheading}</Text>
+    <Text>{props.text}</Text>
   </Card>
 );
