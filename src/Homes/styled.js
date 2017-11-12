@@ -7,7 +7,6 @@ export const Heading = styled.p`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #383838;
   margin: 0;
   margin-top: 8px;
   margin-bottom: 4px;
@@ -23,7 +22,6 @@ export const Description = styled.p`
   font-family: "CircularAir-Light", "Arial Light", sans-serif;
   line-height: 14px;
   font-size: 12px;
-  color: #383838;
   margin: 0;
   margin-bottom: 6px;
 
@@ -37,6 +35,5 @@ export const Stats = styled.span`
   font-family: "CircularAir-Book", "Arial", sans-serif;
   line-height: 14px;
   font-size: 12px;
-  color: #383838;
   margin-left: 4px;
 `;

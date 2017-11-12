@@ -4,7 +4,6 @@ export const Text = styled.p`
   font-family: "CircularAir-Bold", "Arial Bold", sans-serif;
   line-height: 12px;
   font-size: 14px;
-  color: #383838;
   margin: 0;
 
   @media screen and (min-width: 768px) {
