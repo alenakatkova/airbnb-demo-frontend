@@ -15,13 +15,13 @@ export default () => {
             <Card
               alt="Airbnb Homes"
               highRes={homesHigh}
-              link="#"
+              href="#"
               text="Homes"
             />
           </div>
           <div className="col-xs-6 col-md-5 col-lg-4">
             <Card
-              link="#"
+              href="#"
               text="Experiences"
               alt="Airbnb Experiences"
               highRes={experiencesHigh}
@@ -29,7 +29,7 @@ export default () => {
           </div>
           <div className="col-xs-6 col-md-5 col-lg-4">
             <Card
-              link="#"
+              href="#"
               text="Restaurants"
               alt="Airbnb Restaurants"
               highRes={restaurantsHigh}

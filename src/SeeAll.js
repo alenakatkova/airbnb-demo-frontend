@@ -27,7 +27,7 @@ const Link = styled.a`
 `;
 
 const SeeAll = props => (
-  <Link href={props.link}>
+  <Link href={props.href}>
     <Text>See all</Text>
     <Arrow src={arrowIcon} alt="Arrow" />
   </Link>

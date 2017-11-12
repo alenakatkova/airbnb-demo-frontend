@@ -20,14 +20,14 @@ export default () => {
     <Section>
       <div className="row between-xs middle-xs nowrap-xs">
         <SectionTitle>Popular reservations around the world</SectionTitle>
-        <SeeAll link="#" />
+        <SeeAll href="#" />
       </div>
       <NextContainer>
         <CardsContainer>
           <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
-                link="#"
+                href="#"
                 highRes={chumleyHigh}
                 alt="Chumley's"
                 subheading="Speakeasy"
@@ -37,7 +37,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
-                link="#"
+                href="#"
                 highRes={hanjanHigh}
                 alt="Hanjan"
                 subheading="Korean gastropub"
@@ -47,7 +47,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
-                link="#"
+                href="#"
                 highRes={meatsHigh}
                 alt="Prime Meats"
                 subheading="German American"
@@ -57,7 +57,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
-                link="#"
+                href="#"
                 highRes={seapriceHigh}
                 alt="Seaprice"
                 subheading="Fine Seafood"

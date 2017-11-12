@@ -15,28 +15,28 @@ export default () => {
       <CardsContainer>
         <div className="row negative-indent-xs nowrap-xs wrap-lg">
           <div className="col-xs-4 col-md-3 col-lg-2">
-            <Card link="#" highRes={parisHigh} alt="Paris" text="Paris" />
+            <Card href="#" highRes={parisHigh} alt="Paris" text="Paris" />
           </div>
           <div className="col-xs-4 col-md-3 col-lg-2">
-            <Card link="#" highRes={miamiHigh} alt="Miami" text="Miami" />
+            <Card href="#" highRes={miamiHigh} alt="Miami" text="Miami" />
           </div>
           <div className="col-xs-4 col-md-3 col-lg-2">
-            <Card link="#" highRes={tokyoHigh} alt="Tokyo" text="Tokyo" />
+            <Card href="#" highRes={tokyoHigh} alt="Tokyo" text="Tokyo" />
           </div>
           <div className="col-xs-4 col-md-3 col-lg-2">
             <Card
-              link="#"
+              href="#"
               highRes={capetownHigh}
               alt="Cape town"
               text="Cape town"
             />
           </div>
           <div className="col-xs-4 col-md-3 col-lg-2">
-            <Card link="#" highRes={seoulHigh} alt="Seoul" text="Seoul" />
+            <Card href="#" highRes={seoulHigh} alt="Seoul" text="Seoul" />
           </div>
           <div className="col-xs-4 col-md-3 col-lg-2">
             <Card
-              link="#"
+              href="#"
               highRes={losangelesHigh}
               alt="Los Angeles"
               text="Los Angeles"

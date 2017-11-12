@@ -16,7 +16,7 @@ const Picture = Image.extend`
 `;
 
 export default props => (
-  <Card href={props.link}>
+  <Card href={props.href}>
     <FlexContainer>
       <Picture src={props.highRes} alt={props.alt} />
       <TextContainer>
