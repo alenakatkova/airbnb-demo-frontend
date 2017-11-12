@@ -15,7 +15,6 @@ const Select = styled.select`
   opacity: 0;
   cursor: pointer;
   width: 100%;
-  width: 100%;
   height: 40px;
   border: 1px solid rgba(72, 72, 72, 0.2);
   box-sizing: border-box;

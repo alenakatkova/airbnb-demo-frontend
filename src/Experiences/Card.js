@@ -4,8 +4,6 @@ import { Card, Image } from "../styled";
 import { Text, Price, Stats } from "./styled";
 
 const Picture = Image.extend`
-  height: 216px;
-
   @media screen and (min-width: 768px) {
     height: 346px;
   }

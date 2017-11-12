@@ -3,9 +3,15 @@ import Rating from "../Rating";
 import { Card, Image } from "../styled";
 import { Heading, Description, Stats } from "./styled";
 
+const Picture = Image.extend`
+  @media screen and (min-width: 768px) {
+    height: 204px;
+  }
+`;
+
 export default props => (
   <Card>
-    <Image src={props.highRes} alt={props.alt} />
+    <Picture src={props.highRes} alt={props.alt} />
     <Heading>
       {props.price} {props.name}
     </Heading>

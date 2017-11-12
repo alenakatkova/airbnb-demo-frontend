@@ -15,7 +15,7 @@ export const SectionTitle = styled.h2`
   margin-bottom: 16px;
   margin-top: 15px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     line-height: 34px;
     font-size: 32px;
     max-width: 100%;
@@ -45,7 +45,7 @@ export const Image = styled.img`
 export const NextPage = styled.button`
   display: none;
 
-  @media (min-width: 986px) {
+  @media screen and (min-width: 986px) {
     display: block;
     border-radius: 50%;
     padding: 0;

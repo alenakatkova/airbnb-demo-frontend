@@ -3,7 +3,6 @@ import { FlexContainer, TextContainer, Text } from "./styled";
 import { Card, Image } from "../styled";
 
 const Picture = Image.extend`
-  height: 78px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 

@@ -42,6 +42,7 @@ const Logo = styled.img`
 
 const Container = styled.div`
   width: 100%;
+
   @media (min-width: 768px) {
     width: auto;
   }
