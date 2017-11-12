@@ -9,7 +9,7 @@ export const Text = styled.p`
   font-size: 12px;
   color: #383838;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     line-height: 18px;
     font-size: 15px;
   }

@@ -9,7 +9,7 @@ const Container = styled.div`
   padding: 0;
   text-align: left;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     text-align: right;
   }
 `;
@@ -19,7 +19,7 @@ const Link = styled.a`
   margin-right: 8px;
   text-decoration: none;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     margin: 0;
     margin-left: 16px;
   }

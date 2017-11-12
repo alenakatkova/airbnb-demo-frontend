@@ -8,7 +8,7 @@ const Text = styled.span`
   font-size: 12px;
   color: #383838;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     font-size: 14px;
   }
 `;

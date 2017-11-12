@@ -30,13 +30,13 @@ const Input = styled.input`
   padding-top: 12px;
   padding-bottom: 12px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     background-size: 20.02px 21.15px;
     padding-left: 49px;
     background-position: 15.2px 12.2px;
   }
 
-  @media (min-width: 986px) {
+  @media screen and (min-width: 986px) {
     padding-left: 53px;
     background-position: 15.2px 12.2px;
   }
@@ -48,7 +48,7 @@ const Input = styled.input`
     font-size: 14px;
     opacity: 0.64;
 
-    @media (min-width: 768px) {
+    @media screen and (min-width: 768px) {
       font-size: 16px;
     }
   }

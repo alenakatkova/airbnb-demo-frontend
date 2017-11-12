@@ -19,7 +19,7 @@ const Top = styled.div`
   padding-top: 16px;
   padding-bottom: 24px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     padding: 48px 0;
   }
 `;
@@ -29,7 +29,7 @@ const Bottom = styled.div`
   padding-bottom: 16px;
   border-top: 1px solid rgba(72, 72, 72, 0.08);
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     padding-top: 32px;
     padding-bottom: 34px;
   }

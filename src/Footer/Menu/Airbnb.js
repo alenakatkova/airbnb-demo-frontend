@@ -1,18 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-import Heading from "./Heading";
-import Link from "./Link";
-import Container from "./Container";
-
-const Break = styled.br`
-  @media (min-width: 768px) {
-    display: block;
-  }
-
-  @media (min-width: 986px) {
-    display: none;
-  }
-`;
+import { Heading, Link, Container, Break } from "./styled";
 
 export default () => {
   return (

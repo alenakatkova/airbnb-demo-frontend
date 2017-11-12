@@ -12,7 +12,7 @@ export const Heading = styled.p`
   margin-top: 8px;
   margin-bottom: 4px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     line-height: 18px;
     font-size: 15px;
     margin-bottom: 2px;
@@ -27,7 +27,7 @@ export const Description = styled.p`
   margin: 0;
   margin-bottom: 6px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     line-height: 18px;
     font-size: 15px;
   }

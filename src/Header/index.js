@@ -22,14 +22,14 @@ const Link = styled.a`
   margin-right: 4.98px;
   padding: 0;
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
   }
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     margin-right: 6.98px;
   }
 
-  @media (min-width: 986px) {
+  @media screen and (min-width: 986px) {
     margin-right: 51.2px;
   }
 `;
@@ -44,12 +44,12 @@ const MenuBtn = styled.button`
   background-size: cover;
   margin-right: 7.22px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     display: block;
     margin-right: 17.22px;
   }
 
-  @media (min-width: 986px) {
+  @media screen and (min-width: 986px) {
     display: none;
   }
 `;

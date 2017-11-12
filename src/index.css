@@ -120,7 +120,7 @@ body {
   max-width: 100%;
 }
 
-@media (min-width: 576px) {
+@media screen and (min-width: 576px) {
   .col-sm-1 {
     flex-basis: 8.33333333%;
     max-width: 8.33333333%;
@@ -182,7 +182,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .between-md {
     justify-content: space-between;
   }
@@ -282,7 +282,7 @@ body {
   }
 }
 
-@media (min-width: 986px) {
+@media screen and (min-width: 986px) {
   .between-lg {
     justify-content: space-between;
   }

@@ -6,7 +6,7 @@ const Container = styled.div`
   position: relative;
   width: 100%;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     margin-bottom: 16px;
   }
 `;
@@ -45,20 +45,20 @@ const Fake = styled.div`
   background-size: 11.37px 6.31px;
   background-position: 96% 18px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     line-height: 18px;
     font-size: 15px;
     background-size: 15.16px 8.42px;
   }
 
-  @media (min-width: 986px) {
+  @media screen and (min-width: 986px) {
     padding-left: 16px;
     line-height: 21px;
     font-size: 18px;
   }
 `;
 
-const Selection = props => (
+export default props => (
   <Container>
     <Fake>{props.option1}</Fake>
     <Select name={props.name}>
@@ -66,5 +66,3 @@ const Selection = props => (
     </Select>
   </Container>
 );
-
-export default Selection;

@@ -5,7 +5,8 @@ import { Text, Price, Stats } from "./styled";
 
 const Picture = Image.extend`
   height: 216px;
-  @media (min-width: 768px) {
+
+  @media screen and (min-width: 768px) {
     height: 346px;
   }
 `;

@@ -1,7 +1,5 @@
 import React from "react";
-import Heading from "./Heading";
-import Link from "./Link";
-import Container from "./Container";
+import { Heading, Link, Container } from "./styled";
 
 export default () => {
   return (

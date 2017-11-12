@@ -7,7 +7,7 @@ export const Text = styled.p`
   color: #383838;
   margin: 0;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     line-height: 20px;
     font-size: 17px;
   }
@@ -17,7 +17,7 @@ export const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
     flex-wrap: nowrap;
   }
@@ -37,7 +37,7 @@ export const TextContainer = styled.div`
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     padding-top: 25px;
     padding-bottom: 25px;
 

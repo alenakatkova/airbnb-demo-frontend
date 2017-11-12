@@ -8,7 +8,7 @@ export default styled.span`
   display: block;
   margin-left: 12.51px;
 
-  @media (min-width: 986px) {
+  @media screen and (min-width: 986px) {
     line-height: 18px;
     font-size: 15px;
   }

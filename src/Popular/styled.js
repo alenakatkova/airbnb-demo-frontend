@@ -8,7 +8,7 @@ export const Subheading = styled.p`
   font-size: 8px;
   text-transform: uppercase;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     margin-top: 12px;
     line-height: 12px;
     font-size: 10px;
@@ -22,7 +22,7 @@ export const Name = styled.p`
   line-height: 16px;
   font-size: 14px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     line-height: 21px;
     font-size: 18px;
   }
@@ -35,7 +35,7 @@ export const Price = styled.p`
   font-size: 12px;
   opacity: 0.9;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     line-height: 21px;
     font-size: 18px;
   }

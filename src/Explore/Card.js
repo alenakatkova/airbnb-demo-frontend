@@ -7,7 +7,7 @@ const Picture = Image.extend`
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     height: 72px;
     width: 96px;
     border-top-right-radius: 0;
