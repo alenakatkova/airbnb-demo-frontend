@@ -208,7 +208,7 @@ body {
   }
 
   .container {
-    width: 768px;
+    max-width: 768px;
   }
 
   .col-md-1 {
@@ -308,7 +308,7 @@ body {
   }
 
   .container {
-    width: 986px;
+    max-width: 986px;
   }
 
   .wrap-lg {
