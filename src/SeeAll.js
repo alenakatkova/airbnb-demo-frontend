@@ -20,17 +20,16 @@ const Arrow = styled.img`
   margin-right: 6px;
 `;
 
-const Link = styled.a`
-  text-decoration: none;
+const InnerContainer = styled.div`
   display: block;
   white-space: nowrap;
 `;
 
 const SeeAll = props => (
-  <Link href={props.href}>
+  <InnerContainer>
     <Text>See all</Text>
     <Arrow src={arrowIcon} alt="Arrow" />
-  </Link>
+  </InnerContainer>
 );
 
 export default SeeAll;

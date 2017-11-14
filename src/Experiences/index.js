@@ -20,7 +20,7 @@ export default () => {
     <Section>
       <div className="row between-xs middle-xs">
         <SectionTitle>Experiences</SectionTitle>
-        <SeeAll href="#" />
+        <SeeAll />
       </div>
       <NextContainer>
         <CardsContainer>

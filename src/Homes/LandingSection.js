@@ -21,7 +21,7 @@ export default () => {
       <div className="row between-xs middle-xs">
         <SectionTitle>Homes</SectionTitle>
         <Link to="homes" style={{ textDecoration: "none" }}>
-          <SeeAll href="#" />
+          <SeeAll />
         </Link>
       </div>
       <NextContainer>

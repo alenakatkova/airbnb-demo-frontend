@@ -20,7 +20,7 @@ export default () => {
     <Section>
       <div className="row between-xs middle-xs nowrap-xs">
         <SectionTitle>Popular reservations around the world</SectionTitle>
-        <SeeAll href="#" />
+        <SeeAll />
       </div>
       <NextContainer>
         <CardsContainer>
