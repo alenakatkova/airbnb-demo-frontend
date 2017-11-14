@@ -6,6 +6,7 @@ import {
   CardsContainer,
   NextContainer
 } from "../styled";
+import { Link } from "react-router-dom";
 import Card from "./Card";
 import salentinaHigh from "./salentina@2x.png";
 import seeHigh from "./see@2x.png";
@@ -19,7 +20,9 @@ export default () => {
     <Section>
       <div className="row between-xs middle-xs">
         <SectionTitle>Homes</SectionTitle>
-        <SeeAll href="#" />
+        <Link to="homes" style={{ textDecoration: "none" }}>
+          <SeeAll href="#" />
+        </Link>
       </div>
       <NextContainer>
         <CardsContainer>
@@ -27,6 +30,7 @@ export default () => {
             <div className="col-xs-8 col-md-5 col-lg-4">
               <Card
                 href="#"
+                imgHeight="@media screen and (min-width: 768px) { height: 204px; }"
                 highRes={salentinaHigh}
                 price="$82"
                 name="La Salentina, see, nature & relax"
@@ -39,6 +43,7 @@ export default () => {
               <Card
                 href="#"
                 highRes={seeHigh}
+                imgHeight="@media screen and (min-width: 768px) { height: 204px; }"
                 price="$82"
                 name="Your private 3 bedr. riad and exclusive sth"
                 description="Entire house · 5 beds"
@@ -50,6 +55,7 @@ export default () => {
               <Card
                 href="#"
                 highRes={tropicalHigh}
+                imgHeight="@media screen and (min-width: 768px) { height: 204px; }"
                 price="$200"
                 name="Dreamy Tropical Tree House"
                 description="Entire treehouse · 1 beds"
