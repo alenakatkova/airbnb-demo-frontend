@@ -1,7 +1,14 @@
 import styled from "styled-components";
 import mapButton from "./mapButton.svg";
 
-export const Main = styled.main`padding-top: 164px;`;
+export const Main = styled.main`
+  padding-top: 164px;
+  padding-bottom: 88px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 24px;
+  }
+`;
 
 export const FiltersContainer = styled.div`
   border-bottom: 0.5px solid rgba(72, 72, 72, 0.3);
@@ -51,16 +58,10 @@ export const Current = styled.p`
   color: #383838;
 `;
 
-export const MapButtonContainer = styled.div`
-  width: 100%;
-  margin: 24px 0;
-  text-align: right;
-`;
-
 export const MapButton = styled.button`
   width: 40px;
   height: 40px;
-  background: url(${mapButton}) no-repeat center;
+  background: #ffffff url(${mapButton}) no-repeat center;
   background-size: 15.31px 19.06px;
   border-radius: 50%;
   border: 1px solid rgba(72, 72, 72, 0.16);
@@ -68,6 +69,10 @@ export const MapButton = styled.button`
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  position: fixed;
+  right: 8px;
+  bottom: 24px;
+  z-index: 11;
 `;
 
 export const MainBottom = styled.div`

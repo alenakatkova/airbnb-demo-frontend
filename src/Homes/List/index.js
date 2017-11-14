@@ -8,7 +8,6 @@ import {
   FiltersContainer,
   Filter,
   Disclaimer,
-  MapButtonContainer,
   Main,
   MainBottom,
   MapButton
@@ -115,15 +114,12 @@ export default () => {
                   Enter dates to see full pricing. Additional fees apply. Taxes
                   may be added.
                 </Disclaimer>
-
-                <MapButtonContainer>
-                  <MapButton />
-                </MapButtonContainer>
               </MainBottom>
             </div>
           </div>
         </div>
       </div>
+      <MapButton />
     </Main>
   );
 };
