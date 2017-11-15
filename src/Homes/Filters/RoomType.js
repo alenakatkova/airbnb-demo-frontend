@@ -20,7 +20,7 @@ const Container = FilterContainer.extend`
   }
 `;
 
-const FilterPopUp = PopUp.extend`width: auto;`;
+const FilterPopUp = PopUp.extend`display: none; width: auto;`;
 
 const Row = styled.div`
   display: flex;
