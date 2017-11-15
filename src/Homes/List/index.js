@@ -4,7 +4,6 @@ import CardTemplate from "../Card";
 import testPhoto from "../salentina@2x.png";
 import Paginator from "./Paginator";
 import Map from "./Map";
-
 import {
   FiltersContainer,
   Filter,
@@ -25,14 +24,27 @@ const imgHeight = `height: 208px;
 
 const Card = styled(CardTemplate)`margin-bottom: 26px;`;
 
+const OnlyLgFilter = Filter.extend`
+  display: none;
+
+  @media screen and (min-width: 986px) {
+    display: block;
+  }
+`;
+
 export default () => {
   return (
     <Main>
       <FiltersContainer>
         <div className="container">
-          <Filter>Dates</Filter>
-          <Filter>Guests</Filter>
-          <Filter>More filters</Filter>
+          <div className="row negative-indent-xs">
+            <Filter>Dates</Filter>
+            <Filter>Guests</Filter>
+            <OnlyLgFilter>Room type</OnlyLgFilter>
+            <OnlyLgFilter>Price</OnlyLgFilter>
+            <OnlyLgFilter>Instant Book</OnlyLgFilter>
+            <Filter>More filters</Filter>
+          </div>
         </div>
       </FiltersContainer>
       <div className="container">
