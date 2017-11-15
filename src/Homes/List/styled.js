@@ -15,7 +15,6 @@ export const FiltersContainer = styled.div`
   z-index: 11;
   background: #ffffff;
   padding: 12px 8px;
-  margin-top: 1px;
   width: 100%;
   position: fixed;
   left: 0;

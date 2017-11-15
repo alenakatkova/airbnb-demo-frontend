@@ -11,7 +11,7 @@ const MapContainer = styled.div`
     display: block;
     position: fixed;
     right: 0;
-    top: 140px;
+    top: 139px;
     bottom: 0;
     left: calc(50% + 986px * 0.17);
   }

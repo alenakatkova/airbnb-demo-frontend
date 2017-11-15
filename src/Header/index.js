@@ -1,5 +1,4 @@
 import React from "react";
-// import { PageHeader, Link, Logo, MenuBtn } from "./styled";
 import { PageHeader, Logo, LinkContainer, MenuBtn } from "./styled";
 import { Link } from "react-router-dom";
 import Search from "./Search";

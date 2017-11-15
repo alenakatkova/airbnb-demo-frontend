@@ -12,6 +12,7 @@ import {
   MainBottom,
   MapButton
 } from "./styled";
+import RoomType from "../Filters/RoomType";
 
 const imgHeight = `height: 208px;
   @media screen and (min-width: 768px) {
@@ -40,7 +41,8 @@ export default () => {
           <div className="row negative-indent-xs">
             <Filter>Dates</Filter>
             <Filter>Guests</Filter>
-            <OnlyLgFilter>Room type</OnlyLgFilter>
+            {/* <OnlyLgFilter>Room type</OnlyLgFilter> */}
+            <RoomType />
             <OnlyLgFilter>Price</OnlyLgFilter>
             <OnlyLgFilter>Instant Book</OnlyLgFilter>
             <Filter>More filters</Filter>
