@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CardTemplate from "../Card";
 import testPhoto from "../salentina@2x.png";
 import Paginator from "./Paginator";
+import Map from "./Map";
 
 import {
   FiltersContainer,
@@ -13,7 +14,15 @@ import {
   MapButton
 } from "./styled";
 
-const imgHeight = "height: 208px;";
+const imgHeight = `height: 208px;
+  @media screen and (min-width: 768px) {
+    height: 242px;
+  }
+  
+  @media screen and (min-width: 986px) {
+    height: 204px;
+  }`;
+
 const Card = styled(CardTemplate)`margin-bottom: 26px;`;
 
 export default () => {
@@ -120,6 +129,7 @@ export default () => {
         </div>
       </div>
       <MapButton />
+      <Map center={{ lat: -34.397, lng: 150.644 }} zoom={8} />
     </Main>
   );
 };

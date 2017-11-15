@@ -5,7 +5,7 @@ export const Main = styled.main`
   padding-top: 164px;
   padding-bottom: 88px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     padding-bottom: 24px;
   }
 `;
@@ -73,6 +73,10 @@ export const MapButton = styled.button`
   right: 8px;
   bottom: 24px;
   z-index: 11;
+
+  @media screen and (min-width: 986px) {
+    display: none;
+  }
 `;
 
 export const MainBottom = styled.div`
