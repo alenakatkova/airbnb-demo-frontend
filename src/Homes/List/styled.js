@@ -18,7 +18,7 @@ export const FiltersContainer = styled.div`
   width: 100%;
   position: fixed;
   left: 0;
-  top: 82px;
+  top: 82.5px;
 `;
 
 export const Filter = styled.button`
@@ -71,7 +71,7 @@ export const MapButton = styled.button`
   position: fixed;
   right: 8px;
   bottom: 24px;
-  z-index: 11;
+  z-index: 9;
 
   @media screen and (min-width: 986px) {
     display: none;

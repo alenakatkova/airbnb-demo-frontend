@@ -20,7 +20,7 @@ const Container = FilterContainer.extend`
   }
 `;
 
-const FilterPopUp = PopUp.extend`display: none; width: auto;`;
+const FilterPopUp = PopUp.extend`width: auto;`;
 
 const Row = styled.div`
   display: flex;
@@ -72,56 +72,81 @@ const Icon = styled.img`
   height: 32px;
 `;
 
-export default () => {
-  return (
-    <Container>
-      <FilterButton>Room type</FilterButton>
-      <FilterPopUp>
-        <Row>
-          <Label>
-            <Checkbox type="checkbox" name="room-type" value="f" />
-            <FakeCheckbox />
-            <MainText>Entire home</MainText>
-            <br />
-            <Description>Have a place to yourself</Description>
-          </Label>
-          <IconContainer>
-            <Icon src={entireIcon} alt="Entire home" />
-          </IconContainer>
-        </Row>
-        <Row>
-          <Label>
-            <Checkbox type="checkbox" name="room-type" value="f" />
-            <FakeCheckbox />
-            <MainText>Private room</MainText>
-            <br />
-            <Description>
-              Have your own room and share some common spaces
-            </Description>
-          </Label>
-          <IconContainer>
-            <Icon src={privateIcon} alt="Entire home" />
-          </IconContainer>
-        </Row>
-        <Row>
-          <Label>
-            <Checkbox type="checkbox" name="room-type" value="f" />
-            <FakeCheckbox />
-            <MainText>Shared room</MainText>
-            <br />
-            <Description>
-              Stay in a shared space, like a<br />common room
-            </Description>
-          </Label>
-          <IconContainer>
-            <Icon src={sharedIcon} alt="Entire home" />
-          </IconContainer>
-        </Row>
-        <ButtonsContainer>
-          <CancelButton>Cancel</CancelButton>
-          <ApplyButton>Apply</ApplyButton>
-        </ButtonsContainer>
-      </FilterPopUp>
-    </Container>
-  );
-};
+export default class RoomType extends React.Component {
+  state = {
+    isOpen: false,
+    isChecked: false
+  };
+
+  toggleOpen = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };
+
+  render() {
+    return (
+      <Container>
+        <FilterButton onClick={this.toggleOpen}>Room type</FilterButton>
+        {this.state.isOpen && (
+          <FilterPopUp>
+            <Row>
+              <Label>
+                <Checkbox
+                  type="checkbox"
+                  name="room-type"
+                  value="Entire home"
+                />
+                <FakeCheckbox />
+                <MainText>Entire home</MainText>
+                <br />
+                <Description>Have a place to yourself</Description>
+              </Label>
+              <IconContainer>
+                <Icon src={entireIcon} alt="Entire home" />
+              </IconContainer>
+            </Row>
+            <Row>
+              <Label>
+                <Checkbox
+                  type="checkbox"
+                  name="room-type"
+                  value="Private room"
+                />
+                <FakeCheckbox />
+                <MainText>Private room</MainText>
+                <br />
+                <Description>
+                  Have your own room and share some common spaces
+                </Description>
+              </Label>
+              <IconContainer>
+                <Icon src={privateIcon} alt="Entire home" />
+              </IconContainer>
+            </Row>
+            <Row>
+              <Label>
+                <Checkbox
+                  type="checkbox"
+                  name="room-type"
+                  value="Shared room"
+                />
+                <FakeCheckbox />
+                <MainText>Shared room</MainText>
+                <br />
+                <Description>
+                  Stay in a shared space, like a<br />common room
+                </Description>
+              </Label>
+              <IconContainer>
+                <Icon src={sharedIcon} alt="Entire home" />
+              </IconContainer>
+            </Row>
+            <ButtonsContainer>
+              <CancelButton onClick={this.toggleOpen}>Cancel</CancelButton>
+              <ApplyButton>Apply</ApplyButton>
+            </ButtonsContainer>
+          </FilterPopUp>
+        )}
+      </Container>
+    );
+  }
+}

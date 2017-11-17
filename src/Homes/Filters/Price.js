@@ -17,7 +17,7 @@ const Container = FilterContainer.extend`
   }
 `;
 
-const FilterPopUp = PopUp.extend`width: auto;`;
+const FilterPopUp = PopUp.extend`width: auto; display: none;`;
 
 const Range = styled.p`
   margin: 0;

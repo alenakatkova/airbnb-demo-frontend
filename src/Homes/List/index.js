@@ -14,6 +14,7 @@ import {
 } from "./styled";
 import RoomType from "../Filters/RoomType";
 import Price from "../Filters/Price";
+import Guests from "../Filters/Guests";
 
 const imgHeight = `height: 208px;
   @media screen and (min-width: 768px) {
@@ -41,7 +42,7 @@ export default () => {
         <div className="container">
           <div className="row negative-indent-xs">
             <Filter>Dates</Filter>
-            <Filter>Guests</Filter>
+            <Guests />
             <RoomType />
             <Price />
             <OnlyLgFilter>Instant Book</OnlyLgFilter>
