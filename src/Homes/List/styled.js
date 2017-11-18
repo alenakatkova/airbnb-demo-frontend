@@ -81,5 +81,13 @@ export const MapButton = styled.button`
 export const MainBottom = styled.div`
   padding: 0 8px;
   width: 100%;
-  margin-top: 42px;
+  margin-top: 22px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 6px;
+  }
+
+  @media screen and (min-width: 986px) {
+    margin-top: 8px;
+  }
 `;

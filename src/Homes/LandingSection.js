@@ -33,6 +33,7 @@ export default () => {
                 description="Entire house · 9 beds"
                 alt="La Salentina"
                 stats="97 · Superhost"
+                primary
               />
             </div>
             <div className="col-xs-8 col-md-5 col-lg-4">
@@ -44,6 +45,7 @@ export default () => {
                 description="Entire house · 5 beds"
                 alt="3 bedr."
                 stats="161 · Superhost"
+                landing
               />
             </div>
             <div className="col-xs-8 col-md-5 col-lg-4">
@@ -55,6 +57,7 @@ export default () => {
                 description="Entire treehouse · 1 beds"
                 alt="Tropical Tree House"
                 stats="364 · Superhost"
+                landing
               />
             </div>
           </div>

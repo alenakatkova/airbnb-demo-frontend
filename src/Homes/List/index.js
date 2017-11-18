@@ -19,7 +19,17 @@ import Dates from "../Filters/Dates";
 import MediaQuery from "react-responsive";
 import Header from "../Header";
 
-const Card = styled(CardTemplate)`margin-bottom: 26px;`;
+const Card = styled(CardTemplate)`
+  margin-bottom: 26px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 42px;
+  }
+
+  @media screen and (min-width: 986px) {
+    margin-bottom: 40px;
+  }
+`;
 
 export default () => {
   return (
@@ -61,7 +71,7 @@ export default () => {
                     to="/"
                     highRes={testPhoto}
                     price="$82"
-                    name="Your private 3 bedr. riad and exclusive"
+                    name="Your private 3 bedr. riad and exclusive bathroom"
                     description="Entire house · 5 beds"
                     alt="3 bedr."
                     stats="161 · Superhost"
