@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Card, Image } from "../styled";
+import { Card, Image } from "../../styled";
 
 const Text = styled.p`
   margin-top: 8px;

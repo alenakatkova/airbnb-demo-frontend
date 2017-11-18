@@ -5,13 +5,13 @@ import {
   NextPage,
   CardsContainer,
   NextContainer
-} from "../styled";
+} from "../../styled";
 import Card from "./Card";
 import chumleyHigh from "./chumley@2x.png";
 import hanjanHigh from "./hanjan@2x.png";
 import seapriceHigh from "./seaprice@2x.png";
 import meatsHigh from "./meats@2x.png";
-import SeeAll from "../SeeAll";
+import SeeAll from "../../SeeAll";
 
 const Next = NextPage.extend`top: 70px;`;
 

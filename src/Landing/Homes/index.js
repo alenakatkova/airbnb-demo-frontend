@@ -5,12 +5,12 @@ import {
   NextPage,
   CardsContainer,
   NextContainer
-} from "../styled";
-import Card from "./Card";
+} from "../../styled";
+import Card from "../../Homes/Card";
 import salentinaHigh from "./salentina@2x.png";
 import seeHigh from "./see@2x.png";
 import tropicalHigh from "./tropical@2x.png";
-import SeeAll from "../SeeAll";
+import SeeAll from "../../SeeAll";
 
 const Next = NextPage.extend`top: 80px;`;
 

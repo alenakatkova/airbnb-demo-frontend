@@ -21,7 +21,7 @@ export default props => {
             </Link>
             <MenuBtn />
             <SearchContainer>
-              <Input placeholder="Anywhere · Homes" type="text" />
+              <Input placeholder={props.placeholder} type="text" />
             </SearchContainer>
           </div>
           <Menu />

@@ -1,6 +1,6 @@
 import React from "react";
-import Rating from "../Rating";
-import { Card, Image } from "../styled";
+import Rating from "../../Rating";
+import { Card, Image } from "../../styled";
 import { Text, Price, Stats } from "./styled";
 
 const Picture = Image.extend`

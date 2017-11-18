@@ -1,6 +1,6 @@
 import React from "react";
 import { FlexContainer, TextContainer, Text } from "./styled";
-import { Card, Image } from "../styled";
+import { Card, Image } from "../../styled";
 
 const Picture = Image.extend`
   border-top-left-radius: 4px;

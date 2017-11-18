@@ -5,8 +5,8 @@ import {
   CardsContainer,
   NextContainer,
   NextPage
-} from "../styled";
-import SeeAll from "../SeeAll";
+} from "../../styled";
+import SeeAll from "../../SeeAll";
 import Card from "./Card";
 import forestHigh from "./forest@2x.png";
 import whaleHigh from "./whale@2x.png";

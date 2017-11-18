@@ -1,6 +1,5 @@
 import React from "react";
-import { CardsContainer, SectionTitle, Section } from "../styled";
-
+import { CardsContainer, SectionTitle, Section } from "../../styled";
 import Card from "./Card";
 import homesHigh from "./homes@2x.png";
 import experiencesHigh from "./experiences@2x.png";

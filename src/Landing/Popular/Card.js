@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Image } from "../styled";
+import { Card, Image } from "../../styled";
 import { Subheading, Name, Price } from "./styled";
 
 const Picture = Image.extend`

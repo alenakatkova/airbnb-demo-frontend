@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CardTemplate from "../Card";
-import testPhoto from "../salentina@2x.png";
+import testPhoto from "../testPicture.png";
 import Paginator from "./Paginator";
 import InteractiveMap from "./InteractiveMap";
 import {
@@ -17,7 +17,7 @@ import Price from "../Filters/Price";
 import Guests from "../Filters/Guests";
 import Dates from "../Filters/Dates";
 import MediaQuery from "react-responsive";
-import Header from "../Header";
+import Header from "../../Header";
 
 const Card = styled(CardTemplate)`
   margin-bottom: 26px;
@@ -34,7 +34,7 @@ const Card = styled(CardTemplate)`
 export default () => {
   return (
     <div>
-      <Header />
+      <Header placeholder="Anywhere · Homes" />
       <Main>
         <FiltersContainer>
           <div className="container">
