@@ -172,7 +172,7 @@ export const InnerContainer = styled.div`
   @media screen and (min-width: 768px) {
     position: static;
     bottom: 0;
-    padding: 0;
+    padding: 5px;
     min-width: 292px;
   }
 `;
