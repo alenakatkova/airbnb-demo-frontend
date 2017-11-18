@@ -1,7 +1,7 @@
 import React from "react";
 import MediaQuery from "react-responsive";
 import {
-  FilterButton,
+  Button,
   Header,
   Content,
   Container,
@@ -26,9 +26,9 @@ export default class Dropdown extends React.Component {
   render() {
     return (
       <Container>
-        <FilterButton onClick={this.toggleOpen} isOpen={this.state.isOpen}>
+        <Button onClick={this.toggleOpen} isOpen={this.state.isOpen}>
           {this.props.label}
-        </FilterButton>
+        </Button>
 
         {this.state.isOpen && (
           <Content>

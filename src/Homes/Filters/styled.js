@@ -10,25 +10,7 @@ export const Background = styled.div`
   height: 100vh;
 `;
 
-export const PopUp = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 12;
-  box-sizing: border-box;
-  background: #ffffff;
-
-  @media screen and (min-width: 768px) {
-    top: 40px;
-    padding: 24px 16px;
-    border: 1px solid rgba(72, 72, 72, 0.2);
-    box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
-    border-radius: 4px;
-  }
-`;
-
-export const FilterButton = styled.button`
+export const Button = styled.button`
   padding: 7px 16px;
   border-style: solid;
   background: ${props => (props.isOpen ? "#008489" : "#ffffff")};
@@ -41,12 +23,6 @@ export const FilterButton = styled.button`
   line-height: 16px;
   font-family: "CircularAir-Book", "Arial", sans-serif;
   color: ${props => (props.isOpen ? "#ffffff" : "#383838")};
-`;
-
-export const FilterContainer = styled.div`
-  position: relative;
-  margin-right: 16px;
-  display: inline-flex;
 `;
 
 export const ApplyButton = styled.button`
@@ -240,42 +216,4 @@ export const OptionDescription = styled.span`
     line-height: 19px;
     font-size: 16px;
   }
-`;
-
-export const CounterValue = styled.span`
-  display: inline-block;
-  margin: 0 18px;
-  font-family: "CircularAir-Light", "Arial Light", sans-serif;
-  font-size: 18px;
-  color: #383838;
-`;
-
-export const CounterButton = styled.button`
-  border: 1px solid #008489;
-  box-sizing: border-box;
-  border-radius: 22px;
-  width: 32px;
-  height: 32px;
-  background: none;
-  text-align: center;
-  line-height: 32px;
-  position: relative;
-`;
-
-export const DisabledCounterButton = CounterButton.extend`opacity: 0.5;`;
-
-export const Counter = styled.div`
-  display: flex;
-  flex-direction: row;
-  row-wrap: nowrap;
-  justyfy-content: space-between;
-  align-items: center;
-`;
-
-export const ButtonIcon = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
 `;
