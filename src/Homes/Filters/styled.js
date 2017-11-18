@@ -30,14 +30,17 @@ export const PopUp = styled.div`
 
 export const FilterButton = styled.button`
   padding: 7px 16px;
-  background: #ffffff;
-  border: 1px solid rgba(72, 72, 72, 0.2);
+  border-style: solid;
+  background: ${props => (props.isOpen ? "#008489" : "#ffffff")};
+  border-width: 1px;
+  border-color: ${props =>
+    props.isOpen ? "#008489" : "rgba(72, 72, 72, 0.2)"};
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 14px;
   line-height: 16px;
   font-family: "CircularAir-Book", "Arial", sans-serif;
-  color: #383838;
+  color: ${props => (props.isOpen ? "#ffffff" : "#383838")};
 `;
 
 export const FilterContainer = styled.div`
@@ -111,7 +114,7 @@ export const Header = styled.div`
 `;
 
 export const ButtonsContainer = styled.div`
-  position: fixed;
+  position: absolute;
   z-index: 15;
   background: #ffffff;
   bottom: 0;
@@ -165,7 +168,7 @@ export const Content = styled.div`
   @media screen and (min-width: 768px) {
     position: absolute;
     top: 40px;
-    padding: 24px 24px;
+    padding: 24px 16px;
     border: 1px solid rgba(72, 72, 72, 0.2);
     box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
     border-radius: 4px;
@@ -186,20 +189,18 @@ export const InnerContainer = styled.div`
   position: absolute;
   top: 48px;
   left: 0;
-  bottom: 63px;
+  bottom: 0;
   width: 100%;
   height: auto;
   overflow-y: scroll;
   box-sizing: border-box;
-  padding-left: 8px;
   padding-top: 40px;
-  padding-right: 8px;
 
   @media screen and (min-width: 768px) {
     position: static;
     bottom: 0;
     padding: 0;
-    min-width: 287px;
+    min-width: 292px;
   }
 `;
 

@@ -1,0 +1,133 @@
+.DayPicker_focusRegion {
+  margin-top: 50px;
+}
+
+.DayPicker_weekHeader_li {
+  width: 44px !important;
+}
+
+.DayPicker_weekHeader {
+  top: 112px;
+  position: fixed;
+  z-index: 47;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.CalendarMonth {
+  padding: 0;
+}
+
+.CalendarDay_container {
+  width: 44px !important;
+  height: 44px !important;
+}
+
+.CalendarDay_button {
+  font-family: "CircularAir-Book", "Arial", sans-serif;
+  font-size: 12px;
+  color: #383838;
+}
+
+.CalendarDay__blocked_calendar {
+  background: #ffffff;
+}
+
+.CalendarDay__blocked_calendar .CalendarDay_button {
+  color: #cbcbcb;
+}
+
+.CalendarDay_container {
+  border: 1px solid #d5d5d5;
+}
+
+.CalendarMonth_caption {
+  padding-bottom: 8px;
+  padding-top: 16px;
+}
+
+.DayPickerNavigation_container {
+  display: none;
+}
+
+.DayPicker_transitionContainer {
+  overflow: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .DayPickerNavigation_container {
+    display: block;
+  }
+
+  .DayPicker_transitionContainer {
+    overflow: hidden;
+    padding: 0;
+    width: auto !important;
+  }
+
+  .DayPicker {
+    box-shadow: none;
+    margin-top: 0;
+    width: auto !important;
+  }
+
+  .DayPicker_focusRegion {
+    margin-top: 0;
+  }
+
+  .CalendarMonth_caption {
+    padding-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .DayPicker_weekHeader {
+    top: 55px;
+    position: absolute;
+    z-index: 47;
+    padding: 0;
+    background-color: #ffffff;
+  }
+
+  .DayPickerNavigation_button {
+    top: 11px;
+  }
+
+  .CalendarDay_container {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .DayPicker_weekHeader_li {
+    width: 40px !important;
+  }
+
+  .CalendarMonthGrid_month__horizontal {
+    margin-right: 8px;
+  }
+
+  .DayPickerNavigation_leftButton__horizontal {
+    left: 10px;
+  }
+
+  .DayPickerNavigation_rightButton__horizontal {
+    right: 10px;
+  }
+}
+
+@media screen and (min-width: 986px) {
+  .DayPicker {
+    width: auto !important;
+  }
+
+  .DayPicker_transitionContainer {
+    width: 616px !important;
+  }
+
+  .CalendarMonthGrid_month__horizontal {
+    margin-right: 36px;
+  }
+
+  .DayPicker_weekHeader:nth-child(2n) {
+    left: 320px !important;
+  }
+}

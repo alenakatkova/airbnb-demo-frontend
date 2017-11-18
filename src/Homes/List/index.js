@@ -15,6 +15,7 @@ import {
 import RoomType from "../Filters/RoomType";
 import Price from "../Filters/Price";
 import Guests from "../Filters/Guests";
+import Dates from "../Filters/Dates";
 
 const imgHeight = `height: 208px;
   @media screen and (min-width: 768px) {
@@ -41,7 +42,7 @@ export default () => {
       <FiltersContainer>
         <div className="container">
           <div className="row negative-indent-xs">
-            <Filter>Dates</Filter>
+            <Dates />
             <Guests />
             <RoomType />
             <Price />
