@@ -1,5 +1,5 @@
 import React from "react";
-import Map from "google-map-react";
+import ReactMap from "google-map-react";
 import styled from "styled-components";
 
 const MapContainer = styled.div`
@@ -17,7 +17,7 @@ const MapContainer = styled.div`
 
 export default props => (
   <MapContainer>
-    <Map
+    <ReactMap
       bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
       center={props.center}
       zoom={props.zoom}

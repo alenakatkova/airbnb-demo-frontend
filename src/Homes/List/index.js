@@ -3,7 +3,7 @@ import styled from "styled-components";
 import CardTemplate from "../Card";
 import testPhoto from "../salentina@2x.png";
 import Paginator from "./Paginator";
-import Map from "./Map";
+import InteractiveMap from "./InteractiveMap";
 import {
   FiltersContainer,
   Filter,
@@ -125,7 +125,7 @@ export default () => {
         </div>
       </div>
       <MapButton />
-      <Map center={{ lat: -34.397, lng: 150.644 }} zoom={8} />
+      <InteractiveMap center={{ lat: -34.397, lng: 150.644 }} zoom={8} />
     </Main>
   );
 };
