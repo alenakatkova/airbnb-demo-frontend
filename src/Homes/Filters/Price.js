@@ -1,23 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  FilterButton,
-  PopUp,
-  FilterContainer,
-  ApplyButton,
-  CancelButton,
-  ButtonsContainer
-} from "./styled";
-
-const Container = FilterContainer.extend`
-  display: none;
-
-  @media screen and (min-width: 986px) {
-    display: inline-block;
-  }
-`;
-
-const FilterPopUp = PopUp.extend`width: auto; display: none;`;
+import Dropdown from "./Dropdown";
 
 const Range = styled.p`
   margin: 0;
@@ -38,16 +21,9 @@ const Average = styled.p`
 
 export default () => {
   return (
-    <Container>
-      <FilterButton>Room type</FilterButton>
-      <FilterPopUp>
-        <Range>$10 — $1000+</Range>
-        <Average>The average nightly price is $75.</Average>
-        <ButtonsContainer>
-          <CancelButton>Cancel</CancelButton>
-          <ApplyButton>Apply</ApplyButton>
-        </ButtonsContainer>
-      </FilterPopUp>
-    </Container>
+    <Dropdown filterName="Price" dynamicButtonName="Price">
+      <Range>$10 — $1000+</Range>
+      <Average>The average nightly price is $75.</Average>
+    </Dropdown>
   );
 };

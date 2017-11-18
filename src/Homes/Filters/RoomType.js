@@ -1,26 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  FilterButton,
-  PopUp,
-  FilterContainer,
-  ApplyButton,
-  CancelButton,
-  ButtonsContainer
-} from "./styled";
 import entireIcon from "./roomEntire.svg";
 import privateIcon from "./roomPrivate.svg";
 import sharedIcon from "./roomShared.svg";
-
-const Container = FilterContainer.extend`
-  display: none;
-
-  @media screen and (min-width: 986px) {
-    display: inline-block;
-  }
-`;
-
-const FilterPopUp = PopUp.extend`width: auto;`;
+import Dropdown from "./Dropdown";
 
 const Row = styled.div`
   display: flex;
@@ -84,69 +67,48 @@ export default class RoomType extends React.Component {
 
   render() {
     return (
-      <Container>
-        <FilterButton onClick={this.toggleOpen}>Room type</FilterButton>
-        {this.state.isOpen && (
-          <FilterPopUp>
-            <Row>
-              <Label>
-                <Checkbox
-                  type="checkbox"
-                  name="room-type"
-                  value="Entire home"
-                />
-                <FakeCheckbox />
-                <MainText>Entire home</MainText>
-                <br />
-                <Description>Have a place to yourself</Description>
-              </Label>
-              <IconContainer>
-                <Icon src={entireIcon} alt="Entire home" />
-              </IconContainer>
-            </Row>
-            <Row>
-              <Label>
-                <Checkbox
-                  type="checkbox"
-                  name="room-type"
-                  value="Private room"
-                />
-                <FakeCheckbox />
-                <MainText>Private room</MainText>
-                <br />
-                <Description>
-                  Have your own room and share some common spaces
-                </Description>
-              </Label>
-              <IconContainer>
-                <Icon src={privateIcon} alt="Entire home" />
-              </IconContainer>
-            </Row>
-            <Row>
-              <Label>
-                <Checkbox
-                  type="checkbox"
-                  name="room-type"
-                  value="Shared room"
-                />
-                <FakeCheckbox />
-                <MainText>Shared room</MainText>
-                <br />
-                <Description>
-                  Stay in a shared space, like a<br />common room
-                </Description>
-              </Label>
-              <IconContainer>
-                <Icon src={sharedIcon} alt="Entire home" />
-              </IconContainer>
-            </Row>
-            <ButtonsContainer>
-              <CancelButton onClick={this.toggleOpen}>Cancel</CancelButton>
-              <ApplyButton>Apply</ApplyButton>
-            </ButtonsContainer>
-          </FilterPopUp>
-        )}
-      </Container>
+      <Dropdown filterName="Room type" dynamicButtonName="Room Type">
+        <Row>
+          <Label>
+            <Checkbox type="checkbox" name="room-type" value="Entire home" />
+            <FakeCheckbox />
+            <MainText>Entire home</MainText>
+            <br />
+            <Description>Have a place to yourself</Description>
+          </Label>
+          <IconContainer>
+            <Icon src={entireIcon} alt="Entire home" />
+          </IconContainer>
+        </Row>
+        <Row>
+          <Label>
+            <Checkbox type="checkbox" name="room-type" value="Private room" />
+            <FakeCheckbox />
+            <MainText>Private room</MainText>
+            <br />
+            <Description>
+              Have your own room and share some common spaces
+            </Description>
+          </Label>
+          <IconContainer>
+            <Icon src={privateIcon} alt="Entire home" />
+          </IconContainer>
+        </Row>
+        <Row>
+          <Label>
+            <Checkbox type="checkbox" name="room-type" value="Shared room" />
+            <FakeCheckbox />
+            <MainText>Shared room</MainText>
+            <br />
+            <Description>
+              Stay in a shared space, like a<br />common room
+            </Description>
+          </Label>
+          <IconContainer>
+            <Icon src={sharedIcon} alt="Entire home" />
+          </IconContainer>
+        </Row>
+      </Dropdown>
     );
   }
 }

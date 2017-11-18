@@ -16,6 +16,7 @@ import RoomType from "../Filters/RoomType";
 import Price from "../Filters/Price";
 import Guests from "../Filters/Guests";
 import Dates from "../Filters/Dates";
+import MediaQuery from "react-responsive";
 
 const imgHeight = `height: 208px;
   @media screen and (min-width: 768px) {
@@ -28,14 +29,6 @@ const imgHeight = `height: 208px;
 
 const Card = styled(CardTemplate)`margin-bottom: 26px;`;
 
-const OnlyLgFilter = Filter.extend`
-  display: none;
-
-  @media screen and (min-width: 986px) {
-    display: block;
-  }
-`;
-
 export default () => {
   return (
     <Main>
@@ -44,9 +37,11 @@ export default () => {
           <div className="row negative-indent-xs">
             <Dates />
             <Guests />
-            <RoomType />
-            <Price />
-            <OnlyLgFilter>Instant Book</OnlyLgFilter>
+            <MediaQuery query="(min-width: 986px)">
+              <RoomType />
+              <Price />
+              <Filter>Instant Book</Filter>
+            </MediaQuery>
             <Filter>More filters</Filter>
           </div>
         </div>
@@ -57,7 +52,7 @@ export default () => {
             <div className="row negative-indent-xs">
               <div className="col-xs-12 col-md-6 col-lg-6">
                 <Card
-                  href="#"
+                  to="/"
                   imgHeight={imgHeight}
                   highRes={testPhoto}
                   price="$82"
@@ -70,7 +65,7 @@ export default () => {
 
               <div className="col-xs-12 col-md-6 col-lg-6">
                 <Card
-                  href="#"
+                  to="/"
                   highRes={testPhoto}
                   imgHeight={imgHeight}
                   price="$82"
@@ -83,7 +78,7 @@ export default () => {
 
               <div className="col-xs-12 col-md-6 col-lg-6">
                 <Card
-                  href="#"
+                  to="/"
                   highRes={testPhoto}
                   imgHeight={imgHeight}
                   price="$200"
@@ -96,7 +91,7 @@ export default () => {
 
               <div className="col-xs-12 col-md-6 col-lg-6">
                 <Card
-                  href="#"
+                  to="/"
                   highRes={testPhoto}
                   imgHeight={imgHeight}
                   price="$110"
@@ -109,7 +104,7 @@ export default () => {
 
               <div className="col-xs-12 col-md-6 col-lg-6">
                 <Card
-                  href="#"
+                  to="/"
                   highRes={testPhoto}
                   imgHeight={imgHeight}
                   price="$83"
@@ -122,7 +117,7 @@ export default () => {
 
               <div className="col-xs-12 col-md-6 col-lg-6">
                 <Card
-                  href="#"
+                  to="/"
                   highRes={testPhoto}
                   imgHeight={imgHeight}
                   price="$72"

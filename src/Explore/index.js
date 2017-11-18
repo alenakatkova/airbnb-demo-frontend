@@ -1,6 +1,6 @@
 import React from "react";
 import { CardsContainer, SectionTitle, Section } from "../styled";
-import { Link } from "react-router-dom";
+
 import Card from "./Card";
 import homesHigh from "./homes@2x.png";
 import experiencesHigh from "./experiences@2x.png";
@@ -13,12 +13,16 @@ export default () => {
       <CardsContainer>
         <div className="row negative-indent-xs nowrap-xs wrap-lg">
           <div className="col-xs-6 col-md-5 col-lg-4">
-            <Link to="homes" style={{ textDecoration: "none" }}>
-              <Card alt="Airbnb Homes" highRes={homesHigh} text="Homes" />
-            </Link>
+            <Card
+              to="homes"
+              alt="Airbnb Homes"
+              highRes={homesHigh}
+              text="Homes"
+            />
           </div>
           <div className="col-xs-6 col-md-5 col-lg-4">
             <Card
+              to="/"
               text="Experiences"
               alt="Airbnb Experiences"
               highRes={experiencesHigh}
@@ -26,6 +30,7 @@ export default () => {
           </div>
           <div className="col-xs-6 col-md-5 col-lg-4">
             <Card
+              to="/"
               text="Restaurants"
               alt="Airbnb Restaurants"
               highRes={restaurantsHigh}

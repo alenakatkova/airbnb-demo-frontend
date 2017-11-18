@@ -20,14 +20,14 @@ export default () => {
     <Section>
       <div className="row between-xs middle-xs">
         <SectionTitle>Experiences</SectionTitle>
-        <SeeAll />
+        <SeeAll to="/" />
       </div>
       <NextContainer>
         <CardsContainer>
           <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
-                href="#"
+                to="/"
                 highRes={forestHigh}
                 price="$29"
                 text="Forest theraphy"
@@ -37,7 +37,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
-                href="#"
+                to="/"
                 highRes={whaleHigh}
                 price="$69"
                 text="Whale watching"
@@ -47,7 +47,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
-                href="#"
+                to="/"
                 highRes={mountainHigh}
                 price="$69"
                 text="Table Mountain Summi, Cable Car Down"
@@ -57,7 +57,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
-                href="#"
+                to="/"
                 highRes={salsaHigh}
                 price="$50"
                 text="Salsa Night"

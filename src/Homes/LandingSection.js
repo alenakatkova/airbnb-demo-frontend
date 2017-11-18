@@ -6,7 +6,6 @@ import {
   CardsContainer,
   NextContainer
 } from "../styled";
-import { Link } from "react-router-dom";
 import Card from "./Card";
 import salentinaHigh from "./salentina@2x.png";
 import seeHigh from "./see@2x.png";
@@ -20,16 +19,14 @@ export default () => {
     <Section>
       <div className="row between-xs middle-xs">
         <SectionTitle>Homes</SectionTitle>
-        <Link to="homes" style={{ textDecoration: "none" }}>
-          <SeeAll />
-        </Link>
+        <SeeAll to="homes" />
       </div>
       <NextContainer>
         <CardsContainer>
           <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <div className="col-xs-8 col-md-5 col-lg-4">
               <Card
-                href="#"
+                to="/"
                 imgHeight="@media screen and (min-width: 768px) { height: 204px; }"
                 highRes={salentinaHigh}
                 price="$82"
@@ -41,7 +38,7 @@ export default () => {
             </div>
             <div className="col-xs-8 col-md-5 col-lg-4">
               <Card
-                href="#"
+                to="/"
                 highRes={seeHigh}
                 imgHeight="@media screen and (min-width: 768px) { height: 204px; }"
                 price="$82"
@@ -53,7 +50,7 @@ export default () => {
             </div>
             <div className="col-xs-8 col-md-5 col-lg-4">
               <Card
-                href="#"
+                to="/"
                 highRes={tropicalHigh}
                 imgHeight="@media screen and (min-width: 768px) { height: 204px; }"
                 price="$200"

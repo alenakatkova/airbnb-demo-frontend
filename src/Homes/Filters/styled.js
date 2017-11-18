@@ -153,7 +153,6 @@ export const ResetButton = styled.button`
   color: #0f7276;
 `;
 
-// то же самое что и попап
 export const Content = styled.div`
   position: fixed;
   top: 0;
@@ -176,8 +175,6 @@ export const Content = styled.div`
     height: auto;
   }
 `;
-
-// то же самое, что и контейнер
 
 export const Container = styled.div`
   position: relative;

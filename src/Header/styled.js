@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import arrow from "./arrow.svg";
+import { Link as RLink } from "react-router-dom";
 
 export const PageHeader = styled.header`
   box-sizing: border-box;
@@ -18,7 +19,7 @@ export const Logo = styled.img`
   width: 29.77px;
 `;
 
-export const LinkContainer = styled.div`
+export const Link = styled(RLink)`
   display: inline-block;
   margin: 0;
   margin-right: 4.98px;

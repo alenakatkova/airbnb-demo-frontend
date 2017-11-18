@@ -9,7 +9,7 @@ const Picture = Image.extend`
 `;
 
 export default props => (
-  <Card href={props.href}>
+  <Card to={props.to}>
     <Picture src={props.highRes} alt={props.alt} />
     <Subheading>{props.subheading}</Subheading>
     <Name>{props.name}</Name>
