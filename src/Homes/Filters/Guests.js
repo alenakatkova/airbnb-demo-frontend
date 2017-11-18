@@ -9,9 +9,21 @@ import Counter from "./Counter";
 import Dropdown from "./Dropdown";
 
 export default class Guests extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isSelected: false
+    };
+  }
+
+  onToggle = isSelected => {
+    this.setState({ isSelected: !this.state.isSelected });
+  };
+
   render() {
     return (
-      <Dropdown filterName="Guests" dynamicButtonName="Guests">
+      <Dropdown label="Guests" onToggle={this.onToggle}>
         <OptionTable>
           <OptionCell>
             <OptionName>Adults</OptionName>

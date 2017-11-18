@@ -13,30 +13,22 @@ import {
   InnerContainer
 } from "./styled";
 
-export default class Guests extends React.Component {
+export default class Dropdown extends React.Component {
   state = {
-    isOpen: false,
-    isChecked: false
+    isOpen: false
   };
 
   toggleOpen = e => {
     this.setState({ isOpen: !this.state.isOpen });
+    this.props.onToggle(this.state.isOpen);
   };
 
   render() {
     return (
       <Container>
-        {this.state.isOpen ? (
-          <FilterButton onClick={this.toggleOpen} isOpen>
-            {this.state.isOpen
-              ? this.props.dynamicButtonName
-              : this.props.filterName}
-          </FilterButton>
-        ) : (
-          <FilterButton onClick={this.toggleOpen}>
-            {this.props.filterName}
-          </FilterButton>
-        )}
+        <FilterButton onClick={this.toggleOpen} isOpen={this.state.isOpen}>
+          {this.props.label}
+        </FilterButton>
 
         {this.state.isOpen && (
           <Content>

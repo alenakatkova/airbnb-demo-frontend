@@ -56,18 +56,21 @@ const Icon = styled.img`
 `;
 
 export default class RoomType extends React.Component {
-  state = {
-    isOpen: false,
-    isChecked: false
-  };
+  constructor(props) {
+    super(props);
 
-  toggleOpen = () => {
-    this.setState({ isOpen: !this.state.isOpen });
+    this.state = {
+      isSelected: false
+    };
+  }
+
+  onToggle = isSelected => {
+    this.setState({ isSelected: !this.state.isSelected });
   };
 
   render() {
     return (
-      <Dropdown filterName="Room type" dynamicButtonName="Room Type">
+      <Dropdown label="Room Type" onToggle={this.onToggle}>
         <Row>
           <Label>
             <Checkbox type="checkbox" name="room-type" value="Entire home" />

@@ -40,11 +40,16 @@ const Arrow = styled.img`
   margin: 0 16px;
 `;
 
-export default class Guests extends React.Component {
+const getLabel = isSelected => {
+  return isSelected ? "Check in — Check out" : "Dates";
+};
+
+export default class Dates extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      isSelected: false,
       focusedInput: props.autoFocusEndDate ? "endDate" : "startDate",
       startDate: props.initialStartDate,
       endDate: props.initialEndDate
@@ -61,11 +66,15 @@ export default class Guests extends React.Component {
     });
   };
 
+  onToggle = isSelected => {
+    this.setState({ isSelected: !this.state.isSelected });
+  };
+
   render() {
-    const { focusedInput, startDate, endDate } = this.state;
+    const { focusedInput, startDate, endDate, isSelected } = this.state;
 
     return (
-      <Dropdown filterName="Dates" dynamicButtonName="Check in — Check out">
+      <Dropdown onToggle={this.onToggle} label={getLabel(isSelected)}>
         <MediaQuery query="(max-width: 767px)">
           <DateRange>
             <DateInRange isActive>Check-in</DateInRange>
