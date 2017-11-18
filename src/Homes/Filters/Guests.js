@@ -23,7 +23,7 @@ export default class Guests extends React.Component {
 
   render() {
     return (
-      <Dropdown label="Guests" onToggle={this.onToggle}>
+      <Dropdown label="Guests" onToggle={this.onToggle} xsHeading="Guests">
         <OptionTable>
           <OptionCell>
             <OptionName>Adults</OptionName>

@@ -74,7 +74,11 @@ export default class Dates extends React.Component {
     const { focusedInput, startDate, endDate, isSelected } = this.state;
 
     return (
-      <Dropdown onToggle={this.onToggle} label={getLabel(isSelected)}>
+      <Dropdown
+        onToggle={this.onToggle}
+        label={getLabel(isSelected)}
+        xsHeading="When"
+      >
         <MediaQuery query="(max-width: 767px)">
           <DateRange>
             <DateInRange isActive>Check-in</DateInRange>

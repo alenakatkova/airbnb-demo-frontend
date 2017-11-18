@@ -2,7 +2,7 @@ import React from "react";
 import MediaQuery from "react-responsive";
 import {
   Button,
-  Header,
+  TopContainer,
   Content,
   Container,
   ApplyButton,
@@ -33,11 +33,11 @@ export default class Dropdown extends React.Component {
         {this.state.isOpen && (
           <Content>
             <MediaQuery query="(max-width: 767px)">
-              <Header>
+              <TopContainer>
                 <CancelButton onClick={this.toggleOpen} />
-                <Heading>{this.props.filterName}</Heading>
+                <Heading>{this.props.xsHeading}</Heading>
                 <ResetButton>Reset</ResetButton>
-              </Header>
+              </TopContainer>
             </MediaQuery>
 
             <InnerContainer>{this.props.children}</InnerContainer>

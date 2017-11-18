@@ -74,7 +74,7 @@ export const CancelButton = styled.button`
   }
 `;
 
-export const Header = styled.div`
+export const TopContainer = styled.div`
   padding: 16px 8px;
   position: fixed;
   z-index: 15;
@@ -110,12 +110,13 @@ export const ButtonsContainer = styled.div`
   }
 `;
 
-export const Heading = styled.span`
+export const Heading = styled.h2`
   font-family: "CircularAir-Book", "Arial", sans-serif;
   line-height: 16px;
   font-size: 14px;
   color: #383838;
   display: inline-flex;
+  margin: 0;
 `;
 
 export const ResetButton = styled.button`
