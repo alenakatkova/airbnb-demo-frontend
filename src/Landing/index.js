@@ -1,18 +1,17 @@
 import React from "react";
-import styled from "styled-components";
-import Explore from "./Explore";
-import Experiences from "./Experiences";
-import Homes from "./Homes/LandingSection";
-import Popular from "./Popular";
-import Featured from "./Featured";
+import Explore from "../Explore";
+import Experiences from "../Experiences";
+import Homes from "../Homes/LandingSection";
+import Popular from "../Popular";
+import Featured from "../Featured";
+import Header from "./Header";
 import Footer from "./Footer";
-
-const Main = styled.main`padding-top: 82px;`;
 
 export default () => {
   return (
     <div>
-      <Main>
+      <Header />
+      <main>
         <div className="container">
           <Explore />
           <Experiences />
@@ -20,7 +19,7 @@ export default () => {
           <Popular />
           <Featured />
         </div>
-      </Main>
+      </main>
       <Footer />
     </div>
   );

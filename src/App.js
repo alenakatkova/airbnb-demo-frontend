@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-import Header from "./Header";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Landing from "./Landing";
 import Homes from "./Homes/List";
 
@@ -8,11 +7,10 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <Header />
+        <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/homes" component={Homes} />
-        </div>
+        </Switch>
       </BrowserRouter>
     );
   }

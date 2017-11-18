@@ -1,10 +1,16 @@
 import React from "react";
-import { PageHeader, Logo, MenuBtn, Link } from "./styled";
-import Search from "./Search";
+import {
+  PageHeader,
+  Logo,
+  MenuBtn,
+  Link,
+  SearchContainer,
+  Input
+} from "./styled";
 import Menu from "./Menu";
 import logo from "./logo.svg";
 
-export default () => {
+export default props => {
   return (
     <PageHeader>
       <div className="container">
@@ -14,7 +20,9 @@ export default () => {
               <Logo alt="Logo" src={logo} />
             </Link>
             <MenuBtn />
-            <Search />
+            <SearchContainer>
+              <Input placeholder="Anywhere · Homes" type="text" />
+            </SearchContainer>
           </div>
           <Menu />
         </div>
