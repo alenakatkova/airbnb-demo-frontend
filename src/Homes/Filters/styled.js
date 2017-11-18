@@ -143,7 +143,7 @@ export const Content = styled.div`
   @media screen and (min-width: 768px) {
     position: absolute;
     top: 40px;
-    padding: 24px 16px;
+    padding: 19px 11px;
     border: 1px solid rgba(72, 72, 72, 0.2);
     box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
     border-radius: 4px;
@@ -173,7 +173,7 @@ export const InnerContainer = styled.div`
     position: static;
     bottom: 0;
     padding: 5px;
-    min-width: 292px;
+    min-width: 304px;
   }
 `;
 

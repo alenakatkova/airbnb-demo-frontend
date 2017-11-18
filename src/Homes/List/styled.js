@@ -14,7 +14,7 @@ export const FiltersContainer = styled.div`
   border-bottom: 0.5px solid rgba(72, 72, 72, 0.3);
   z-index: 11;
   background: #ffffff;
-  padding: 12px 8px;
+  padding: 12px 0;
   width: 100%;
   position: fixed;
   left: 0;

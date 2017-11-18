@@ -38,7 +38,7 @@ export default () => {
       <Main>
         <FiltersContainer>
           <div className="container">
-            <div className="row negative-indent-xs">
+            <div className="row">
               <Dates />
               <Guests />
               <MediaQuery query="(min-width: 986px)">
