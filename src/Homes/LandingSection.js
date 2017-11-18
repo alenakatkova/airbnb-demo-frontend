@@ -27,7 +27,6 @@ export default () => {
             <div className="col-xs-8 col-md-5 col-lg-4">
               <Card
                 to="/"
-                imgHeight="@media screen and (min-width: 768px) { height: 204px; }"
                 highRes={salentinaHigh}
                 price="$82"
                 name="La Salentina, see, nature & relax"
@@ -40,7 +39,6 @@ export default () => {
               <Card
                 to="/"
                 highRes={seeHigh}
-                imgHeight="@media screen and (min-width: 768px) { height: 204px; }"
                 price="$82"
                 name="Your private 3 bedr. riad and exclusive sth"
                 description="Entire house · 5 beds"
@@ -52,7 +50,6 @@ export default () => {
               <Card
                 to="/"
                 highRes={tropicalHigh}
-                imgHeight="@media screen and (min-width: 768px) { height: 204px; }"
                 price="$200"
                 name="Dreamy Tropical Tree House"
                 description="Entire treehouse · 1 beds"

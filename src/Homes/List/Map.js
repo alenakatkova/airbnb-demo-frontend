@@ -2,8 +2,6 @@ import React from "react";
 import Map from "google-map-react";
 import styled from "styled-components";
 
-const MY_API_KEY = `AIzaSyAB7xBvlYlBEDNMfr3Rd6SfASXu_JPXj-E`;
-
 const MapContainer = styled.div`
   display: none;
 
@@ -20,7 +18,7 @@ const MapContainer = styled.div`
 export default props => (
   <MapContainer>
     <Map
-      bootstrapURLKeys={{ key: MY_API_KEY }}
+      bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
       center={props.center}
       zoom={props.zoom}
     />

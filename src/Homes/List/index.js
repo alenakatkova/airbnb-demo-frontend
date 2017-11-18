@@ -18,15 +18,6 @@ import Guests from "../Filters/Guests";
 import Dates from "../Filters/Dates";
 import MediaQuery from "react-responsive";
 
-const imgHeight = `height: 208px;
-  @media screen and (min-width: 768px) {
-    height: 242px;
-  }
-  
-  @media screen and (min-width: 986px) {
-    height: 204px;
-  }`;
-
 const Card = styled(CardTemplate)`margin-bottom: 26px;`;
 
 export default () => {
@@ -53,7 +44,6 @@ export default () => {
               <div className="col-xs-12 col-md-6 col-lg-6">
                 <Card
                   to="/"
-                  imgHeight={imgHeight}
                   highRes={testPhoto}
                   price="$82"
                   name="La Salentina, see, nature & relax"
@@ -67,7 +57,6 @@ export default () => {
                 <Card
                   to="/"
                   highRes={testPhoto}
-                  imgHeight={imgHeight}
                   price="$82"
                   name="Your private 3 bedr. riad and exclusive"
                   description="Entire house · 5 beds"
@@ -80,7 +69,6 @@ export default () => {
                 <Card
                   to="/"
                   highRes={testPhoto}
-                  imgHeight={imgHeight}
                   price="$200"
                   name="Dreamy Tropical Tree House"
                   description="Entire treehouse · 1 beds"
@@ -93,7 +81,6 @@ export default () => {
                 <Card
                   to="/"
                   highRes={testPhoto}
-                  imgHeight={imgHeight}
                   price="$110"
                   name="Best location old town luxury loft"
                   description="Entire appartment · 1 bed"
@@ -106,7 +93,6 @@ export default () => {
                 <Card
                   to="/"
                   highRes={testPhoto}
-                  imgHeight={imgHeight}
                   price="$83"
                   name="Lussuoso. Vista incantevole."
                   description="Entire appartment · 6 bed"
@@ -119,7 +105,6 @@ export default () => {
                 <Card
                   to="/"
                   highRes={testPhoto}
-                  imgHeight={imgHeight}
                   price="$72"
                   name="In the historical center of Lecce"
                   description="Entire house · 3 bed"

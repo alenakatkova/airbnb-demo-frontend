@@ -43,7 +43,7 @@ export const Stats = styled.span`
 
 export default props => (
   <Card className={props.className} to={props.to}>
-    <Image src={props.highRes} height={props.imgHeight} alt={props.alt} />
+    <Image src={props.highRes} alt={props.alt} />
     <Heading>
       {props.price} {props.name}
     </Heading>
