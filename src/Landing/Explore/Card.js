@@ -1,6 +1,6 @@
 import React from "react";
 import { FlexContainer, TextContainer, Text } from "./styled";
-import { Card, Image } from "../styled";
+import { Card, Image } from "../../styled";
 
 const Picture = Image.extend`
   border-top-left-radius: 4px;
@@ -16,7 +16,7 @@ const Picture = Image.extend`
 `;
 
 export default props => (
-  <Card href={props.href}>
+  <Card to={props.to}>
     <FlexContainer>
       <Picture src={props.highRes} alt={props.alt} />
       <TextContainer>

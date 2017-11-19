@@ -5,13 +5,13 @@ import {
   NextPage,
   CardsContainer,
   NextContainer
-} from "../styled";
+} from "../../styled";
 import Card from "./Card";
 import chumleyHigh from "./chumley@2x.png";
 import hanjanHigh from "./hanjan@2x.png";
 import seapriceHigh from "./seaprice@2x.png";
 import meatsHigh from "./meats@2x.png";
-import SeeAll from "../SeeAll";
+import SeeAll from "../../SeeAll";
 
 const Next = NextPage.extend`top: 70px;`;
 
@@ -20,14 +20,14 @@ export default () => {
     <Section>
       <div className="row between-xs middle-xs nowrap-xs">
         <SectionTitle>Popular reservations around the world</SectionTitle>
-        <SeeAll href="#" />
+        <SeeAll to="/" />
       </div>
       <NextContainer>
         <CardsContainer>
           <div className="row negative-indent-xs nowrap-xs wrap-lg">
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
-                href="#"
+                to="/"
                 highRes={chumleyHigh}
                 alt="Chumley's"
                 subheading="Speakeasy"
@@ -37,7 +37,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
-                href="#"
+                to="/"
                 highRes={hanjanHigh}
                 alt="Hanjan"
                 subheading="Korean gastropub"
@@ -47,7 +47,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
-                href="#"
+                to="/"
                 highRes={meatsHigh}
                 alt="Prime Meats"
                 subheading="German American"
@@ -57,7 +57,7 @@ export default () => {
             </div>
             <div className="col-xs-6 col-md-4 col-lg-3">
               <Card
-                href="#"
+                to="/"
                 highRes={seapriceHigh}
                 alt="Seaprice"
                 subheading="Fine Seafood"

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import nextIcon from "./nextIcon.svg";
+import { Link } from "react-router-dom";
 
 export const Section = styled.section`
   margin-top: 50px;
@@ -31,7 +32,7 @@ export const CardsContainer = styled.div`
   box-sizing: border-box;
 `;
 
-export const Card = styled.a`
+export const Card = styled(Link)`
   display: block;
   text-decoration: none;
   color: #383838;

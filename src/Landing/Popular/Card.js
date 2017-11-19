@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Image } from "../styled";
+import { Card, Image } from "../../styled";
 import { Subheading, Name, Price } from "./styled";
 
 const Picture = Image.extend`
@@ -9,7 +9,7 @@ const Picture = Image.extend`
 `;
 
 export default props => (
-  <Card href={props.href}>
+  <Card to={props.to}>
     <Picture src={props.highRes} alt={props.alt} />
     <Subheading>{props.subheading}</Subheading>
     <Name>{props.name}</Name>

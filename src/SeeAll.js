@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import arrowIcon from "./arrowIcon.svg";
+import { Link as RLink } from "react-router-dom";
 
 const Text = styled.span`
   font-family: "CircularAir-Book", "Arial", sans-serif;
@@ -20,14 +21,14 @@ const Arrow = styled.img`
   margin-right: 6px;
 `;
 
-const Link = styled.a`
-  text-decoration: none;
+const Link = styled(RLink)`
   display: block;
   white-space: nowrap;
+  text-decoration: none;
 `;
 
 const SeeAll = props => (
-  <Link href={props.href}>
+  <Link to={props.to}>
     <Text>See all</Text>
     <Arrow src={arrowIcon} alt="Arrow" />
   </Link>

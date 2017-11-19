@@ -1,20 +1,28 @@
 import React from "react";
-import { PageHeader, Link, Logo, MenuBtn } from "./styled";
-import Search from "./Search";
+import {
+  PageHeader,
+  Logo,
+  MenuBtn,
+  Link,
+  SearchContainer,
+  Input
+} from "./styled";
 import Menu from "./Menu";
 import logo from "./logo.svg";
 
-export default () => {
+export default props => {
   return (
     <PageHeader>
       <div className="container">
         <div className="row between-xs middle-xs">
           <div className="row between-xs middle-xs">
-            <Link href="#">
+            <Link to="/">
               <Logo alt="Logo" src={logo} />
             </Link>
             <MenuBtn />
-            <Search />
+            <SearchContainer>
+              <Input placeholder={props.placeholder} type="text" />
+            </SearchContainer>
           </div>
           <Menu />
         </div>

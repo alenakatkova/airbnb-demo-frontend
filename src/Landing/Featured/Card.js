@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Card, Image } from "../styled";
+import { Card, Image } from "../../styled";
 
 const Text = styled.p`
   margin-top: 8px;
@@ -25,7 +25,7 @@ const Picture = Image.extend`
 `;
 
 export default props => (
-  <Card href={props.href}>
+  <Card to={props.to}>
     <Picture src={props.highRes} alt={props.alt} />
     <Text>{props.text}</Text>
   </Card>

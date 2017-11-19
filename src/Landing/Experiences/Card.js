@@ -1,6 +1,6 @@
 import React from "react";
-import Rating from "../Rating";
-import { Card, Image } from "../styled";
+import Rating from "../../Rating";
+import { Card, Image } from "../../styled";
 import { Text, Price, Stats } from "./styled";
 
 const Picture = Image.extend`
@@ -10,7 +10,7 @@ const Picture = Image.extend`
 `;
 
 export default props => (
-  <Card href={props.href}>
+  <Card to={props.to}>
     <Picture src={props.highRes} alt={props.alt} />
     <Text>
       <Price>{props.price}</Price> {props.text}
