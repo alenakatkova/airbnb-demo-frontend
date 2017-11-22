@@ -3,11 +3,12 @@ import styled from "styled-components";
 
 const Container = styled.div`
   margin: 0;
-  padding: 0;
+  padding: 0 8px;
   text-align: left;
 
   @media screen and (min-width: 768px) {
     text-align: right;
+    padding: 0;
   }
 `;
 

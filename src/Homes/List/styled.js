@@ -10,6 +10,23 @@ export const Main = styled.main`
   }
 `;
 
+export const CardsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  margin: 0 -8px;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 -16px;
+  }
+
+  @media screen and (min-width: 992px) {
+    flex-basis: 66.66666667%;
+    max-width: 66.66666667%;
+  }
+`;
+
 export const FiltersContainer = styled.div`
   border-bottom: 0.5px solid rgba(72, 72, 72, 0.3);
   z-index: 11;
@@ -19,6 +36,17 @@ export const FiltersContainer = styled.div`
   position: fixed;
   left: 0;
   top: 82.5px;
+`;
+
+export const Filters = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 -8px;
+  }
 `;
 
 export const Filter = styled.button`

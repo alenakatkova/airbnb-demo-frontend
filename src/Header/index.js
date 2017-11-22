@@ -1,6 +1,7 @@
 import React from "react";
 import {
   PageHeader,
+  LeftSideContainer,
   Logo,
   MenuBtn,
   Link,
@@ -15,7 +16,7 @@ export default props => {
     <PageHeader>
       <div className="container">
         <div className="row between-xs middle-xs">
-          <div className="row between-xs middle-xs">
+          <LeftSideContainer>
             <Link to="/">
               <Logo alt="Logo" src={logo} />
             </Link>
@@ -23,7 +24,7 @@ export default props => {
             <SearchContainer>
               <Input placeholder={props.placeholder} type="text" />
             </SearchContainer>
-          </div>
+          </LeftSideContainer>
           <Menu />
         </div>
       </div>

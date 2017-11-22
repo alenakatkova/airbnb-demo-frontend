@@ -15,6 +15,20 @@ export const PageHeader = styled.header`
   left: 0;
 `;
 
+export const LeftSideContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
+`;
+
 export const Logo = styled.img`
   height: 31.98px;
   width: 29.77px;

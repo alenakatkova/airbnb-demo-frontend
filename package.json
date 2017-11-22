@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "flexboxgrid2": "^7.0.0-alpha12",
     "google-map-react": "^0.25.0",
     "lodash": "^4.17.4",
     "moment": "^2.19.2",

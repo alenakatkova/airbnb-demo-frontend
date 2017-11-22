@@ -4,7 +4,8 @@ import {
   SectionTitle,
   NextPage,
   CardsContainer,
-  NextContainer
+  NextContainer,
+  TitleContainer
 } from "../../styled";
 import Card from "./Card";
 import chumleyHigh from "./chumley@2x.png";
@@ -18,53 +19,51 @@ const Next = NextPage.extend`top: 70px;`;
 export default () => {
   return (
     <Section>
-      <div className="row between-xs middle-xs nowrap-xs">
+      <TitleContainer>
         <SectionTitle>Popular reservations around the world</SectionTitle>
         <SeeAll to="/" />
-      </div>
+      </TitleContainer>
       <NextContainer>
         <CardsContainer>
-          <div className="row negative-indent-xs nowrap-xs wrap-lg">
-            <div className="col-xs-6 col-md-4 col-lg-3">
-              <Card
-                to="/"
-                highRes={chumleyHigh}
-                alt="Chumley's"
-                subheading="Speakeasy"
-                name="Chumley's"
-                price="About $60 per person"
-              />
-            </div>
-            <div className="col-xs-6 col-md-4 col-lg-3">
-              <Card
-                to="/"
-                highRes={hanjanHigh}
-                alt="Hanjan"
-                subheading="Korean gastropub"
-                name="Hanjan"
-                price="About $50 per person"
-              />
-            </div>
-            <div className="col-xs-6 col-md-4 col-lg-3">
-              <Card
-                to="/"
-                highRes={meatsHigh}
-                alt="Prime Meats"
-                subheading="German American"
-                name="Prime Meats"
-                price="About $55 per person"
-              />
-            </div>
-            <div className="col-xs-6 col-md-4 col-lg-3">
-              <Card
-                to="/"
-                highRes={seapriceHigh}
-                alt="Seaprice"
-                subheading="Fine Seafood"
-                name="Seaprice"
-                price="About $75 per person"
-              />
-            </div>
+          <div className="col-xs-6 col-md-4 col-lg-3">
+            <Card
+              to="/"
+              highRes={chumleyHigh}
+              alt="Chumley's"
+              subheading="Speakeasy"
+              name="Chumley's"
+              price="About $60 per person"
+            />
+          </div>
+          <div className="col-xs-6 col-md-4 col-lg-3">
+            <Card
+              to="/"
+              highRes={hanjanHigh}
+              alt="Hanjan"
+              subheading="Korean gastropub"
+              name="Hanjan"
+              price="About $50 per person"
+            />
+          </div>
+          <div className="col-xs-6 col-md-4 col-lg-3">
+            <Card
+              to="/"
+              highRes={meatsHigh}
+              alt="Prime Meats"
+              subheading="German American"
+              name="Prime Meats"
+              price="About $55 per person"
+            />
+          </div>
+          <div className="col-xs-6 col-md-4 col-lg-3">
+            <Card
+              to="/"
+              highRes={seapriceHigh}
+              alt="Seaprice"
+              subheading="Fine Seafood"
+              name="Seaprice"
+              price="About $75 per person"
+            />
           </div>
         </CardsContainer>
         <Next />
