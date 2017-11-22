@@ -5,21 +5,14 @@ import testPhoto from "../testPicture.png";
 import Paginator from "./Paginator";
 import InteractiveMap from "./InteractiveMap";
 import {
-  FiltersContainer,
-  Filter,
   Disclaimer,
   Main,
   MainBottom,
   MapButton,
-  Filters,
   CardsContainer
 } from "./styled";
-import RoomType from "../Filters/RoomType";
-import Price from "../Filters/Price";
-import Guests from "../Filters/Guests";
-import Dates from "../Filters/Dates";
-import MediaQuery from "react-responsive";
 import Header from "../../Header";
+import Filters from "../Filters";
 
 const Card = styled(CardTemplate)`
   margin-bottom: 26px;
@@ -38,20 +31,7 @@ export default () => {
     <div>
       <Header placeholder="Anywhere · Homes" />
       <Main>
-        <FiltersContainer>
-          <div className="container">
-            <Filters>
-              <Dates />
-              <Guests />
-              <MediaQuery query="(min-width: 992px)">
-                <RoomType />
-                <Price />
-                <Filter>Instant Book</Filter>
-              </MediaQuery>
-              <Filter>More filters</Filter>
-            </Filters>
-          </div>
-        </FiltersContainer>
+        <Filters />
         <div className="container">
           <CardsContainer>
             <div className="col-xs-12 col-md-6 col-lg-6">

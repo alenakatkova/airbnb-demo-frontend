@@ -1,6 +1,41 @@
 import styled from "styled-components";
 import closeIcon from "./closeIcon.svg";
 
+export const FiltersContainer = styled.div`
+  border-bottom: 0.5px solid rgba(72, 72, 72, 0.3);
+  z-index: 11;
+  background: #ffffff;
+  padding: 12px 0;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 82.5px;
+`;
+
+export const Buttons = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 -8px;
+  }
+`;
+
+export const Filter = styled.button`
+  padding: 7px 16px;
+  background: #ffffff;
+  margin-right: 16px;
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "CircularAir-Book", "Arial", sans-serif;
+  color: #383838;
+`;
+
 export const Background = styled.div`
   position: fixed;
   z-index: 0;

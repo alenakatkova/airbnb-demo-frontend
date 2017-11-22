@@ -3,7 +3,6 @@ import styled from "styled-components";
 import entireIcon from "./roomEntire.svg";
 import privateIcon from "./roomPrivate.svg";
 import sharedIcon from "./roomShared.svg";
-import Dropdown from "./Dropdown";
 
 const Row = styled.div`
   display: flex;
@@ -55,63 +54,47 @@ const Icon = styled.img`
   height: 32px;
 `;
 
-export default class RoomType extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isSelected: false
-    };
-  }
-
-  onToggle = isSelected => {
-    this.setState({ isSelected: !this.state.isSelected });
-  };
-
-  render() {
-    return (
-      <Dropdown label="Room Type" onToggle={this.onToggle}>
-        <Row>
-          <Label>
-            <Checkbox type="checkbox" name="room-type" value="Entire home" />
-            <FakeCheckbox />
-            <MainText>Entire home</MainText>
-            <br />
-            <Description>Have a place to yourself</Description>
-          </Label>
-          <IconContainer>
-            <Icon src={entireIcon} alt="Entire home" />
-          </IconContainer>
-        </Row>
-        <Row>
-          <Label>
-            <Checkbox type="checkbox" name="room-type" value="Private room" />
-            <FakeCheckbox />
-            <MainText>Private room</MainText>
-            <br />
-            <Description>
-              Have your own room and share some common spaces
-            </Description>
-          </Label>
-          <IconContainer>
-            <Icon src={privateIcon} alt="Entire home" />
-          </IconContainer>
-        </Row>
-        <Row>
-          <Label>
-            <Checkbox type="checkbox" name="room-type" value="Shared room" />
-            <FakeCheckbox />
-            <MainText>Shared room</MainText>
-            <br />
-            <Description>
-              Stay in a shared space, like a<br />common room
-            </Description>
-          </Label>
-          <IconContainer>
-            <Icon src={sharedIcon} alt="Entire home" />
-          </IconContainer>
-        </Row>
-      </Dropdown>
-    );
-  }
-}
+export default () => (
+  <div>
+    <Row>
+      <Label>
+        <Checkbox type="checkbox" name="room-type" value="Entire home" />
+        <FakeCheckbox />
+        <MainText>Entire home</MainText>
+        <br />
+        <Description>Have a place to yourself</Description>
+      </Label>
+      <IconContainer>
+        <Icon src={entireIcon} alt="Entire home" />
+      </IconContainer>
+    </Row>
+    <Row>
+      <Label>
+        <Checkbox type="checkbox" name="room-type" value="Private room" />
+        <FakeCheckbox />
+        <MainText>Private room</MainText>
+        <br />
+        <Description>
+          Have your own room and share some common spaces
+        </Description>
+      </Label>
+      <IconContainer>
+        <Icon src={privateIcon} alt="Entire home" />
+      </IconContainer>
+    </Row>
+    <Row>
+      <Label>
+        <Checkbox type="checkbox" name="room-type" value="Shared room" />
+        <FakeCheckbox />
+        <MainText>Shared room</MainText>
+        <br />
+        <Description>
+          Stay in a shared space, like a<br />common room
+        </Description>
+      </Label>
+      <IconContainer>
+        <Icon src={sharedIcon} alt="Entire home" />
+      </IconContainer>
+    </Row>
+  </div>
+);

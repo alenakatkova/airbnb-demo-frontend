@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Dropdown from "./Dropdown";
 
 const Range = styled.p`
   margin: 0;
@@ -19,25 +18,9 @@ const Average = styled.p`
   color: #383838;
 `;
 
-export default class Price extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isSelected: false
-    };
-  }
-
-  onToggle = isSelected => {
-    this.setState({ isSelected: !this.state.isSelected });
-  };
-
-  render() {
-    return (
-      <Dropdown label="Price" onToggle={this.onToggle}>
-        <Range>$10 — $1000+</Range>
-        <Average>The average nightly price is $75.</Average>
-      </Dropdown>
-    );
-  }
-}
+export default () => (
+  <div>
+    <Range>$10 — $1000+</Range>
+    <Average>The average nightly price is $75.</Average>
+  </div>
+);

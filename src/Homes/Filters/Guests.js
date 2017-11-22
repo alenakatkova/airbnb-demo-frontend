@@ -6,55 +6,38 @@ import {
   OptionTable
 } from "./styled";
 import Counter from "./Counter";
-import Dropdown from "./Dropdown";
 
-export default class Guests extends React.Component {
-  constructor(props) {
-    super(props);
+export default () => (
+  <div>
+    <OptionTable>
+      <OptionCell>
+        <OptionName>Adults</OptionName>
+      </OptionCell>
+      <OptionCell>
+        <Counter />
+      </OptionCell>
+    </OptionTable>
 
-    this.state = {
-      isSelected: false
-    };
-  }
+    <OptionTable>
+      <OptionCell>
+        <OptionName>Children</OptionName>
+        <br />
+        <OptionDescription>Ages 2 — 12</OptionDescription>
+      </OptionCell>
+      <OptionCell>
+        <Counter />
+      </OptionCell>
+    </OptionTable>
 
-  onToggle = isSelected => {
-    this.setState({ isSelected: !this.state.isSelected });
-  };
-
-  render() {
-    return (
-      <Dropdown label="Guests" onToggle={this.onToggle} xsHeading="Guests">
-        <OptionTable>
-          <OptionCell>
-            <OptionName>Adults</OptionName>
-          </OptionCell>
-          <OptionCell>
-            <Counter />
-          </OptionCell>
-        </OptionTable>
-
-        <OptionTable>
-          <OptionCell>
-            <OptionName>Children</OptionName>
-            <br />
-            <OptionDescription>Ages 2 — 12</OptionDescription>
-          </OptionCell>
-          <OptionCell>
-            <Counter />
-          </OptionCell>
-        </OptionTable>
-
-        <OptionTable>
-          <OptionCell>
-            <OptionName>Infants</OptionName>
-            <br />
-            <OptionDescription>Under 2</OptionDescription>
-          </OptionCell>
-          <OptionCell>
-            <Counter />
-          </OptionCell>
-        </OptionTable>
-      </Dropdown>
-    );
-  }
-}
+    <OptionTable>
+      <OptionCell>
+        <OptionName>Infants</OptionName>
+        <br />
+        <OptionDescription>Under 2</OptionDescription>
+      </OptionCell>
+      <OptionCell>
+        <Counter />
+      </OptionCell>
+    </OptionTable>
+  </div>
+);
