@@ -36,7 +36,7 @@ export default () => {
           <CardsContainer>
             <div className="col-xs-12 col-md-6 col-lg-6">
               <Card
-                to="/"
+                to="homes/cabana"
                 highRes={testPhoto}
                 price="$82"
                 name="La Salentina, see, nature & relax"
@@ -48,7 +48,7 @@ export default () => {
 
             <div className="col-xs-12 col-md-6 col-lg-6">
               <Card
-                to="/"
+                to="homes/cabana"
                 highRes={testPhoto}
                 price="$82"
                 name="Your private 3 bedr. riad and exclusive bathroom"
@@ -60,7 +60,7 @@ export default () => {
 
             <div className="col-xs-12 col-md-6 col-lg-6">
               <Card
-                to="/"
+                to="homes/cabana"
                 highRes={testPhoto}
                 price="$200"
                 name="Dreamy Tropical Tree House"
@@ -72,7 +72,7 @@ export default () => {
 
             <div className="col-xs-12 col-md-6 col-lg-6">
               <Card
-                to="/"
+                to="homes/cabana"
                 highRes={testPhoto}
                 price="$110"
                 name="Best location old town luxury loft"
@@ -84,7 +84,7 @@ export default () => {
 
             <div className="col-xs-12 col-md-6 col-lg-6">
               <Card
-                to="/"
+                to="homes/cabana"
                 highRes={testPhoto}
                 price="$83"
                 name="Lussuoso. Vista incantevole."
@@ -96,7 +96,7 @@ export default () => {
 
             <div className="col-xs-12 col-md-6 col-lg-6">
               <Card
-                to="/"
+                to="homes/cabana"
                 highRes={testPhoto}
                 price="$72"
                 name="In the historical center of Lecce"
