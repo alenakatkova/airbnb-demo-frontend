@@ -5,6 +5,7 @@ import { Main } from "./styled";
 import Photos from "./Photos";
 import Nav from "./Nav";
 import Overview from "./Overview";
+import Reviews from "./Reviews";
 
 export default () => {
   return (
@@ -17,6 +18,7 @@ export default () => {
             <div className="col-xs-12 col-lg-8">
               <Nav />
               <Overview />
+              <Reviews />
             </div>
           </div>
         </div>

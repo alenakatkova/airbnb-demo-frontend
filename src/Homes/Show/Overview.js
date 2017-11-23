@@ -19,7 +19,6 @@ import cancellation from "./cancellation.svg";
 
 const Section = styled.section`
   position: relative;
-
   padding-top: 16px;
 
   @media screen and (min-width: 768px) {
@@ -304,19 +303,18 @@ const CancelIcon = styled.img`
 export default () => {
   return (
     <Section id="overview">
+      <PhotoContainer>
+        <Photo src={mdHostPhoto} alt="Host photo" />
+        <Medal src={mdMedal} alt="Medal" />
+        <Md>
+          <Name>
+            Yudi &<br />Victoria
+          </Name>
+        </Md>
+      </PhotoContainer>
       <Title>Romantic Cabana with view</Title>
       <Part>
         <ShortDescription>Entire cabin · Armenia</ShortDescription>
-        <PhotoContainer>
-          <Photo src={mdHostPhoto} alt="Host photo" />
-          <Medal src={mdMedal} alt="Medal" />
-          <Md>
-            <Name>
-              Yudi &<br />Victoria
-            </Name>
-          </Md>
-        </PhotoContainer>
-
         <Details>
           <Detail>
             <DetailIcon src={guestIcon} alt="Beds" />2 guests
