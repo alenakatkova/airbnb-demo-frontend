@@ -3,7 +3,7 @@ import styled from "styled-components";
 import CardTemplate from "../Card";
 import testPhoto from "../testPicture.png";
 import Paginator from "./Paginator";
-import InteractiveMap from "./InteractiveMap";
+import InteractiveMap from "../InteractiveMap";
 import {
   Disclaimer,
   Main,
@@ -23,6 +23,23 @@ const Card = styled(CardTemplate)`
 
   @media screen and (min-width: 986px) {
     margin-bottom: 40px;
+  }
+`;
+
+const MapContainer = styled.div`
+  display: none;
+
+  @media screen and (min-width: 992px) {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 139px;
+    bottom: 0;
+    left: calc(50% + 992px * 0.17);
+  }
+
+  @media screen and (min-width: 1200px) {
+    left: calc(50% + 1200px * 0.17);
   }
 `;
 
@@ -116,7 +133,9 @@ export default () => {
           </CardsContainer>
         </div>
         <MapButton />
-        <InteractiveMap center={{ lat: -34.397, lng: 150.644 }} zoom={8} />
+        <MapContainer>
+          <InteractiveMap center={{ lat: -34.397, lng: 150.644 }} zoom={8} />
+        </MapContainer>
       </Main>
     </div>
   );

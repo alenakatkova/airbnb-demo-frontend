@@ -7,7 +7,9 @@ import Nav from "./Nav";
 import Overview from "./Overview";
 import Reviews from "./Reviews";
 import Host from "./Host";
-import Neighbourghood from "./Neighbourghood";
+import Neighbourhood from "./Neighbourhood";
+import HomeMap from "./HomeMap";
+import Similar from "./Similar";
 
 export default () => {
   return (
@@ -22,9 +24,11 @@ export default () => {
               <Overview />
               <Reviews />
               <Host />
-              <Neighbourghood />
+              <Neighbourhood />
             </div>
           </div>
+          <HomeMap />
+          <Similar />
         </div>
       </Main>
       <Footer />
