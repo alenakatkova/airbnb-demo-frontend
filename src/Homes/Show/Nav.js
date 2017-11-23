@@ -6,10 +6,10 @@ const Nav = styled.nav`
   padding: 11px 0;
 `;
 
-const Link = styled.button`
+const Link = styled.a`
   display: inline-block;
-  border: none;
-  background: none;
+  margin: 0;
+  text-decoration: none;
   padding: 0;
   font-family: "CircularAir-Book", "Arial", sans-serif;
   line-height: 14px;

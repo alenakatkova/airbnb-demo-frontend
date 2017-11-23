@@ -4,6 +4,7 @@ import Footer from "../../Landing/Footer";
 import { Main } from "./styled";
 import Photos from "./Photos";
 import Nav from "./Nav";
+import Overview from "./Overview";
 
 export default () => {
   return (
@@ -12,7 +13,12 @@ export default () => {
       <Main>
         <Photos />
         <div className="container">
-          <Nav />
+          <div className="row">
+            <div className="col-xs-12 col-lg-8">
+              <Nav />
+              <Overview />
+            </div>
+          </div>
         </div>
       </Main>
       <Footer />
