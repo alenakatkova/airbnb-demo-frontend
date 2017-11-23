@@ -46,6 +46,17 @@ const Title = styled.h2`
   }
 `;
 
+const ReadMore = styled.button`
+  font-family: "CircularAir-Light", "Arial Light", sans-serif;
+  line-height: 19px;
+  font-size: 16px;
+  color: #0f7276;
+  border: none;
+  background: none;
+  padding: 0;
+  display: inline-block;
+`;
+
 const ShortDescription = styled.span`
   display: inline-block;
   font-family: "CircularAir-Book", "Arial", sans-serif;
@@ -272,17 +283,6 @@ const Hr = styled.hr`
   background: #767676;
   opacity: 0.2;
   margin: 20px 0;
-`;
-
-const ReadMore = styled.button`
-  font-family: "CircularAir-Light", "Arial Light", sans-serif;
-  line-height: 19px;
-  font-size: 16px;
-  color: #0f7276;
-  border: none;
-  background: none;
-  padding: none;
-  display: inline-block;
 `;
 
 const CancelIcon = styled.img`

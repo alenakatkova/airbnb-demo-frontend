@@ -5,7 +5,7 @@ import { Main } from "./styled";
 import Photos from "./Photos";
 import Nav from "./Nav";
 import Overview from "./Overview";
-import Reviews from "./Reviews";
+import Reviews from "./Review";
 
 export default () => {
   return (
