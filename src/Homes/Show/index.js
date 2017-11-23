@@ -5,7 +5,9 @@ import { Main } from "./styled";
 import Photos from "./Photos";
 import Nav from "./Nav";
 import Overview from "./Overview";
-import Reviews from "./Review";
+import Reviews from "./Reviews";
+import Host from "./Host";
+import Neighbourghood from "./Neighbourghood";
 
 export default () => {
   return (
@@ -19,6 +21,8 @@ export default () => {
               <Nav />
               <Overview />
               <Reviews />
+              <Host />
+              <Neighbourghood />
             </div>
           </div>
         </div>

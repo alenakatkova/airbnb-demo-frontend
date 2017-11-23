@@ -5,6 +5,7 @@ import searchIcon from "./searchIcon.svg";
 import Review from "./Review";
 import marlee from "./marlee.png";
 import michelle from "./michelle.png";
+import Paginator from "./Paginator";
 
 const Section = styled.section`
   position: relative;
@@ -159,6 +160,7 @@ export default () => {
         with our little Spanish. Victoria was a lovely host and gave us so…
         <ReadMore>Read more</ReadMore>
       </Review>
+      <Paginator />
     </Section>
   );
 };
