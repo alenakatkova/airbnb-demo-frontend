@@ -20,6 +20,11 @@ export default class Filters extends React.Component {
     dates: {
       startDate: null,
       endDate: null
+    },
+    guests: {
+      adults: 1,
+      children: 0,
+      infants: 0
     }
   };
 
@@ -34,8 +39,7 @@ export default class Filters extends React.Component {
   };
 
   onApplyClick = (key, closeFilter) => {
-    //здесь должна быть функция фильтрации карточек//
-    this.setState({ dates: this.state.selectedFilterData }, closeFilter());
+    this.setState({ [key]: this.state.selectedFilterData }, closeFilter());
   };
 
   onCancelClick = closeFilter => {
@@ -54,6 +58,7 @@ export default class Filters extends React.Component {
                 xsHeading="Room type"
                 onToggle={this.onFilterToggle}
                 apply={this.onApplyClick}
+                cancel={this.onCancelClick}
               >
                 <RoomType />
               </Dropdown>
@@ -63,6 +68,7 @@ export default class Filters extends React.Component {
                 xsHeading="Price"
                 onToggle={this.onFilterToggle}
                 apply={this.onApplyClick}
+                cancel={this.onCancelClick}
               >
                 <Price />
               </Dropdown>
@@ -89,8 +95,14 @@ export default class Filters extends React.Component {
               xsHeading="Guests"
               onToggle={this.onFilterToggle}
               apply={this.onApplyClick}
+              cancel={this.onCancelClick}
             >
-              <Guests />
+              <Guests
+                adults={this.state.guests.adults}
+                children={this.state.guests.children}
+                infants={this.state.guests.infants}
+                handlerFromParent={this.handleData}
+              />
             </Dropdown>
           </Buttons>
         </div>
