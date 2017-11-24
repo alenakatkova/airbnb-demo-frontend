@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Rheostat from "rheostat";
+import "./slider.css";
 
 const Range = styled.p`
   margin: 0;
@@ -21,6 +23,7 @@ const Average = styled.p`
 export default () => (
   <div>
     <Range>$10 — $1000+</Range>
-    <Average>The average nightly price is $75.</Average>
+    <Rheostat min={1} max={100} values={[1, 100]} />
+    <Average>The average nightly price is !!!$75.</Average>
   </div>
 );

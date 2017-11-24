@@ -40,18 +40,21 @@ const Arrow = styled.img`
 `;
 
 export default class Dates extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    focusedInput: this.props.autoFocusEndDate ? "endDate" : "startDate",
+    startDate: this.props.startDate,
+    endDate: this.props.endDate
+  };
 
-    this.state = {
-      focusedInput: props.autoFocusEndDate ? "endDate" : "startDate",
-      startDate: props.initialStartDate,
-      endDate: props.initialEndDate
-    };
-  }
+  onDateChange = ({ startDate, endDate }) => {
+    this.setState(
+      { startDate: startDate, endDate: endDate },
+      this.passDatesToParent
+    );
+  };
 
-  onDatesChange = ({ startDate, endDate }) => {
-    this.setState({ startDate, endDate });
+  passDatesToParent = () => {
+    this.props.handlerFromParent(this.state);
   };
 
   onFocusChange = focusedInput => {
@@ -61,8 +64,7 @@ export default class Dates extends React.Component {
   };
 
   render() {
-    const { focusedInput, startDate, endDate } = this.state;
-
+    const { focusedInput } = this.state;
     return (
       <div>
         <MediaQuery query="(max-width: 767px)">
@@ -72,11 +74,11 @@ export default class Dates extends React.Component {
             <DateInRange>Check-out</DateInRange>
           </DateRange>
           <DayPickerRangeController
-            onDatesChange={this.onDatesChange}
+            onDatesChange={this.onDateChange}
             onFocusChange={this.onFocusChange}
             focusedInput={focusedInput}
-            startDate={startDate}
-            endDate={endDate}
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
             orientation="vertical"
             numberOfMonths={1}
             minimumNights={1}
@@ -87,11 +89,11 @@ export default class Dates extends React.Component {
 
         <MediaQuery minWidth={768} maxWidth={985}>
           <DayPickerRangeController
-            onDatesChange={this.onDatesChange}
+            onDatesChange={this.onDateChange}
             onFocusChange={this.onFocusChange}
             focusedInput={focusedInput}
-            startDate={startDate}
-            endDate={endDate}
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
             orientation="horizontal"
             numberOfMonths={1}
             minimumNights={1}
@@ -102,11 +104,11 @@ export default class Dates extends React.Component {
 
         <MediaQuery query="(min-width: 992px)">
           <DayPickerRangeController
-            onDatesChange={this.onDatesChange}
+            onDatesChange={this.onDateChange}
             onFocusChange={this.onFocusChange}
             focusedInput={focusedInput}
-            startDate={startDate}
-            endDate={endDate}
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
             orientation="horizontal"
             numberOfMonths={2}
             minimumNights={1}

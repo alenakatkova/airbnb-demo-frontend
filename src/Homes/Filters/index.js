@@ -15,11 +15,31 @@ function getLabel(filterName) {
 
 export default class Filters extends React.Component {
   state = {
-    selectedFilter: null
+    selectedFilter: null,
+    selectedFilterData: {},
+    dates: {
+      startDate: null,
+      endDate: null
+    }
+  };
+
+  handleData = data => {
+    this.setState({
+      selectedFilterData: data
+    });
   };
 
   onFilterToggle = (key, isOpen) => {
     this.setState({ selectedFilter: isOpen ? key : null });
+  };
+
+  onApplyClick = (key, closeFilter) => {
+    //здесь должна быть функция фильтрации карточек//
+    this.setState({ dates: this.state.selectedFilterData }, closeFilter());
+  };
+
+  onCancelClick = closeFilter => {
+    closeFilter();
   };
 
   render() {
@@ -33,6 +53,7 @@ export default class Filters extends React.Component {
                 label="Room type"
                 xsHeading="Room type"
                 onToggle={this.onFilterToggle}
+                apply={this.onApplyClick}
               >
                 <RoomType />
               </Dropdown>
@@ -41,6 +62,7 @@ export default class Filters extends React.Component {
                 label="Price"
                 xsHeading="Price"
                 onToggle={this.onFilterToggle}
+                apply={this.onApplyClick}
               >
                 <Price />
               </Dropdown>
@@ -51,8 +73,14 @@ export default class Filters extends React.Component {
               label={getLabel(this.state.selectedFilter) || "Dates"}
               xsHeading="When"
               onToggle={this.onFilterToggle}
+              apply={this.onApplyClick}
+              cancel={this.onCancelClick}
             >
-              <Dates />
+              <Dates
+                startDate={this.state.dates.startDate}
+                endDate={this.state.dates.endDate}
+                handlerFromParent={this.handleData}
+              />
             </Dropdown>
 
             <Dropdown
@@ -60,6 +88,7 @@ export default class Filters extends React.Component {
               label="Guests"
               xsHeading="Guests"
               onToggle={this.onFilterToggle}
+              apply={this.onApplyClick}
             >
               <Guests />
             </Dropdown>

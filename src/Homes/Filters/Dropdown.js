@@ -49,6 +49,20 @@ export default class Dropdown extends React.Component {
     document.removeEventListener("keydown", this.onEscPress, true);
   }
 
+  componentWillReceiveProps() {}
+
+  closeFilter = () => {
+    this.onFilterClick(false);
+  };
+
+  onApplyButtonClick = () => {
+    this.props.apply(this.props.id, this.closeFilter);
+  };
+
+  onCancelButtonClick = () => {
+    this.props.cancel(this.closeFilter);
+  };
+
   render() {
     return (
       <Container>
@@ -75,10 +89,12 @@ export default class Dropdown extends React.Component {
 
               <Md>
                 <ButtonsContainer>
-                  <CancelButton onClick={this.onFilterClick}>
+                  <CancelButton onClick={this.onCancelButtonClick}>
                     Cancel
                   </CancelButton>
-                  <ApplyButton>Apply</ApplyButton>
+                  <ApplyButton onClick={this.onApplyButtonClick}>
+                    Apply
+                  </ApplyButton>
                 </ButtonsContainer>
               </Md>
             </Content>

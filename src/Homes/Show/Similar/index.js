@@ -38,7 +38,7 @@ export default () => {
           <div className="col-xs-8 col-md-5 col-lg-4">
             <Card
               to="/"
-              highRes={photo1}
+              highRes={photo2}
               price="$51 per night"
               title="Full apartment in the best area of the city"
               label="Entire house · 4 beds"
@@ -50,7 +50,7 @@ export default () => {
           <div className="col-xs-8 col-md-5 col-lg-4">
             <Card
               to="/"
-              highRes={photo1}
+              highRes={photo3}
               price="$45 per night"
               title="Beautiful Apartament North Armenia Quindio"
               label="Entire house · 4 beds"
