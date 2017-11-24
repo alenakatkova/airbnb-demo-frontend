@@ -25,6 +25,11 @@ export default class Filters extends React.Component {
       adults: 1,
       children: 0,
       infants: 0
+    },
+    room: {
+      entire: false,
+      private: false,
+      shared: false
     }
   };
 
@@ -60,7 +65,12 @@ export default class Filters extends React.Component {
                 apply={this.onApplyClick}
                 cancel={this.onCancelClick}
               >
-                <RoomType />
+                <RoomType
+                  entire={this.state.room.entire}
+                  private={this.state.room.private}
+                  shared={this.state.room.shared}
+                  handlerFromParent={this.handleData}
+                />
               </Dropdown>
               <Dropdown
                 id="price"

@@ -49,8 +49,6 @@ export default class Dropdown extends React.Component {
     document.removeEventListener("keydown", this.onEscPress, true);
   }
 
-  componentWillReceiveProps() {}
-
   closeFilter = () => {
     this.onFilterClick(false);
   };
