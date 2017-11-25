@@ -7,15 +7,13 @@ import {
   Container,
   ApplyButton,
   CancelButton,
-  ButtonsContainer,
   Heading,
-  ResetButton,
-  InnerContainer
+  ResetButton
 } from "./styled";
 
 const Content = styled.div`
   position: fixed;
-  top: 111px;
+  top: 138px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -26,6 +24,28 @@ const Content = styled.div`
 
   @media screen and (min-width: 992px) {
     width: calc(50% + 992px * 0.17);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc(50% + 1200px * 0.17);
+  }
+`;
+
+export const ButtonsContainer = styled.div`
+  position: absolute;
+  z-index: 15;
+  background: #ffffff;
+  bottom: 138px;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  border-top: 1px solid #d5d5d5;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 50px;
   }
 `;
 
@@ -99,8 +119,14 @@ export default class Dropdown extends React.Component {
                 </TopContainer>
               </OnlyXs>
 
-              <InnerContainer>{this.props.children}</InnerContainer>
-
+              {this.props.children}
+              <OnlyXs>
+                <ButtonsContainer>
+                  <ApplyButton onClick={this.onApplyButtonClick}>
+                    See homes
+                  </ApplyButton>
+                </ButtonsContainer>
+              </OnlyXs>
               <Md>
                 <ButtonsContainer>
                   <CancelButton onClick={this.onCancelButtonClick}>

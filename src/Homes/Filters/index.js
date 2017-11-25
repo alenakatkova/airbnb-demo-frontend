@@ -148,6 +148,7 @@ export default class Filters extends React.Component {
               onToggle={this.onFilterToggle}
               apply={this.onApplyClick}
               cancel={this.onCancelClick}
+              showApplyOnXs
             >
               <Guests
                 adults={this.state.guests.adults}
@@ -165,7 +166,16 @@ export default class Filters extends React.Component {
               apply={this.onApplyClick}
               cancel={this.onCancelClick}
             >
-              <More handlerFromParent={this.handleData} />
+              <More
+                handlerFromParent={this.handleData}
+                instant={this.state.instant.checked}
+                min={this.state.price.min}
+                max={this.state.price.max}
+                entire={this.state.room.entire}
+                private={this.state.room.private}
+                shared={this.state.room.shared}
+                values={this.state.price.values}
+              />
             </MoreFiltersDropdown>
           </Buttons>
         </div>

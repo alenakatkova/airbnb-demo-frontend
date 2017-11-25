@@ -6,30 +6,32 @@ import RoomType from "./RoomType";
 
 export const Container = styled.div`
   position: absolute;
-  top: 48px;
+  top: 0;
   left: 0;
-  bottom: 0;
+  bottom: 202px;
   width: 100%;
   height: auto;
   overflow-y: scroll;
   box-sizing: border-box;
-  padding-top: 40px;
+  padding-top: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
 `;
 
 export default class More extends React.Component {
   state = {
     room: {
-      entire: false,
-      private: false,
-      shared: false
+      entire: this.props.entire,
+      private: this.props.private,
+      shared: this.props.shared
     },
     price: {
-      min: 10,
-      max: 1000,
-      values: [10, 1000]
+      min: this.props.min,
+      max: this.props.max,
+      values: this.props.values
     },
     instant: {
-      checked: false
+      checked: this.props.instant
     }
   };
 

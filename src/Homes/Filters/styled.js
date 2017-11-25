@@ -75,6 +75,7 @@ export const ApplyButton = styled.button`
   border-radius: 4px;
 
   @media screen and (min-width: 768px) {
+    position: static;
     font-family: "CircularAir-Book", "Arial", sans-serif;
     background: none;
     padding: 0 12px;
@@ -197,9 +198,9 @@ export const Container = styled.div`
 export const InnerContainer = styled.div`
   position: absolute;
   top: 48px;
-  left: 0;
+  left: 8px;
   bottom: 0;
-  width: 100%;
+  right: 8px;
   height: auto;
   overflow-y: scroll;
   box-sizing: border-box;

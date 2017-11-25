@@ -10,9 +10,7 @@ import {
   ButtonsContainer,
   Heading,
   ResetButton,
-  InnerContainer,
-  SmallFilterContent,
-  SmallFilterInnerContainer
+  InnerContainer
 } from "./styled";
 
 export default class Dropdown extends React.Component {
@@ -97,6 +95,16 @@ export default class Dropdown extends React.Component {
                   </ApplyButton>
                 </ButtonsContainer>
               </Md>
+
+              {this.props.showApplyOnXs && (
+                <OnlyXs>
+                  <ButtonsContainer>
+                    <ApplyButton onClick={this.onApplyButtonClick}>
+                      Save
+                    </ApplyButton>
+                  </ButtonsContainer>
+                </OnlyXs>
+              )}
             </Content>
           )}
         </div>
