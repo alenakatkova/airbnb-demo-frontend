@@ -1,19 +1,33 @@
 import React from "react";
+import styled from "styled-components";
 import { OnlyXs, Md } from "../../mediaQueries";
 import {
   Button,
   TopContainer,
-  Content,
   Container,
   ApplyButton,
   CancelButton,
   ButtonsContainer,
   Heading,
   ResetButton,
-  InnerContainer,
-  SmallFilterContent,
-  SmallFilterInnerContainer
+  InnerContainer
 } from "./styled";
+
+const Content = styled.div`
+  position: fixed;
+  top: 111px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 8px;
+
+  @media screen and (min-width: 992px) {
+    width: calc(50% + 992px * 0.17);
+  }
+`;
 
 export default class Dropdown extends React.Component {
   state = {

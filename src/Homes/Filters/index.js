@@ -7,6 +7,7 @@ import Dates from "./Dates";
 import InstantBook from "./InstantBook";
 import More from "./More";
 import Dropdown from "./Dropdown";
+import MoreFiltersDropdown from "./MoreFiltersDropdow";
 import { Lg } from "../../mediaQueries";
 
 function getLabel(filterName) {
@@ -156,7 +157,7 @@ export default class Filters extends React.Component {
               />
             </Dropdown>
 
-            <Dropdown
+            <MoreFiltersDropdown
               id="more"
               label="More filters"
               xsHeading="More filters"
@@ -165,7 +166,7 @@ export default class Filters extends React.Component {
               cancel={this.onCancelClick}
             >
               <More handlerFromParent={this.handleData} />
-            </Dropdown>
+            </MoreFiltersDropdown>
           </Buttons>
         </div>
       </FiltersContainer>

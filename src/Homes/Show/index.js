@@ -10,6 +10,9 @@ import Host from "./Host";
 import Neighbourhood from "./Neighbourhood";
 import HomeMap from "./HomeMap";
 import Similar from "./Similar";
+import Explore from "./Explore";
+import LgRequest from "./Request";
+import { Lg } from "../../mediaQueries";
 
 export default () => {
   return (
@@ -26,9 +29,15 @@ export default () => {
               <Host />
               <Neighbourhood />
             </div>
+            <Lg>
+              <div className="col-lg-4">
+                <LgRequest />
+              </div>
+            </Lg>
           </div>
           <HomeMap />
           <Similar />
+          <Explore />
         </div>
       </Main>
       <Footer />
