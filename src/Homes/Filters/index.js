@@ -41,6 +41,26 @@ export default class Filters extends React.Component {
     },
     instant: {
       checked: false
+    },
+    superhost: {
+      checked: false
+    },
+    amenities: {
+      heating: false,
+      kitchen: false,
+      tv: false,
+      wireless: false
+    },
+    facilities: {
+      elevator: false,
+      parking: false,
+      pool: false,
+      wheelchair: false
+    },
+    roomsAndBeds: {
+      bedrooms: 0,
+      beds: 0,
+      bathrooms: 0
     }
   };
 
@@ -60,7 +80,11 @@ export default class Filters extends React.Component {
         {
           price: this.state.selectedFilterData.price,
           instant: this.state.selectedFilterData.instant,
-          room: this.state.selectedFilterData.room
+          superhost: this.state.selectedFilterData.superhost,
+          room: this.state.selectedFilterData.room,
+          amenities: this.state.selectedFilterData.amenities,
+          facilities: this.state.selectedFilterData.facilities,
+          roomsAndBeds: this.state.selectedFilterData.roomsAndBeds
         },
         closeFilter()
       );
@@ -169,12 +193,24 @@ export default class Filters extends React.Component {
               <More
                 handlerFromParent={this.handleData}
                 instant={this.state.instant.checked}
+                superhost={this.state.superhost.checked}
                 min={this.state.price.min}
                 max={this.state.price.max}
                 entire={this.state.room.entire}
                 private={this.state.room.private}
                 shared={this.state.room.shared}
                 values={this.state.price.values}
+                heating={this.state.amenities.heating}
+                kitchen={this.state.amenities.kitchen}
+                tv={this.state.amenities.tv}
+                wireless={this.state.amenities.wireless}
+                parking={this.state.facilities.parking}
+                wheelchair={this.state.facilities.wheelchair}
+                pool={this.state.facilities.pool}
+                elevator={this.state.facilities.elevator}
+                bedrooms={this.state.roomsAndBeds.bedrooms}
+                bathrooms={this.state.roomsAndBeds.bathrooms}
+                beds={this.state.roomsAndBeds.beds}
               />
             </MoreFiltersDropdown>
           </Buttons>

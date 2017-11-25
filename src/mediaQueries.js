@@ -7,6 +7,8 @@ export const OnlyMd = props => (
   <MediaQuery {...props} minWidth={768} maxWidth={991} />
 );
 
+export const OnlyXsAndMd = props => <MediaQuery {...props} maxWidth={991} />;
+
 export const Md = props => <MediaQuery {...props} minWidth={768} />;
 
 export const Lg = props => <MediaQuery {...props} minWidth={992} />;

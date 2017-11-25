@@ -69,7 +69,10 @@ export default class Counter extends React.Component {
           </Button>
         )}
 
-        <Value>{this.props.value}</Value>
+        <Value>
+          {this.props.value}
+          {this.props.plus}
+        </Value>
         <Button onClick={this.onPlusClick}>
           <ButtonIcon src={plusIcon} alt="Plus" />
         </Button>

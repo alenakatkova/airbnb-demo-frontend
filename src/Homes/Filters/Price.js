@@ -4,9 +4,6 @@ import Rheostat from "rheostat";
 import "./slider.css";
 import priceStats from "./price.svg";
 
-const Container = styled.div`
-  position: relative;
-`;
 const Range = styled.p`
   margin: 0;
   font-family: "CircularAir-Light", "Arial Bold", sans-serif;
@@ -27,8 +24,15 @@ const Average = styled.p`
 const Stats = styled.img`
   position: absolute;
   z-index: 0;
-  top: 73px;
+  top: -73px;
   left: 37px;
+`;
+
+const RheostatContainer = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  position: relative;
 `;
 
 export default class Price extends React.Component {
@@ -53,19 +57,22 @@ export default class Price extends React.Component {
 
   render() {
     return (
-      <Container>
+      <div>
         <Range>
           ${this.state.values[0]} — ${this.state.values[1]}+
         </Range>
         <Average>The average nightly price is $75.</Average>
-        <Stats src={priceStats} alt="Price stats" />
-        <Rheostat
-          min={this.props.min}
-          max={this.props.max}
-          onValuesUpdated={this.onValuesChange}
-          values={this.props.values}
-        />
-      </Container>
+
+        <RheostatContainer>
+          <Stats src={priceStats} alt="Price stats" />
+          <Rheostat
+            min={this.props.min}
+            max={this.props.max}
+            onValuesUpdated={this.onValuesChange}
+            values={this.props.values}
+          />
+        </RheostatContainer>
+      </div>
     );
   }
 }

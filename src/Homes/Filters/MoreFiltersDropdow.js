@@ -13,7 +13,7 @@ import {
 
 const Content = styled.div`
   position: fixed;
-  top: 138px;
+  top: 48px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -21,6 +21,10 @@ const Content = styled.div`
   box-sizing: border-box;
   background: #ffffff;
   padding: 8px;
+
+  @media screen and (min-width: 768px) {
+    top: 138px;
+  }
 
   @media screen and (min-width: 992px) {
     width: calc(50% + 992px * 0.17);
@@ -35,7 +39,7 @@ export const ButtonsContainer = styled.div`
   position: absolute;
   z-index: 15;
   background: #ffffff;
-  bottom: 138px;
+  bottom: 48px;
   left: 0;
   width: 100%;
   padding: 8px;
@@ -46,6 +50,15 @@ export const ButtonsContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     padding-top: 50px;
+    bottom: 138px;
+  }
+
+  @media screen and (min-width: 992px) {
+    padding-left: calc(50% - 992px * 0.32);
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-left: calc(50% - 1200px * 0.32);
   }
 `;
 
