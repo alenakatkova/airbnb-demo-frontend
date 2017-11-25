@@ -1,6 +1,20 @@
 import React from "react";
-import { OptionCell, OptionName, OptionTable } from "./styled";
+import styled from "styled-components";
+import { OptionCell, OptionTable } from "./styled";
 import Counter from "./Counter";
+
+const OptionName = styled.span`
+  display: inline-block;
+  font-family: "CircularAir-Light", "Arial Light", sans-serif;
+  line-height: 19px;
+  font-size: 16px;
+  color: #383838;
+
+  @media screen and (min-width: 768px) {
+    line-height: 21px;
+    font-size: 18px;
+  }
+`;
 
 export default class Guests extends React.Component {
   state = {

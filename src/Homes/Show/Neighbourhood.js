@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import arrow from "./arrow.svg";
 
-const Section = styled.section`position: relative;`;
+const Section = styled.section`
+  position: relative;
+`;
 
 const Title = styled.h2`
   font-family: "CircularAir-Bold", "Arial Bold", sans-serif;
@@ -29,7 +31,9 @@ const Description = styled.p`
   margin: 16px 0;
 `;
 
-const Details = Description.extend`margin-bottom: 24px;`;
+const Details = Description.extend`
+  margin-bottom: 24px;
+`;
 
 const GreenButton = styled.button`
   display: block;
@@ -52,7 +56,7 @@ const Arrow = styled.img`
 
 export default () => {
   return (
-    <Section id="host">
+    <Section id="location">
       <Title>The neighborhood</Title>
       <Details>
         Yudy & Victoria’s home is located in Armenia, Quindio, Colombia.

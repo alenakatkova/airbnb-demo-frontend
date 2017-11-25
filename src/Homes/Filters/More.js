@@ -21,6 +21,10 @@ const Container = styled.div`
   padding-left: 8px;
   padding-right: 8px;
 
+  @media screen and (min-width: 768px) {
+    bottom: 200px;
+  }
+
   @media screen and (min-width: 992px) {
     padding-left: calc(50% - 992px * 0.32);
   }
@@ -35,6 +39,10 @@ const Section = styled.section`
   background: #ffffff;
   border-bottom: 0.5px solid rgba(72, 72, 72, 0.3);
   bottom: 202px;
+`;
+
+const InnerContainer = styled.div`
+  max-width: 60%;
 `;
 
 const Title = styled.h2`
@@ -121,27 +129,32 @@ export default class More extends React.Component {
           </Section>
         </OnlyXsAndMd>
         <Section>
-          <Title>Rooms and beds</Title>
-          <RoomsAndBeds
-            handlerFromParent={this.handleData}
-            bedrooms={this.state.roomsAndBeds.bedrooms}
-            bathrooms={this.state.roomsAndBeds.bathrooms}
-            beds={this.state.roomsAndBeds.beds}
-          />
+          <InnerContainer>
+            <Title>Rooms and beds</Title>
+            <RoomsAndBeds
+              handlerFromParent={this.handleData}
+              bedrooms={this.state.roomsAndBeds.bedrooms}
+              bathrooms={this.state.roomsAndBeds.bathrooms}
+              beds={this.state.roomsAndBeds.beds}
+            />
+          </InnerContainer>
         </Section>
 
         <Section>
-          <Title>More options</Title>
-          <OnlyXsAndMd>
-            <InstantBook
-              checked={this.state.instant.checked}
-              handlerFromParent={this.handleData}
-            />
+          <InnerContainer>
+            <Title>More options</Title>
+            <OnlyXsAndMd>
+              <InstantBook
+                checked={this.state.instant.checked}
+                handlerFromParent={this.handleData}
+                inMoreFilters
+              />
+            </OnlyXsAndMd>
             <Superhost
               checked={this.state.superhost.checked}
               handlerFromParent={this.handleData}
             />
-          </OnlyXsAndMd>
+          </InnerContainer>
         </Section>
 
         <Section>

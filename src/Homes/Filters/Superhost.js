@@ -35,6 +35,16 @@ const Button = styled.button`
   padding: 0;
 `;
 
+const LearnMore = styled.button`
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: "CircularAir-Light", "Arial Bold", sans-serif;
+  line-height: 16px;
+  font-size: 14px;
+  color: #0f7276;
+`;
+
 export default class Superhost extends React.Component {
   state = {
     checked: this.props.checked
@@ -57,7 +67,10 @@ export default class Superhost extends React.Component {
     return (
       <Container>
         <Title>SuperHost</Title>
-        <Description>Stay with recognized hosts.</Description>
+        <Description>
+          Stay with recognized hosts.
+          <LearnMore>Learn more</LearnMore>
+        </Description>
         <Button onClick={this.onButtonClick}>
           {this.state.checked ? (
             <img src={checked} alt="button" />
