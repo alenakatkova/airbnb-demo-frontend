@@ -5,6 +5,7 @@ import Price from "./Price";
 import Guests from "./Guests";
 import Dates from "./Dates";
 import InstantBook from "./InstantBook";
+import More from "./More";
 import Dropdown from "./Dropdown";
 import { Lg } from "../../mediaQueries";
 
@@ -42,7 +43,7 @@ export default class Filters extends React.Component {
     }
   };
 
-  handleData = data => {
+  handleData = (data, key = "") => {
     this.setState({
       selectedFilterData: data
     });
@@ -53,7 +54,18 @@ export default class Filters extends React.Component {
   };
 
   onApplyClick = (key, closeFilter) => {
-    this.setState({ [key]: this.state.selectedFilterData }, closeFilter());
+    if (key === "more") {
+      this.setState(
+        {
+          price: this.state.selectedFilterData.price,
+          instant: this.state.selectedFilterData.instant,
+          room: this.state.selectedFilterData.room
+        },
+        closeFilter()
+      );
+    } else {
+      this.setState({ [key]: this.state.selectedFilterData }, closeFilter());
+    }
   };
 
   onCancelClick = closeFilter => {
@@ -142,6 +154,17 @@ export default class Filters extends React.Component {
                 infants={this.state.guests.infants}
                 handlerFromParent={this.handleData}
               />
+            </Dropdown>
+
+            <Dropdown
+              id="more"
+              label="More filters"
+              xsHeading="More filters"
+              onToggle={this.onFilterToggle}
+              apply={this.onApplyClick}
+              cancel={this.onCancelClick}
+            >
+              <More handlerFromParent={this.handleData} />
             </Dropdown>
           </Buttons>
         </div>

@@ -39,7 +39,7 @@ export default class Price extends React.Component {
   };
 
   passDataToParent = () => {
-    this.props.handlerFromParent(this.state);
+    this.props.handlerFromParent(this.state, "price");
   };
 
   onValuesChange = sliderState => {

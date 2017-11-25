@@ -4,6 +4,7 @@ import entireIcon from "./roomEntire.svg";
 import privateIcon from "./roomPrivate.svg";
 import sharedIcon from "./roomShared.svg";
 import checkedCheckbox from "./checkedCheckbox.svg";
+import { InnerContainer } from "./styled";
 
 const Row = styled.div`
   display: flex;
@@ -74,12 +75,12 @@ export default class RoomType extends React.Component {
   };
 
   passDataToParent = () => {
-    this.props.handlerFromParent(this.state);
+    this.props.handlerFromParent(this.state, "room");
   };
 
   render() {
     return (
-      <div>
+      <InnerContainer>
         <Row onClick={e => this.onCheckboxClick("entire", e)}>
           <Label>
             <Checkbox type="checkbox" name="room-type" value="Entire home" />
@@ -122,7 +123,7 @@ export default class RoomType extends React.Component {
             <Icon src={sharedIcon} alt="Entire home" />
           </IconContainer>
         </Row>
-      </div>
+      </InnerContainer>
     );
   }
 }

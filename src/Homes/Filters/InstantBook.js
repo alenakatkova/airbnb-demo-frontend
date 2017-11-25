@@ -41,7 +41,7 @@ export default class InstantBook extends React.Component {
   };
 
   passDataToParent = () => {
-    this.props.handlerFromParent(this.state);
+    this.props.handlerFromParent(this.state, "instant");
   };
 
   onButtonClick = sliderState => {
