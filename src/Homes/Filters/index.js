@@ -1,9 +1,10 @@
 import React from "react";
 import { FiltersContainer, Buttons } from "./styled";
-import RoomType from "../Filters/RoomType";
-import Price from "../Filters/Price";
-import Guests from "../Filters/Guests";
-import Dates from "../Filters/Dates";
+import RoomType from "./RoomType";
+import Price from "./Price";
+import Guests from "./Guests";
+import Dates from "./Dates";
+import InstantBook from "./InstantBook";
 import Dropdown from "./Dropdown";
 import { Lg } from "../../mediaQueries";
 
@@ -30,6 +31,14 @@ export default class Filters extends React.Component {
       entire: false,
       private: false,
       shared: false
+    },
+    price: {
+      min: 10,
+      max: 1000,
+      values: [10, 1000]
+    },
+    instant: {
+      checked: false
     }
   };
 
@@ -72,6 +81,21 @@ export default class Filters extends React.Component {
                   handlerFromParent={this.handleData}
                 />
               </Dropdown>
+
+              <Dropdown
+                id="instant"
+                label="Instant book"
+                xsHeading="Instant book"
+                onToggle={this.onFilterToggle}
+                apply={this.onApplyClick}
+                cancel={this.onCancelClick}
+              >
+                <InstantBook
+                  checked={this.state.instant.checked}
+                  handlerFromParent={this.handleData}
+                />
+              </Dropdown>
+
               <Dropdown
                 id="price"
                 label="Price"
@@ -80,7 +104,12 @@ export default class Filters extends React.Component {
                 apply={this.onApplyClick}
                 cancel={this.onCancelClick}
               >
-                <Price />
+                <Price
+                  min={this.state.price.min}
+                  max={this.state.price.max}
+                  values={this.state.price.values}
+                  handlerFromParent={this.handleData}
+                />
               </Dropdown>
             </Lg>
 
