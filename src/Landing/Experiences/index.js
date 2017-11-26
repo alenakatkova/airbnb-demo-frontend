@@ -4,7 +4,8 @@ import {
   SectionTitle,
   CardsContainer,
   NextContainer,
-  NextPage
+  NextPage,
+  TitleContainer
 } from "../../styled";
 import SeeAll from "../../SeeAll";
 import Card from "./Card";
@@ -18,53 +19,51 @@ const Next = NextPage.extend`top: 155px;`;
 export default () => {
   return (
     <Section>
-      <div className="row between-xs middle-xs">
+      <TitleContainer>
         <SectionTitle>Experiences</SectionTitle>
         <SeeAll to="/" />
-      </div>
+      </TitleContainer>
       <NextContainer>
         <CardsContainer>
-          <div className="row negative-indent-xs nowrap-xs wrap-lg">
-            <div className="col-xs-6 col-md-4 col-lg-3">
-              <Card
-                to="/"
-                highRes={forestHigh}
-                price="$29"
-                text="Forest theraphy"
-                alt="Forest theraphy"
-                stats="44 reviews"
-              />
-            </div>
-            <div className="col-xs-6 col-md-4 col-lg-3">
-              <Card
-                to="/"
-                highRes={whaleHigh}
-                price="$69"
-                text="Whale watching"
-                alt="Whale watching"
-                stats="46 reviews"
-              />
-            </div>
-            <div className="col-xs-6 col-md-4 col-lg-3">
-              <Card
-                to="/"
-                highRes={mountainHigh}
-                price="$69"
-                text="Table Mountain Summi, Cable Car Down"
-                alt="Table Mountain Summi, Cable Car Down"
-                stats="44 reviews"
-              />
-            </div>
-            <div className="col-xs-6 col-md-4 col-lg-3">
-              <Card
-                to="/"
-                highRes={salsaHigh}
-                price="$50"
-                text="Salsa Night"
-                alt="Salsa Night"
-                stats="44 reviews"
-              />
-            </div>
+          <div className="col-xs-6 col-md-4 col-lg-3">
+            <Card
+              to="/"
+              highRes={forestHigh}
+              price="$29"
+              text="Forest theraphy"
+              alt="Forest theraphy"
+              stats="44 reviews"
+            />
+          </div>
+          <div className="col-xs-6 col-md-4 col-lg-3">
+            <Card
+              to="/"
+              highRes={whaleHigh}
+              price="$69"
+              text="Whale watching"
+              alt="Whale watching"
+              stats="46 reviews"
+            />
+          </div>
+          <div className="col-xs-6 col-md-4 col-lg-3">
+            <Card
+              to="/"
+              highRes={mountainHigh}
+              price="$69"
+              text="Table Mountain Summi, Cable Car Down"
+              alt="Table Mountain Summi, Cable Car Down"
+              stats="44 reviews"
+            />
+          </div>
+          <div className="col-xs-6 col-md-4 col-lg-3">
+            <Card
+              to="/"
+              highRes={salsaHigh}
+              price="$50"
+              text="Salsa Night"
+              alt="Salsa Night"
+              stats="44 reviews"
+            />
           </div>
         </CardsContainer>
         <Next />

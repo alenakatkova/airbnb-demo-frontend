@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Dropdown from "./Dropdown";
 import "react-dates/initialize";
 import { DayPickerRangeController } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
@@ -40,24 +39,22 @@ const Arrow = styled.img`
   margin: 0 16px;
 `;
 
-const getLabel = isSelected => {
-  return isSelected ? "Check in — Check out" : "Dates";
-};
-
 export default class Dates extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    focusedInput: this.props.autoFocusEndDate ? "endDate" : "startDate",
+    startDate: this.props.startDate,
+    endDate: this.props.endDate
+  };
 
-    this.state = {
-      isSelected: false,
-      focusedInput: props.autoFocusEndDate ? "endDate" : "startDate",
-      startDate: props.initialStartDate,
-      endDate: props.initialEndDate
-    };
-  }
+  onDateChange = ({ startDate, endDate }) => {
+    this.setState(
+      { startDate: startDate, endDate: endDate },
+      this.passDatesToParent
+    );
+  };
 
-  onDatesChange = ({ startDate, endDate }) => {
-    this.setState({ startDate, endDate });
+  passDatesToParent = () => {
+    this.props.handlerFromParent(this.state);
   };
 
   onFocusChange = focusedInput => {
@@ -66,19 +63,10 @@ export default class Dates extends React.Component {
     });
   };
 
-  onToggle = isSelected => {
-    this.setState({ isSelected: !this.state.isSelected });
-  };
-
   render() {
-    const { focusedInput, startDate, endDate, isSelected } = this.state;
-
+    const { focusedInput } = this.state;
     return (
-      <Dropdown
-        onToggle={this.onToggle}
-        label={getLabel(isSelected)}
-        xsHeading="When"
-      >
+      <div>
         <MediaQuery query="(max-width: 767px)">
           <DateRange>
             <DateInRange isActive>Check-in</DateInRange>
@@ -86,11 +74,11 @@ export default class Dates extends React.Component {
             <DateInRange>Check-out</DateInRange>
           </DateRange>
           <DayPickerRangeController
-            onDatesChange={this.onDatesChange}
+            onDatesChange={this.onDateChange}
             onFocusChange={this.onFocusChange}
             focusedInput={focusedInput}
-            startDate={startDate}
-            endDate={endDate}
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
             orientation="vertical"
             numberOfMonths={1}
             minimumNights={1}
@@ -101,11 +89,11 @@ export default class Dates extends React.Component {
 
         <MediaQuery minWidth={768} maxWidth={985}>
           <DayPickerRangeController
-            onDatesChange={this.onDatesChange}
+            onDatesChange={this.onDateChange}
             onFocusChange={this.onFocusChange}
             focusedInput={focusedInput}
-            startDate={startDate}
-            endDate={endDate}
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
             orientation="horizontal"
             numberOfMonths={1}
             minimumNights={1}
@@ -114,13 +102,13 @@ export default class Dates extends React.Component {
           />
         </MediaQuery>
 
-        <MediaQuery query="(min-width: 986px)">
+        <MediaQuery query="(min-width: 992px)">
           <DayPickerRangeController
-            onDatesChange={this.onDatesChange}
+            onDatesChange={this.onDateChange}
             onFocusChange={this.onFocusChange}
             focusedInput={focusedInput}
-            startDate={startDate}
-            endDate={endDate}
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
             orientation="horizontal"
             numberOfMonths={2}
             minimumNights={1}
@@ -128,7 +116,7 @@ export default class Dates extends React.Component {
             hideKeyboardShortcutsPanel
           />
         </MediaQuery>
-      </Dropdown>
+      </div>
     );
   }
 }

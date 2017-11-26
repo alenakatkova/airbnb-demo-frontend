@@ -6,30 +6,36 @@ import {
   OptionTable
 } from "./styled";
 import Counter from "./Counter";
-import Dropdown from "./Dropdown";
 
 export default class Guests extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    adults: this.props.adults,
+    children: this.props.children,
+    infants: this.props.infants
+  };
 
-    this.state = {
-      isSelected: false
-    };
-  }
+  onCounterClick = (key, value) => {
+    this.setState({ [key]: value }, this.passDataToParent);
+  };
 
-  onToggle = isSelected => {
-    this.setState({ isSelected: !this.state.isSelected });
+  passDataToParent = () => {
+    this.props.handlerFromParent(this.state);
   };
 
   render() {
     return (
-      <Dropdown label="Guests" onToggle={this.onToggle} xsHeading="Guests">
+      <div>
         <OptionTable>
           <OptionCell>
             <OptionName>Adults</OptionName>
           </OptionCell>
           <OptionCell>
-            <Counter />
+            <Counter
+              id="adults"
+              value={this.state.adults}
+              count={this.onCounterClick}
+              minimum={1}
+            />
           </OptionCell>
         </OptionTable>
 
@@ -40,7 +46,12 @@ export default class Guests extends React.Component {
             <OptionDescription>Ages 2 — 12</OptionDescription>
           </OptionCell>
           <OptionCell>
-            <Counter />
+            <Counter
+              id="children"
+              value={this.state.children}
+              count={this.onCounterClick}
+              minimum={0}
+            />
           </OptionCell>
         </OptionTable>
 
@@ -51,10 +62,15 @@ export default class Guests extends React.Component {
             <OptionDescription>Under 2</OptionDescription>
           </OptionCell>
           <OptionCell>
-            <Counter />
+            <Counter
+              id="infants"
+              value={this.state.infants}
+              count={this.onCounterClick}
+              minimum={0}
+            />
           </OptionCell>
         </OptionTable>
-      </Dropdown>
+      </div>
     );
   }
 }

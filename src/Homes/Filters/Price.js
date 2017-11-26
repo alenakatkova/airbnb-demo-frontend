@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Dropdown from "./Dropdown";
+import Rheostat from "rheostat";
+import "./slider.css";
+import priceStats from "./price.svg";
 
 const Range = styled.p`
   margin: 0;
@@ -19,25 +21,58 @@ const Average = styled.p`
   color: #383838;
 `;
 
+const Stats = styled.img`
+  position: absolute;
+  z-index: 0;
+  top: -73px;
+  left: 37px;
+`;
+
+const RheostatContainer = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+`;
+
 export default class Price extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    min: this.props.min,
+    max: this.props.max,
+    values: this.props.values
+  };
 
-    this.state = {
-      isSelected: false
-    };
-  }
+  passDataToParent = () => {
+    this.props.handlerFromParent(this.state, "price");
+  };
 
-  onToggle = isSelected => {
-    this.setState({ isSelected: !this.state.isSelected });
+  onValuesChange = sliderState => {
+    this.setState(
+      {
+        values: sliderState.values
+      },
+      this.passDataToParent
+    );
   };
 
   render() {
     return (
-      <Dropdown label="Price" onToggle={this.onToggle}>
-        <Range>$10 — $1000+</Range>
+      <div>
+        <Range>
+          ${this.state.values[0]} — ${this.state.values[1]}+
+        </Range>
         <Average>The average nightly price is $75.</Average>
-      </Dropdown>
+
+        <RheostatContainer>
+          <Stats src={priceStats} alt="Price stats" />
+          <Rheostat
+            min={this.props.min}
+            max={this.props.max}
+            onValuesUpdated={this.onValuesChange}
+            values={this.props.values}
+          />
+        </RheostatContainer>
+      </div>
     );
   }
 }

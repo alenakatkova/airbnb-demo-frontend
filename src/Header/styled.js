@@ -15,6 +15,20 @@ export const PageHeader = styled.header`
   left: 0;
 `;
 
+export const LeftSideContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
+`;
+
 export const Logo = styled.img`
   height: 31.98px;
   width: 29.77px;
@@ -30,7 +44,7 @@ export const Link = styled(RLink)`
     margin-right: 6.98px;
   }
 
-  @media screen and (min-width: 986px) {
+  @media screen and (min-width: 992px) {
     margin-right: 51.2px;
   }
 `;
@@ -50,7 +64,7 @@ export const MenuBtn = styled.button`
     margin-right: 17.22px;
   }
 
-  @media screen and (min-width: 986px) {
+  @media screen and (min-width: 992px) {
     display: none;
   }
 `;
@@ -64,7 +78,7 @@ export const SearchContainer = styled.div`
     min-width: 432px;
   }
 
-  @media screen and (min-width: 986px) {
+  @media screen and (min-width: 992px) {
     min-width: 392px;
   }
 `;
@@ -89,7 +103,7 @@ export const Input = styled.input`
     background-position: 15.2px 12.2px;
   }
 
-  @media screen and (min-width: 986px) {
+  @media screen and (min-width: 992px) {
     padding-left: 53px;
     background-position: 15.2px 12.2px;
   }

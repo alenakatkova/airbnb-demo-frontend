@@ -14,7 +14,7 @@ body {
   font-family: "CircularAir-Book", "Arial", sans-serif;
 }
 
-.container {
+/* .container {
   max-width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
@@ -54,6 +54,7 @@ body {
 }
 
 .middle-xs {
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -110,8 +111,7 @@ body {
 }
 
 .col-xs-8 {
-  flex-basis: 66.66666667%;
-  max-width: 66.66666667%;
+  
 }
 
 .col-xs-9 {
@@ -398,4 +398,4 @@ body {
     flex-basis: 100%;
     max-width: 100%;
   }
-}
+} */
