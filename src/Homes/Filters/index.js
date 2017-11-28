@@ -97,6 +97,35 @@ export default class Filters extends React.Component {
       <FiltersContainer>
         <div className="container">
           <Buttons>
+            <SmallDropdown
+              id="dates"
+              label={getDatesLabel(this.state) || "Dates"}
+              xsHeading="When"
+              onToggle={this.onFilterToggle}
+              apply={this.onApplyClick}
+              cancel={this.onCancelClick}
+            >
+              <Dates
+                dates={this.state.dates}
+                handlerFromParent={this.handleData}
+              />
+            </SmallDropdown>
+
+            <SmallDropdown
+              id="guests"
+              label="Guests"
+              xsHeading="Guests"
+              onToggle={this.onFilterToggle}
+              apply={this.onApplyClick}
+              cancel={this.onCancelClick}
+              showApplyOnXs
+            >
+              <Guests
+                guests={this.state.guests}
+                handlerFromParent={this.handleData}
+              />
+            </SmallDropdown>
+
             <Lg>
               <SmallDropdown
                 id="room"
@@ -140,35 +169,6 @@ export default class Filters extends React.Component {
                 />
               </SmallDropdown>
             </Lg>
-
-            <SmallDropdown
-              id="dates"
-              label={getDatesLabel(this.state) || "Dates"}
-              xsHeading="When"
-              onToggle={this.onFilterToggle}
-              apply={this.onApplyClick}
-              cancel={this.onCancelClick}
-            >
-              <Dates
-                dates={this.state.dates}
-                handlerFromParent={this.handleData}
-              />
-            </SmallDropdown>
-
-            <SmallDropdown
-              id="guests"
-              label="Guests"
-              xsHeading="Guests"
-              onToggle={this.onFilterToggle}
-              apply={this.onApplyClick}
-              cancel={this.onCancelClick}
-              showApplyOnXs
-            >
-              <Guests
-                guests={this.state.guests}
-                handlerFromParent={this.handleData}
-              />
-            </SmallDropdown>
 
             <BigDropdown
               id="more"
