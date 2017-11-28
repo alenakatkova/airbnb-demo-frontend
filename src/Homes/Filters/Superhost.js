@@ -29,6 +29,7 @@ const Description = styled.p`
 const Button = styled.button`
   border: none;
   background: none;
+  cursor: pointer;
   position: absolute;
   top: 15px;
   right: 0;
@@ -47,7 +48,7 @@ const LearnMore = styled.button`
 
 export default class Superhost extends React.Component {
   state = {
-    checked: this.props.checked
+    checked: this.props.superhost.checked
   };
 
   passDataToParent = () => {

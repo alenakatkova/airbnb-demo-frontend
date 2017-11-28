@@ -9,9 +9,9 @@ import Counter from "./Counter";
 
 export default class Guests extends React.Component {
   state = {
-    adults: this.props.adults,
-    children: this.props.children,
-    infants: this.props.infants
+    adults: this.props.guests.adults,
+    children: this.props.guests.children,
+    infants: this.props.guests.infants
   };
 
   onCounterClick = (key, value) => {
@@ -19,10 +19,11 @@ export default class Guests extends React.Component {
   };
 
   passDataToParent = () => {
-    this.props.handlerFromParent(this.state);
+    this.props.handlerFromParent(this.state, this.props.id);
   };
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <OptionTable>

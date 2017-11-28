@@ -7,12 +7,12 @@ const MainText = styled.span`
   line-height: 19px;
 `;
 
-export default class RoomType extends React.Component {
+export default class Amenities extends React.Component {
   state = {
-    heating: this.props.heating,
-    kitchen: this.props.kitchen,
-    tv: this.props.tv,
-    wireless: this.props.wireless
+    heating: this.props.amenities.heating,
+    kitchen: this.props.amenities.kitchen,
+    tv: this.props.amenities.tv,
+    wireless: this.props.amenities.wireless
   };
 
   checkCheckbox = key => {

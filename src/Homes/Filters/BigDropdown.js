@@ -5,10 +5,10 @@ import {
   Button,
   TopContainer,
   Container,
-  ApplyButton,
-  CancelButton,
+  CancelButton as Cancel,
   Heading,
-  ResetButton
+  ResetButton,
+  Background
 } from "./styled";
 
 const Content = styled.div`
@@ -35,7 +35,7 @@ const Content = styled.div`
   }
 `;
 
-export const ButtonsContainer = styled.div`
+const ButtonsContainer = styled.div`
   position: absolute;
   z-index: 15;
   background: #ffffff;
@@ -48,17 +48,52 @@ export const ButtonsContainer = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding-top: 50px;
+    justify-content: center;
+    padding-top: 40px;
     bottom: 138px;
   }
 
   @media screen and (min-width: 992px) {
     padding-left: calc(50% - 992px * 0.32);
+    justify-content: flex-end;
   }
 
   @media screen and (min-width: 1200px) {
     padding-left: calc(50% - 1200px * 0.32);
+  }
+`;
+
+const ApplyButton = styled.button`
+  border: none;
+  margin: 0;
+  font-family: "CircularAir-Book", "Arial", sans-serif;
+  line-height: 21px;
+  font-size: 18px;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 13px 0;
+  width: 100%;
+  text-align: center;
+  background: #ff5a5f;
+  border-radius: 4px;
+
+  @media screen and (min-width: 768px) {
+    position: static;
+    background: #008489;
+    padding: 0 12px;
+    display: inline-flex;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    width: auto;
+    padding: 12px 28px;
+  }
+`;
+
+const CancelButton = Cancel.extend`
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 21px;
   }
 `;
 
@@ -128,30 +163,25 @@ export default class Dropdown extends React.Component {
                 <TopContainer>
                   <CancelButton onClick={this.onFilterClick} />
                   <Heading>{this.props.xsHeading}</Heading>
-                  <ResetButton>Reset</ResetButton>
+                  <ResetButton>Clear all</ResetButton>
                 </TopContainer>
               </OnlyXs>
 
               {this.props.children}
-              <OnlyXs>
-                <ButtonsContainer>
-                  <ApplyButton onClick={this.onApplyButtonClick}>
-                    See homes
-                  </ApplyButton>
-                </ButtonsContainer>
-              </OnlyXs>
-              <Md>
-                <ButtonsContainer>
+
+              <ButtonsContainer>
+                <Md>
                   <CancelButton onClick={this.onCancelButtonClick}>
                     Cancel
                   </CancelButton>
-                  <ApplyButton onClick={this.onApplyButtonClick}>
-                    Apply
-                  </ApplyButton>
-                </ButtonsContainer>
-              </Md>
+                </Md>
+                <ApplyButton onClick={this.onApplyButtonClick}>
+                  See homes
+                </ApplyButton>
+              </ButtonsContainer>
             </Content>
           )}
+          {this.state.isOpen && <Background />}
         </div>
       </Container>
     );

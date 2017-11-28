@@ -7,7 +7,8 @@ import Amenities from "./Amenities";
 import Facilities from "./Facilities";
 import RoomsAndBeds from "./RoomsAndBeds";
 import Superhost from "./Superhost";
-import { OnlyXsAndMd } from "../../mediaQueries";
+import { OnlyXsAndMd, OnlyXs, Md } from "../../mediaQueries";
+import SeeAll from "./SeeAll";
 
 const Container = styled.div`
   position: absolute;
@@ -42,7 +43,9 @@ const Section = styled.section`
 `;
 
 const InnerContainer = styled.div`
-  max-width: 60%;
+  @media screen and (min-width: 768px) {
+    max-width: 60%;
+  }
 `;
 
 const Title = styled.h2`
@@ -57,37 +60,37 @@ const Title = styled.h2`
 export default class More extends React.Component {
   state = {
     room: {
-      entire: this.props.entire,
-      private: this.props.private,
-      shared: this.props.shared
+      entire: this.props.room.entire,
+      private: this.props.room.private,
+      shared: this.props.room.shared
     },
     price: {
-      min: this.props.min,
-      max: this.props.max,
-      values: this.props.values
+      min: this.props.price.min,
+      max: this.props.price.max,
+      values: this.props.price.values
     },
     instant: {
-      checked: this.props.instant
+      checked: this.props.instant.checked
     },
     superhost: {
-      checked: this.props.superhost
+      checked: this.props.superhost.checked
     },
     amenities: {
-      heating: this.props.heating,
-      kitchen: this.props.kitchen,
-      tv: this.props.tv,
-      wireless: this.props.wireless
+      heating: this.props.amenities.heating,
+      kitchen: this.props.amenities.kitchen,
+      tv: this.props.amenities.tv,
+      wireless: this.props.amenities.wireless
     },
     facilities: {
-      elevator: this.props.elevator,
-      parking: this.props.parking,
-      pool: this.props.pool,
-      wheelchair: this.props.wheelchair
+      elevator: this.props.facilities.elevator,
+      parking: this.props.facilities.parking,
+      pool: this.props.facilities.pool,
+      wheelchair: this.props.facilities.wheelchair
     },
     roomsAndBeds: {
-      bedrooms: this.props.bedrooms,
-      beds: this.props.beds,
-      bathrooms: this.props.bathrooms
+      bedrooms: this.props.roomsAndBeds.bedrooms,
+      beds: this.props.roomsAndBeds.beds,
+      bathrooms: this.props.roomsAndBeds.bathrooms
     }
   };
 
@@ -111,9 +114,7 @@ export default class More extends React.Component {
           <Section>
             <Title>Room type</Title>
             <RoomType
-              entire={this.state.room.entire}
-              private={this.state.room.private}
-              shared={this.state.room.shared}
+              room={this.state.room}
               handlerFromParent={this.handleData}
             />
           </Section>
@@ -121,10 +122,8 @@ export default class More extends React.Component {
           <Section>
             <Title>Price range</Title>
             <Price
-              min={this.state.price.min}
-              max={this.state.price.max}
-              values={this.state.price.values}
               handlerFromParent={this.handleData}
+              price={this.state.price}
             />
           </Section>
         </OnlyXsAndMd>
@@ -133,9 +132,7 @@ export default class More extends React.Component {
             <Title>Rooms and beds</Title>
             <RoomsAndBeds
               handlerFromParent={this.handleData}
-              bedrooms={this.state.roomsAndBeds.bedrooms}
-              bathrooms={this.state.roomsAndBeds.bathrooms}
-              beds={this.state.roomsAndBeds.beds}
+              roomsAndBeds={this.state.roomsAndBeds}
             />
           </InnerContainer>
         </Section>
@@ -145,38 +142,56 @@ export default class More extends React.Component {
             <Title>More options</Title>
             <OnlyXsAndMd>
               <InstantBook
-                checked={this.state.instant.checked}
+                instant={this.state.instant}
                 handlerFromParent={this.handleData}
                 inMoreFilters
               />
             </OnlyXsAndMd>
             <Superhost
-              checked={this.state.superhost.checked}
+              superhost={this.state.superhost}
               handlerFromParent={this.handleData}
             />
           </InnerContainer>
         </Section>
 
         <Section>
-          <Title>Amenities</Title>
-          <Amenities
-            handlerFromParent={this.handleData}
-            heating={this.state.amenities.heating}
-            kitchen={this.state.amenities.kitchen}
-            tv={this.state.amenities.tv}
-            wireless={this.state.amenities.wireless}
-          />
+          <OnlyXs>
+            <SeeAll title="Amenities" label="See all">
+              <Amenities
+                handlerFromParent={this.handleData}
+                amenities={this.state.amenities}
+              />
+            </SeeAll>
+          </OnlyXs>
+
+          <Md>
+            <Title>Amenities</Title>
+            <Amenities
+              handlerFromParent={this.handleData}
+              amenities={this.state.amenities}
+            />
+            <SeeAll label="See all amenities" />
+          </Md>
         </Section>
 
         <Section>
-          <Title>Facilities</Title>
-          <Facilities
-            handlerFromParent={this.handleData}
-            parking={this.state.facilities.parking}
-            wheelchair={this.state.facilities.wheelchair}
-            pool={this.state.facilities.pool}
-            elevator={this.state.facilities.elevator}
-          />
+          <OnlyXs>
+            <SeeAll title="Facilities" label="See all">
+              <Facilities
+                handlerFromParent={this.handleData}
+                facilities={this.state.facilities}
+              />
+            </SeeAll>
+          </OnlyXs>
+
+          <Md>
+            <Title>Facilities</Title>
+            <Facilities
+              handlerFromParent={this.handleData}
+              facilities={this.state.facilities}
+            />
+            <SeeAll label="See all facilities" />
+          </Md>
         </Section>
       </Container>
     );

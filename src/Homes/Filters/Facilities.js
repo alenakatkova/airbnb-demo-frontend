@@ -9,10 +9,10 @@ const MainText = styled.span`
 
 export default class RoomType extends React.Component {
   state = {
-    elevator: this.props.elevator,
-    parking: this.props.parking,
-    pool: this.props.pool,
-    wheelchair: this.props.wheelchair
+    elevator: this.props.facilities.elevator,
+    parking: this.props.facilities.parking,
+    pool: this.props.facilities.pool,
+    wheelchair: this.props.facilities.wheelchair
   };
 
   checkCheckbox = key => {

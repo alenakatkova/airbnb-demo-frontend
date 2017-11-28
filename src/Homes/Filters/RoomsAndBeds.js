@@ -16,11 +16,11 @@ const OptionName = styled.span`
   }
 `;
 
-export default class Guests extends React.Component {
+export default class RoomsAndBeds extends React.Component {
   state = {
-    bedrooms: this.props.bedrooms,
-    beds: this.props.beds,
-    bathrooms: this.props.bathrooms
+    bedrooms: this.props.roomsAndBeds.bedrooms,
+    beds: this.props.roomsAndBeds.beds,
+    bathrooms: this.props.roomsAndBeds.bathrooms
   };
 
   onCounterClick = (key, value) => {

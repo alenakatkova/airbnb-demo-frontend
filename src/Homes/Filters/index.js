@@ -6,15 +6,10 @@ import Guests from "./Guests";
 import Dates from "./Dates";
 import InstantBook from "./InstantBook";
 import More from "./More";
-import Dropdown from "./Dropdown";
-import MoreFiltersDropdown from "./MoreFiltersDropdow";
+import SmallDropdown from "./SmallDropdown";
+import BigDropdown from "./BigDropdown";
 import { Lg } from "../../mediaQueries";
-
-function getLabel(filterName) {
-  if (filterName === "dates") {
-    return "Check in — Check out";
-  }
-}
+import { getDatesLabel } from "./labels";
 
 export default class Filters extends React.Component {
   state = {
@@ -103,7 +98,7 @@ export default class Filters extends React.Component {
         <div className="container">
           <Buttons>
             <Lg>
-              <Dropdown
+              <SmallDropdown
                 id="room"
                 label="Room type"
                 xsHeading="Room type"
@@ -112,14 +107,12 @@ export default class Filters extends React.Component {
                 cancel={this.onCancelClick}
               >
                 <RoomType
-                  entire={this.state.room.entire}
-                  private={this.state.room.private}
-                  shared={this.state.room.shared}
+                  room={this.state.room}
                   handlerFromParent={this.handleData}
                 />
-              </Dropdown>
+              </SmallDropdown>
 
-              <Dropdown
+              <SmallDropdown
                 id="instant"
                 label="Instant book"
                 xsHeading="Instant book"
@@ -128,12 +121,12 @@ export default class Filters extends React.Component {
                 cancel={this.onCancelClick}
               >
                 <InstantBook
-                  checked={this.state.instant.checked}
+                  instant={this.state.instant}
                   handlerFromParent={this.handleData}
                 />
-              </Dropdown>
+              </SmallDropdown>
 
-              <Dropdown
+              <SmallDropdown
                 id="price"
                 label="Price"
                 xsHeading="Price"
@@ -142,30 +135,27 @@ export default class Filters extends React.Component {
                 cancel={this.onCancelClick}
               >
                 <Price
-                  min={this.state.price.min}
-                  max={this.state.price.max}
-                  values={this.state.price.values}
+                  price={this.state.price}
                   handlerFromParent={this.handleData}
                 />
-              </Dropdown>
+              </SmallDropdown>
             </Lg>
 
-            <Dropdown
+            <SmallDropdown
               id="dates"
-              label={getLabel(this.state.selectedFilter) || "Dates"}
+              label={getDatesLabel(this.state) || "Dates"}
               xsHeading="When"
               onToggle={this.onFilterToggle}
               apply={this.onApplyClick}
               cancel={this.onCancelClick}
             >
               <Dates
-                startDate={this.state.dates.startDate}
-                endDate={this.state.dates.endDate}
+                dates={this.state.dates}
                 handlerFromParent={this.handleData}
               />
-            </Dropdown>
+            </SmallDropdown>
 
-            <Dropdown
+            <SmallDropdown
               id="guests"
               label="Guests"
               xsHeading="Guests"
@@ -175,14 +165,12 @@ export default class Filters extends React.Component {
               showApplyOnXs
             >
               <Guests
-                adults={this.state.guests.adults}
-                children={this.state.guests.children}
-                infants={this.state.guests.infants}
+                guests={this.state.guests}
                 handlerFromParent={this.handleData}
               />
-            </Dropdown>
+            </SmallDropdown>
 
-            <MoreFiltersDropdown
+            <BigDropdown
               id="more"
               label="More filters"
               xsHeading="More filters"
@@ -192,27 +180,15 @@ export default class Filters extends React.Component {
             >
               <More
                 handlerFromParent={this.handleData}
-                instant={this.state.instant.checked}
-                superhost={this.state.superhost.checked}
-                min={this.state.price.min}
-                max={this.state.price.max}
-                entire={this.state.room.entire}
-                private={this.state.room.private}
-                shared={this.state.room.shared}
-                values={this.state.price.values}
-                heating={this.state.amenities.heating}
-                kitchen={this.state.amenities.kitchen}
-                tv={this.state.amenities.tv}
-                wireless={this.state.amenities.wireless}
-                parking={this.state.facilities.parking}
-                wheelchair={this.state.facilities.wheelchair}
-                pool={this.state.facilities.pool}
-                elevator={this.state.facilities.elevator}
-                bedrooms={this.state.roomsAndBeds.bedrooms}
-                bathrooms={this.state.roomsAndBeds.bathrooms}
-                beds={this.state.roomsAndBeds.beds}
+                instant={this.state.instant}
+                superhost={this.state.superhost}
+                room={this.state.room}
+                price={this.state.price}
+                amenities={this.state.amenities}
+                facilities={this.state.facilities}
+                roomsAndBeds={this.state.roomsAndBeds}
               />
-            </MoreFiltersDropdown>
+            </BigDropdown>
           </Buttons>
         </div>
       </FiltersContainer>

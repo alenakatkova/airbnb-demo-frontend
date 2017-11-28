@@ -10,7 +10,8 @@ import {
   ButtonsContainer,
   Heading,
   ResetButton,
-  InnerContainer
+  InnerContainer,
+  Background
 } from "./styled";
 
 export default class Dropdown extends React.Component {
@@ -79,7 +80,9 @@ export default class Dropdown extends React.Component {
                 <TopContainer>
                   <CancelButton onClick={this.onFilterClick} />
                   <Heading>{this.props.xsHeading}</Heading>
-                  <ResetButton>Reset</ResetButton>
+                  <ResetButton onClick={this.onResetButtonClick}>
+                    Reset
+                  </ResetButton>
                 </TopContainer>
               </OnlyXs>
 
@@ -107,6 +110,7 @@ export default class Dropdown extends React.Component {
               )}
             </Content>
           )}
+          {this.state.isOpen && <Background />}
         </div>
       </Container>
     );

@@ -21,6 +21,7 @@ const Button = styled.button`
   text-align: center;
   line-height: 32px;
   position: relative;
+  cursor: pointer;
   opacity: ${props => (props.disabled ? "0.5" : "1.0")};
 `;
 

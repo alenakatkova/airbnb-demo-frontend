@@ -39,6 +39,8 @@ export const Filter = styled.button`
 export const Background = styled.div`
   position: fixed;
   z-index: 0;
+  top: 139px;
+  left: 0;
   background-color: #ffffff;
   opacity: 0.8;
   width: 100%;

@@ -25,9 +25,10 @@ const Checkbox = styled.input`
   display: none;
 `;
 
-const FakeCheckbox = styled.span`
+const FakeCheckbox = styled.button`
   content: "";
   position: absolute;
+  cursor: pointer;
   top: 0;
   left: 0;
   display: block;
@@ -51,7 +52,7 @@ const Icon = styled.img`
 
 export default class ArrowCheckbox extends React.Component {
   onCheckboxClick = e => {
-    if (e.target.tagName === "INPUT") {
+    if (e.target.tagName === "INPUT" || e.target.tagName === "BUTTON") {
       this.props.check(this.props.id);
     }
   };

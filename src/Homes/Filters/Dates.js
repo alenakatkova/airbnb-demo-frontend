@@ -42,8 +42,8 @@ const Arrow = styled.img`
 export default class Dates extends React.Component {
   state = {
     focusedInput: this.props.autoFocusEndDate ? "endDate" : "startDate",
-    startDate: this.props.startDate,
-    endDate: this.props.endDate
+    startDate: this.props.dates.startDate,
+    endDate: this.props.dates.endDate
   };
 
   onDateChange = ({ startDate, endDate }) => {
@@ -64,14 +64,18 @@ export default class Dates extends React.Component {
   };
 
   render() {
-    const { focusedInput } = this.state;
+    const { focusedInput, startDate, endDate } = this.state;
     return (
       <div>
         <MediaQuery query="(max-width: 767px)">
           <DateRange>
-            <DateInRange isActive>Check-in</DateInRange>
+            <DateInRange isActive={focusedInput === "startDate"}>
+              {startDate ? startDate.format("MMM Do") : "Check-in"}
+            </DateInRange>
             <Arrow src={arrowRight} alt="Arrow" />
-            <DateInRange>Check-out</DateInRange>
+            <DateInRange isActive={focusedInput === "endDate"}>
+              {endDate ? endDate.format("MMM Do") : "Check-out"}
+            </DateInRange>
           </DateRange>
           <DayPickerRangeController
             onDatesChange={this.onDateChange}

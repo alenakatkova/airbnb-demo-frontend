@@ -37,9 +37,9 @@ const RheostatContainer = styled.div`
 
 export default class Price extends React.Component {
   state = {
-    min: this.props.min,
-    max: this.props.max,
-    values: this.props.values
+    min: this.props.price.min,
+    max: this.props.price.max,
+    values: this.props.price.values
   };
 
   passDataToParent = () => {
@@ -66,10 +66,10 @@ export default class Price extends React.Component {
         <RheostatContainer>
           <Stats src={priceStats} alt="Price stats" />
           <Rheostat
-            min={this.props.min}
-            max={this.props.max}
+            min={this.state.min}
+            max={this.state.max}
             onValuesUpdated={this.onValuesChange}
-            values={this.props.values}
+            values={this.state.values}
           />
         </RheostatContainer>
       </div>

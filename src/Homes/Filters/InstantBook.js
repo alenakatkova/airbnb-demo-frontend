@@ -33,6 +33,7 @@ const Button = styled.button`
   top: 15px;
   right: 0;
   padding: 0;
+  cursor: pointer;
 `;
 
 const LearnMore = styled.button`
@@ -47,14 +48,14 @@ const LearnMore = styled.button`
 
 export default class InstantBook extends React.Component {
   state = {
-    checked: this.props.checked
+    checked: this.props.instant.checked
   };
 
   passDataToParent = () => {
     this.props.handlerFromParent(this.state, "instant");
   };
 
-  onButtonClick = sliderState => {
+  onButtonClick = () => {
     this.setState(
       {
         checked: !this.state.checked

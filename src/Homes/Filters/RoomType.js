@@ -16,9 +16,9 @@ const Description = styled.span`
 
 export default class RoomType extends React.Component {
   state = {
-    entire: this.props.entire,
-    private: this.props.private,
-    shared: this.props.shared
+    entire: this.props.room.entire,
+    private: this.props.room.private,
+    shared: this.props.room.shared
   };
 
   checkCheckbox = key => {
