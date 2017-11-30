@@ -6,6 +6,13 @@ import {
   OptionTable
 } from "./styled";
 import Counter from "./Counter";
+import Dropdown from "./SmallDropdown";
+
+const getLabel = state => {
+  if (state.adults + state.children + state.infants > 1) {
+    return `Guests · ${state.adults + state.children + state.infants}`;
+  }
+};
 
 export default class Guests extends React.Component {
   state = {
@@ -15,17 +22,44 @@ export default class Guests extends React.Component {
   };
 
   onCounterClick = (key, value) => {
-    this.setState({ [key]: value }, this.passDataToParent);
+    this.setState({ [key]: value });
   };
 
-  passDataToParent = () => {
-    this.props.handlerFromParent(this.state, this.props.id);
+  onApplyClick = () => {
+    this.props.apply("guests", this.state);
+  };
+
+  onCancelClick = closeFilter => {
+    this.setState(
+      {
+        adults: this.props.guests.adults,
+        children: this.props.guests.children,
+        infants: this.props.guests.infants
+      },
+      closeFilter
+    );
+  };
+
+  componentWillReceiveProps = nextProps => {
+    this.setState({
+      adults: nextProps.guests.adults,
+      children: nextProps.guests.children,
+      infants: nextProps.guests.infants
+    });
   };
 
   render() {
-    console.log(this.props);
     return (
-      <div>
+      <Dropdown
+        apply={this.onApplyClick}
+        cancel={this.onCancelClick}
+        onToggle={this.props.toggle}
+        reset={this.props.reset}
+        id="guests"
+        label={getLabel(this.state) || "Guests"}
+        xsHeading="Guests"
+        showApplyOnXs
+      >
         <OptionTable>
           <OptionCell>
             <OptionName>Adults</OptionName>
@@ -71,7 +105,7 @@ export default class Guests extends React.Component {
             />
           </OptionCell>
         </OptionTable>
-      </div>
+      </Dropdown>
     );
   }
 }

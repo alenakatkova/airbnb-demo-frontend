@@ -56,10 +56,15 @@ export default class Dropdown extends React.Component {
 
   onApplyButtonClick = () => {
     this.props.apply(this.props.id, this.closeFilter);
+    this.closeFilter();
   };
 
   onCancelButtonClick = () => {
     this.props.cancel(this.closeFilter);
+  };
+
+  onResetButtonClick = () => {
+    this.props.reset(this.props.id);
   };
 
   render() {

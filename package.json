@@ -6,6 +6,7 @@
     "flexboxgrid2": "^7.0.0-alpha12",
     "google-map-react": "^0.25.0",
     "lodash": "^4.17.4",
+    "lodash.isequal": "^4.5.0",
     "moment": "^2.19.2",
     "normalize.css": "^7.0.0",
     "react": "^16.0.0",

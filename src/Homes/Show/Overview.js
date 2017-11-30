@@ -9,12 +9,6 @@ import guestIcon from "./guestIcon.svg";
 import doorIcon from "./doorIcon.svg";
 import lamp from "./lamp.png";
 import arrow from "./arrow.svg";
-import xsParking from "./xsParking.svg";
-import xsInternet from "./xsInternet.svg";
-import xsWiFi from "./xsWiFi.svg";
-import xsFamily from "./xsFamily.svg";
-import mdFamily from "./mdFamily.svg";
-import lgFamily from "./lgFamily.svg";
 import cancellation from "./cancellation.svg";
 
 const Section = styled.section`
@@ -247,6 +241,8 @@ const Amenity = styled.li`
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-basis: 50%;
+  max-width: 50%;
 
   @media screen and (min-width: 768px) {
     line-height: 19px;
@@ -356,12 +352,10 @@ export default () => {
 
         <Amenities>
           {AmenitiesArr.map(amenity => (
-            <div className="col-xs-6">
-              <Amenity>
-                <Icon src={amenity.icon} />
-                {amenity.name}
-              </Amenity>
-            </div>
+            <Amenity key={amenity.name}>
+              <Icon src={amenity.icon} />
+              {amenity.name}
+            </Amenity>
           ))}
         </Amenities>
 

@@ -12,9 +12,8 @@ import { Lg } from "../../mediaQueries";
 import { getDatesLabel } from "./labels";
 
 export default class Filters extends React.Component {
-  state = {
+  initialState = {
     selectedFilter: null,
-    selectedFilterData: {},
     dates: {
       startDate: null,
       endDate: null
@@ -59,45 +58,126 @@ export default class Filters extends React.Component {
     }
   };
 
-  handleData = (data, key = "") => {
-    this.setState({
-      selectedFilterData: data
-    });
-  };
+  state = this.initialState;
 
   onFilterToggle = (key, isOpen) => {
     this.setState({ selectedFilter: isOpen ? key : null });
   };
 
-  onApplyClick = (key, closeFilter) => {
-    if (key === "more") {
-      this.setState(
-        {
-          price: this.state.selectedFilterData.price,
-          instant: this.state.selectedFilterData.instant,
-          superhost: this.state.selectedFilterData.superhost,
-          room: this.state.selectedFilterData.room,
-          amenities: this.state.selectedFilterData.amenities,
-          facilities: this.state.selectedFilterData.facilities,
-          roomsAndBeds: this.state.selectedFilterData.roomsAndBeds
-        },
-        closeFilter()
-      );
-    } else {
-      this.setState({ [key]: this.state.selectedFilterData }, closeFilter());
-    }
+  onApplyClick = (key, data) => {
+    this.setState({ [key]: data }, function() {
+      console.log(this.state.guests);
+    });
   };
 
-  onCancelClick = closeFilter => {
-    closeFilter();
+  onResetClick = key => {
+    this.setState({ [key]: this.initialState[key] }, function() {
+      console.log(this.state.guests);
+    });
   };
 
   render() {
+    console.log(this.state.guests);
     return (
       <FiltersContainer>
         <div className="container">
           <Buttons>
-            <SmallDropdown
+            <Guests
+              guests={this.state.guests}
+              toggle={this.onFilterToggle}
+              apply={this.onApplyClick}
+              cancel={this.onCancelClick}
+              reset={this.onResetClick}
+            />
+          </Buttons>
+        </div>
+      </FiltersContainer>
+    );
+  }
+}
+
+// state = {
+//   selectedFilter: null,
+//   selectedFilterData: {},
+//   dates: {
+//     startDate: null,
+//     endDate: null
+//   },
+//   guests: {
+//     adults: 1,
+//     children: 0,
+//     infants: 0
+//   },
+//   room: {
+//     entire: false,
+//     private: false,
+//     shared: false
+//   },
+//   price: {
+//     min: 10,
+//     max: 1000,
+//     values: [10, 1000]
+//   },
+//   instant: {
+//     checked: false
+//   },
+//   superhost: {
+//     checked: false
+//   },
+//   amenities: {
+//     heating: false,
+//     kitchen: false,
+//     tv: false,
+//     wireless: false
+//   },
+//   facilities: {
+//     elevator: false,
+//     parking: false,
+//     pool: false,
+//     wheelchair: false
+//   },
+//   roomsAndBeds: {
+//     bedrooms: 0,
+//     beds: 0,
+//     bathrooms: 0
+//   }
+// };
+
+// handleData = (data, key = "") => {
+//   this.setState({
+//     selectedFilterData: data
+//   });
+// };
+
+// onFilterToggle = (key, isOpen) => {
+//   this.setState({ selectedFilter: isOpen ? key : null });
+// };
+
+// onApplyClick = (key, closeFilter) => {
+//   if (key === "more") {
+//     this.setState(
+//       {
+//         price: this.state.selectedFilterData.price,
+//         instant: this.state.selectedFilterData.instant,
+//         superhost: this.state.selectedFilterData.superhost,
+//         room: this.state.selectedFilterData.room,
+//         amenities: this.state.selectedFilterData.amenities,
+//         facilities: this.state.selectedFilterData.facilities,
+//         roomsAndBeds: this.state.selectedFilterData.roomsAndBeds
+//       },
+//       closeFilter()
+//     );
+//   } else {
+//     this.setState({ [key]: this.state.selectedFilterData }, closeFilter());
+//   }
+// };
+
+// onCancelClick = closeFilter => {
+//   closeFilter();
+// };
+
+{
+  /* <SmallDropdown
               id="dates"
               label={getDatesLabel(this.state) || "Dates"}
               xsHeading="When"
@@ -188,10 +268,5 @@ export default class Filters extends React.Component {
                 facilities={this.state.facilities}
                 roomsAndBeds={this.state.roomsAndBeds}
               />
-            </BigDropdown>
-          </Buttons>
-        </div>
-      </FiltersContainer>
-    );
-  }
+            </BigDropdown> */
 }

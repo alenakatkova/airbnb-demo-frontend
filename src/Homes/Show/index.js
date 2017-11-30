@@ -12,6 +12,7 @@ import HomeMap from "./HomeMap";
 import Similar from "./Similar";
 import Explore from "./Explore";
 import StickyRequest from "./Request";
+import MobileRequest from "./Request/Footer";
 import { Lg } from "../../mediaQueries";
 import { StickyContainer } from "react-sticky";
 
@@ -45,6 +46,7 @@ export default () => {
       </Main>
 
       <Footer />
+      <MobileRequest />
     </div>
   );
 };
