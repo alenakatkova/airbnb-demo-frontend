@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { OptionCell, OptionTable } from "./styled";
-import Counter from "./Counter";
+import { OptionCell, OptionTable } from "../styled";
+import Counter from "../Counter";
 
 const OptionName = styled.span`
   display: inline-block;
@@ -17,20 +17,6 @@ const OptionName = styled.span`
 `;
 
 export default class RoomsAndBeds extends React.Component {
-  state = {
-    bedrooms: this.props.roomsAndBeds.bedrooms,
-    beds: this.props.roomsAndBeds.beds,
-    bathrooms: this.props.roomsAndBeds.bathrooms
-  };
-
-  onCounterClick = (key, value) => {
-    this.setState({ [key]: value }, this.passDataToParent);
-  };
-
-  passDataToParent = () => {
-    this.props.handlerFromParent(this.state, "roomsAndBeds");
-  };
-
   render() {
     return (
       <div>
@@ -41,8 +27,8 @@ export default class RoomsAndBeds extends React.Component {
           <OptionCell>
             <Counter
               id="bedrooms"
-              value={this.state.bedrooms}
-              count={this.onCounterClick}
+              value={this.props.roomsAndBeds.bedrooms}
+              count={this.props.count}
               minimum={0}
               plus="+"
             />
@@ -56,8 +42,8 @@ export default class RoomsAndBeds extends React.Component {
           <OptionCell>
             <Counter
               id="beds"
-              value={this.state.beds}
-              count={this.onCounterClick}
+              value={this.props.roomsAndBeds.beds}
+              count={this.props.count}
               minimum={0}
               plus="+"
             />
@@ -71,8 +57,8 @@ export default class RoomsAndBeds extends React.Component {
           <OptionCell>
             <Counter
               id="bathrooms"
-              value={this.state.bathrooms}
-              count={this.onCounterClick}
+              value={this.props.roomsAndBeds.bathrooms}
+              count={this.props.count}
               minimum={0}
               plus="+"
             />

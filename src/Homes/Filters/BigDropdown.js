@@ -139,10 +139,15 @@ export default class Dropdown extends React.Component {
 
   onApplyButtonClick = () => {
     this.props.apply(this.props.id, this.closeFilter);
+    this.closeFilter();
   };
 
   onCancelButtonClick = () => {
     this.props.cancel(this.closeFilter);
+  };
+
+  onResetButtonClick = () => {
+    this.props.reset(this.props.id);
   };
 
   render() {
@@ -163,7 +168,9 @@ export default class Dropdown extends React.Component {
                 <TopContainer>
                   <CancelButton onClick={this.onFilterClick} />
                   <Heading>{this.props.xsHeading}</Heading>
-                  <ResetButton>Clear all</ResetButton>
+                  <ResetButton onClick={this.onResetButtonClick}>
+                    Clear all
+                  </ResetButton>
                 </TopContainer>
               </OnlyXs>
 

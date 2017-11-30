@@ -7,6 +7,7 @@ import "./react_dates_overrides.css";
 import MediaQuery from "react-responsive";
 import arrowRight from "./arrowRight.svg";
 import moment from "moment";
+import Dropdown from "./SmallDropdown";
 
 const DateRange = styled.div`
   padding-left: 8px;
@@ -39,6 +40,14 @@ const Arrow = styled.img`
   margin: 0 16px;
 `;
 
+export function getLabel(state, isSelected) {
+  if (isSelected || state.startDate !== null || state.endDate !== null) {
+    return `${
+      state.startDate ? state.startDate.format("MMM Do") : `Check In`
+    } — ${state.endDate ? state.endDate.format("MMM Do") : `Check out`}`;
+  }
+}
+
 export default class Dates extends React.Component {
   state = {
     focusedInput: this.props.autoFocusEndDate ? "endDate" : "startDate",
@@ -53,20 +62,46 @@ export default class Dates extends React.Component {
     );
   };
 
-  passDatesToParent = () => {
-    this.props.handlerFromParent(this.state);
-  };
-
   onFocusChange = focusedInput => {
     this.setState({
       focusedInput: !focusedInput ? "startDate" : focusedInput
     });
   };
 
+  onApplyClick = () => {
+    this.props.apply("dates", this.state);
+  };
+
+  onCancelClick = closeFilter => {
+    this.setState(
+      {
+        startDate: this.props.dates.startDate,
+        endDate: this.props.dates.endDate
+      },
+      closeFilter
+    );
+  };
+
+  componentWillReceiveProps = nextProps => {
+    this.setState({
+      startDate: nextProps.dates.startDate,
+      endDate: nextProps.dates.endDate
+    });
+  };
+
   render() {
     const { focusedInput, startDate, endDate } = this.state;
+
     return (
-      <div>
+      <Dropdown
+        apply={this.onApplyClick}
+        cancel={this.onCancelClick}
+        onToggle={this.props.toggle}
+        reset={this.props.reset}
+        id="dates"
+        label={getLabel(this.state, this.props.isSelected) || "Dates"}
+        xsHeading="When"
+      >
         <MediaQuery query="(max-width: 767px)">
           <DateRange>
             <DateInRange isActive={focusedInput === "startDate"}>
@@ -120,7 +155,7 @@ export default class Dates extends React.Component {
             hideKeyboardShortcutsPanel
           />
         </MediaQuery>
-      </div>
+      </Dropdown>
     );
   }
 }

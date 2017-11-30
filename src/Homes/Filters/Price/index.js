@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Rheostat from "rheostat";
 import "./slider.css";
 import priceStats from "./price.svg";
+import Dropdown from "../SmallDropdown";
+import isEqual from "lodash.isequal";
 
 const Range = styled.p`
   margin: 0;
@@ -35,6 +37,12 @@ const RheostatContainer = styled.div`
   position: relative;
 `;
 
+const getLabel = (newState, initState) => {
+  if (!isEqual(newState, initState)) {
+    return `${newState.values[0]}$ — ${newState.values[1]}$`;
+  }
+};
+
 export default class Price extends React.Component {
   state = {
     min: this.props.price.min,
@@ -42,22 +50,45 @@ export default class Price extends React.Component {
     values: this.props.price.values
   };
 
-  passDataToParent = () => {
-    this.props.handlerFromParent(this.state, "price");
+  onApplyClick = () => {
+    this.props.apply("price", this.state);
+  };
+
+  onCancelClick = closeFilter => {
+    this.setState(
+      {
+        min: this.props.price.min,
+        max: this.props.price.max,
+        values: this.props.price.values
+      },
+      closeFilter
+    );
+  };
+
+  componentWillReceiveProps = nextProps => {
+    this.setState({
+      min: nextProps.price.min,
+      max: nextProps.price.max,
+      values: nextProps.price.values
+    });
   };
 
   onValuesChange = sliderState => {
-    this.setState(
-      {
-        values: sliderState.values
-      },
-      this.passDataToParent
-    );
+    this.setState({
+      values: sliderState.values
+    });
   };
 
   render() {
     return (
-      <div>
+      <Dropdown
+        apply={this.onApplyClick}
+        cancel={this.onCancelClick}
+        onToggle={this.props.toggle}
+        reset={this.props.reset}
+        id="price"
+        label={getLabel(this.state, this.props.initialState) || "Price"}
+      >
         <Range>
           ${this.state.values[0]} — ${this.state.values[1]}+
         </Range>
@@ -72,7 +103,7 @@ export default class Price extends React.Component {
             values={this.state.values}
           />
         </RheostatContainer>
-      </div>
+      </Dropdown>
     );
   }
 }

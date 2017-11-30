@@ -3,7 +3,8 @@ import styled from "styled-components";
 import entireIcon from "./roomEntire.svg";
 import privateIcon from "./roomPrivate.svg";
 import sharedIcon from "./roomShared.svg";
-import Checkbox from "./Checkbox";
+import Checkbox from "../Checkbox";
+import Dropdown from "../SmallDropdown";
 
 const MainText = styled.span`
   font-size: 16px;
@@ -14,6 +15,12 @@ const Description = styled.span`
   line-height: 14px;
 `;
 
+const getLabel = state => {
+  if (state.entire || state.private || state.shared) {
+    return `Room type · ${state.entire + state.private + state.shared}`;
+  }
+};
+
 export default class RoomType extends React.Component {
   state = {
     entire: this.props.room.entire,
@@ -22,16 +29,44 @@ export default class RoomType extends React.Component {
   };
 
   checkCheckbox = key => {
-    this.setState({ [key]: !this.state[key] }, this.passDataToParent);
+    this.setState({ [key]: !this.state[key] });
   };
 
-  passDataToParent = () => {
-    this.props.handlerFromParent(this.state, "room");
+  onApplyClick = () => {
+    this.props.apply("room", this.state);
+  };
+
+  onCancelClick = closeFilter => {
+    this.setState(
+      {
+        entire: this.props.room.entire,
+        private: this.props.room.private,
+        shared: this.props.room.shared
+      },
+      closeFilter
+    );
+  };
+
+  componentWillReceiveProps = nextProps => {
+    this.setState({
+      entire: nextProps.room.entire,
+      private: nextProps.room.private,
+      shared: nextProps.room.shared
+    });
   };
 
   render() {
     return (
-      <div>
+      <Dropdown
+        apply={this.onApplyClick}
+        cancel={this.onCancelClick}
+        onToggle={this.props.toggle}
+        reset={this.props.reset}
+        id="room"
+        label={getLabel(this.state) || "Room type"}
+        xsHeading="Room type"
+        showApplyOnXs
+      >
         <Checkbox
           id="entire"
           checkboxName="room-type"
@@ -78,7 +113,7 @@ export default class RoomType extends React.Component {
           <br />
           <Description>Stay in a shared space, like a common room</Description>
         </Checkbox>
-      </div>
+      </Dropdown>
     );
   }
 }
