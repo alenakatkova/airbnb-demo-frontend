@@ -237,14 +237,16 @@ const SmallHeading = styled.h4`
   }
 `;
 
-const Amenity = styled.div`
-  padding-left: 28px;
+const Amenity = styled.li`
   font-family: "CircularAir-Light", "Arial Light", sans-serif;
   line-height: 16px;
   font-size: 14px;
   color: #383838;
   margin-bottom: 27px;
   min-height: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
   @media screen and (min-width: 768px) {
     line-height: 19px;
@@ -252,30 +254,26 @@ const Amenity = styled.div`
   }
 `;
 
-const Internet = Amenity.extend`background: url(${xsInternet}) no-repeat;`;
-
-const WiFi = Amenity.extend`background: url(${xsWiFi}) no-repeat;`;
-
-const Family = Amenity.extend`
-  background: url(${xsFamily}) no-repeat;
-
-  @media screen and (min-width: 768px) {
-    background: url(${mdFamily}) no-repeat;
-  }
-
-  @media screen and (min-width: 992px) {
-    background: url(${lgFamily}) no-repeat;
-  }
+const Amenities = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 `;
 
-const Parking = Amenity.extend`
-  background: url(${xsParking}) no-repeat;
-  background-position: 0 5px;
-
-  @media screen and (min-width: 768px) {
-    background-position: 0 0;
-  }
+const Icon = styled.img`
+  margin-right: 16px;
 `;
+
+const AmenitiesArr = [
+  { name: "Internet", icon: require("./xsInternet.svg") },
+  { name: "Family/kid friendly", icon: require("./xsFamily.svg") },
+  { name: "Wireless Internet", icon: require("./xsWiFi.svg") },
+  { name: "Free parking on premises", icon: require("./xsParking.svg") }
+];
 
 const Hr = styled.hr`
   width: 65px;
@@ -355,20 +353,18 @@ export default () => {
 
       <Part>
         <SubHeading>Amenities</SubHeading>
-        <div className="row middle-xs">
-          <div className="col-xs-6">
-            <Internet>Internet</Internet>
-          </div>
-          <div className="col-xs-6">
-            <Family>Family/kid friendly</Family>
-          </div>
-          <div className="col-xs-6">
-            <WiFi>Wireless Internet</WiFi>
-          </div>
-          <div className="col-xs-6">
-            <Parking>Free parking on premises</Parking>
-          </div>
-        </div>
+
+        <Amenities>
+          {AmenitiesArr.map(amenity => (
+            <div className="col-xs-6">
+              <Amenity>
+                <Icon src={amenity.icon} />
+                {amenity.name}
+              </Amenity>
+            </div>
+          ))}
+        </Amenities>
+
         <GreenButton>
           Show all amenities <Arrow src={arrow} alt="Arrow" />
         </GreenButton>

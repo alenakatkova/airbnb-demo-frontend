@@ -3,7 +3,7 @@ import Header from "../../Header";
 import Footer from "../../Landing/Footer";
 import { Main } from "./styled";
 import Photos from "./Photos";
-import Nav from "./Nav";
+import StickyNavigation from "./Nav";
 import Overview from "./Overview";
 import Reviews from "./Reviews";
 import Host from "./Host";
@@ -11,8 +11,9 @@ import Neighbourhood from "./Neighbourhood";
 import HomeMap from "./HomeMap";
 import Similar from "./Similar";
 import Explore from "./Explore";
-import LgRequest from "./Request";
+import StickyRequest from "./Request";
 import { Lg } from "../../mediaQueries";
+import { StickyContainer } from "react-sticky";
 
 export default () => {
   return (
@@ -20,26 +21,29 @@ export default () => {
       <Header placeholder="Search" />
       <Main>
         <Photos />
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12 col-lg-8">
-              <Nav />
-              <Overview />
-              <Reviews />
-              <Host />
-              <Neighbourhood />
-            </div>
-            <Lg>
-              <div className="col-lg-4">
-                <LgRequest />
+        <StickyContainer>
+          <div className="container">
+            <div className="row">
+              <div className="col-xs-12 col-lg-8">
+                <StickyNavigation />
+                <Overview />
+                <Reviews />
+                <Host />
+                <Neighbourhood />
               </div>
-            </Lg>
+              <Lg>
+                <div className="col-lg-4">
+                  <StickyRequest />
+                </div>
+              </Lg>
+            </div>
+            <HomeMap />
+            <Similar />
+            <Explore />
           </div>
-          <HomeMap />
-          <Similar />
-          <Explore />
-        </div>
+        </StickyContainer>
       </Main>
+
       <Footer />
     </div>
   );

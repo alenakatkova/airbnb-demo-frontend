@@ -1,5 +1,5 @@
 import React from "react";
-import testPicture from "../testPicture.png";
+import mainPhoto from "./cabana.png";
 import xsShare from "./xsShare.svg";
 import xsLike from "./xsLike.svg";
 import mdShare from "./mdShare.svg";
@@ -8,7 +8,7 @@ import styled from "styled-components";
 import { Md } from "../../mediaQueries";
 
 const PhotoContainer = styled.div`
-  background: url(${testPicture}) no-repeat;
+  background: url(${mainPhoto}) no-repeat;
   min-height: 290px;
   background-size: cover;
 
@@ -39,6 +39,7 @@ const SocialButton = styled.button`
   border: none;
   background-size: contain;
   border-radius: 0;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     width: auto;
@@ -62,6 +63,7 @@ const Share = SocialButton.extend`
   background: url(${xsShare}) no-repeat;
   width: 24px;
   height: 24px;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     background-image: url(${mdShare});
@@ -73,6 +75,7 @@ const Like = SocialButton.extend`
   height: 23px;
   background: url(${xsLike}) no-repeat;
   margin-left: 16px;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     background-image: url(${mdLike});

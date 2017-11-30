@@ -32,10 +32,6 @@ export const TitleContainer = styled.div`
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-
-  @media screen and (min-width: 768px) {
-    margin: 0 -8px;
-  }
 `;
 
 export const CardsContainer = styled.div`
@@ -48,10 +44,6 @@ export const CardsContainer = styled.div`
   flex: 0 1 auto;
   flex-direction: row;
   flex-wrap: nowrap;
-
-  @media screen and (min-width: 768px) {
-    margin: 0 -16px;
-  }
 `;
 
 export const Card = styled(Link)`
@@ -84,4 +76,6 @@ export const NextPage = styled.button`
   }
 `;
 
-export const NextContainer = styled.div`position: relative;`;
+export const NextContainer = styled.div`
+  position: relative;
+`;

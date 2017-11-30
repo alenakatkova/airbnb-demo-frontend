@@ -23,10 +23,6 @@ export const LeftSideContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 8px;
-
-  @media screen and (min-width: 768px) {
-    padding: 0;
-  }
 `;
 
 export const Logo = styled.img`

@@ -1,9 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { Sticky } from "react-sticky";
 
-const Nav = styled.nav`
+const NavContainer = styled.nav`
   border-bottom: 1px solid rgba(118, 118, 118, 0.2);
   padding: 11px 0;
+  background: #ffffff;
+
+  @media screen and (min-width: 768px) {
+    padding: 16px 0;
+  }
 `;
 
 const Link = styled.a`
@@ -14,12 +20,8 @@ const Link = styled.a`
   font-family: "CircularAir-Book", "Arial", sans-serif;
   line-height: 14px;
   font-size: 12px;
-  color: #0f7276;
-
-  &:active {
-    font-family: "CircularAir-Bold", "Arial Bold", sans-serif;
-    color: #383838;
-  }
+  color: ${props => (props.isChosen ? "#383838" : "#0f7276")};
+  font-weight: ${props => (props.isChosen ? "bolder" : "normal")};
 
   @media screen and (min-width: 768px) {
     line-height: 16px;
@@ -41,16 +43,79 @@ const Decor = styled.span`
   }
 `;
 
+class Nav extends React.Component {
+  state = {
+    linkChosen: null
+  };
+
+  onLinkClick = key => {
+    this.setState({ linkChosen: key });
+  };
+
+  render() {
+    return (
+      <NavContainer>
+        <Link
+          href="#overview"
+          onClick={() => this.onLinkClick("overview")}
+          isChosen={this.state.linkChosen === "overview"}
+        >
+          Overview
+        </Link>
+        <Decor>·</Decor>
+        <Link
+          href="#reviews"
+          onClick={() => this.onLinkClick("reviews")}
+          isChosen={this.state.linkChosen === "reviews"}
+        >
+          Reviews
+        </Link>
+        <Decor>·</Decor>
+        <Link
+          href="#host"
+          onClick={() => this.onLinkClick("host")}
+          isChosen={this.state.linkChosen === "host"}
+        >
+          The Host
+        </Link>
+        <Decor>·</Decor>
+        <Link
+          href="#location"
+          onClick={() => this.onLinkClick("location")}
+          isChosen={this.state.linkChosen === "location"}
+        >
+          Location
+        </Link>
+      </NavContainer>
+    );
+  }
+}
+
 export default () => {
   return (
-    <Nav>
-      <Link href="#overview">Overview</Link>
-      <Decor>·</Decor>
-      <Link href="#reviews">Reviews</Link>
-      <Decor>·</Decor>
-      <Link href="#host">The Host</Link>
-      <Decor>·</Decor>
-      <Link href="#location">Location</Link>
-    </Nav>
+    <Sticky topOffset={-82.5}>
+      {({ style, isSticky }) => {
+        return (
+          <div
+            style={{
+              ...style,
+              background: "#ffffff",
+              left: 0,
+              zIndex: 11,
+              top: isSticky ? 82.5 : 0,
+              width: "100%"
+            }}
+          >
+            {isSticky ? (
+              <div className="container">
+                <Nav />
+              </div>
+            ) : (
+              <Nav />
+            )}
+          </div>
+        );
+      }}
+    </Sticky>
   );
 };
