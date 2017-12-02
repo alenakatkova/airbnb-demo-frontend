@@ -41,16 +41,14 @@ const ButtonIcon = styled.img`
   transform: translate(-50%, -50%);
 `;
 
-let currentValue;
-
 export default class Counter extends React.Component {
   onPlusClick = () => {
-    currentValue = this.props.value + 1;
+    const currentValue = this.props.value + 1;
     this.props.count(this.props.id, currentValue);
   };
 
   onMinusClick = () => {
-    currentValue =
+    const currentValue =
       this.props.value > this.props.minimum
         ? this.props.value - 1
         : this.props.minimum;
@@ -60,16 +58,12 @@ export default class Counter extends React.Component {
   render() {
     return (
       <Container>
-        {this.props.value === this.props.minimum ? (
-          <Button onClick={this.onMinusClick} disabled>
-            <ButtonIcon src={minusIcon} alt="Minus" />
-          </Button>
-        ) : (
-          <Button onClick={this.onMinusClick}>
-            <ButtonIcon src={minusIcon} alt="Minus" />
-          </Button>
-        )}
-
+        <Button
+          onClick={this.onMinusClick}
+          disabled={this.props.value === this.props.minimum}
+        >
+          <ButtonIcon src={minusIcon} alt="Minus" />
+        </Button>
         <Value>
           {this.props.value}
           {this.props.plus}

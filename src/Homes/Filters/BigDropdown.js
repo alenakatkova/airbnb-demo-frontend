@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { OnlyXs, Md } from "../../mediaQueries";
+import { Md } from "../../mediaQueries";
 import {
   Button,
   TopContainer,
-  Container,
   CancelButton as Cancel,
   Heading,
-  ResetButton,
-  Background
+  Container,
+  ResetButton
 } from "./styled";
 
 const Content = styled.div`
@@ -21,17 +20,16 @@ const Content = styled.div`
   box-sizing: border-box;
   background: #ffffff;
   padding: 8px;
+  display: flex;
+  flex-flow: column nowrap;
 
   @media screen and (min-width: 768px) {
     top: 138px;
   }
 
   @media screen and (min-width: 992px) {
-    width: calc(50% + 992px * 0.17);
-  }
-
-  @media screen and (min-width: 1200px) {
-    width: calc(50% + 1200px * 0.17);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0;
   }
 `;
 
@@ -54,12 +52,9 @@ const ButtonsContainer = styled.div`
   }
 
   @media screen and (min-width: 992px) {
-    padding-left: calc(50% - 992px * 0.32);
     justify-content: flex-end;
-  }
-
-  @media screen and (min-width: 1200px) {
-    padding-left: calc(50% - 1200px * 0.32);
+    right: 0;
+    bottom: -82px;
   }
 `;
 
@@ -97,17 +92,61 @@ const CancelButton = Cancel.extend`
   }
 `;
 
+const Filters = styled.div`
+  flex-basis: 100%;
+  max-width: 100%;
+
+  @media screen and (min-width: 992px) {
+    flex-basis: 66.6667%;
+    max-width: 66.6667%;
+    position: relative;
+    padding: 0 8px;
+  }
+`;
+
+const InnerContainer = styled.div`
+  overflow-y: auto;
+  padding-bottom: 74px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 8px;
+    padding-bottom: 194px;
+  }
+
+  @media screen and (min-width: 992px) {
+    padding: 0 16px;
+    padding-bottom: 224px;
+  }
+`;
+
+const Background = styled.div`
+  @media screen and (min-width: 992px) {
+    width: calc(50% + 992px * 0.17);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -10;
+    background: #ffffff;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc(50% + 1200px * 0.17);
+  }
+`;
+
 export default class Dropdown extends React.Component {
   state = {
     isOpen: false
   };
 
+  onToggle = () => {
+    this.props.onToggle(this.props.id, !this.state.isOpen);
+  };
+
   onFilterClick = isOpen => {
     if (this.state.isOpen !== isOpen) {
-      this.setState(
-        { isOpen: !this.state.isOpen },
-        this.props.onToggle(this.props.id, !this.state.isOpen)
-      );
+      this.setState({ isOpen: !this.state.isOpen }, this.onToggle);
     }
   };
 
@@ -138,7 +177,7 @@ export default class Dropdown extends React.Component {
   };
 
   onApplyButtonClick = () => {
-    this.props.apply(this.props.id, this.closeFilter);
+    this.props.apply(this.props.id);
     this.closeFilter();
   };
 
@@ -147,7 +186,7 @@ export default class Dropdown extends React.Component {
   };
 
   onResetButtonClick = () => {
-    this.props.reset(this.props.id);
+    this.props.reset();
   };
 
   render() {
@@ -164,31 +203,38 @@ export default class Dropdown extends React.Component {
 
           {this.state.isOpen && (
             <Content>
-              <OnlyXs>
-                <TopContainer>
-                  <CancelButton onClick={this.onFilterClick} />
-                  <Heading>{this.props.xsHeading}</Heading>
-                  <ResetButton onClick={this.onResetButtonClick}>
-                    Clear all
-                  </ResetButton>
-                </TopContainer>
-              </OnlyXs>
+              <Background />
 
-              {this.props.children}
+              <TopContainer>
+                <CancelButton onClick={this.onFilterClick} />
+                <Heading>{this.props.label}</Heading>
+                <ResetButton onClick={this.onResetButtonClick}>
+                  Clear all
+                </ResetButton>
+              </TopContainer>
 
-              <ButtonsContainer>
-                <Md>
-                  <CancelButton onClick={this.onCancelButtonClick}>
-                    Cancel
-                  </CancelButton>
-                </Md>
-                <ApplyButton onClick={this.onApplyButtonClick}>
-                  See homes
-                </ApplyButton>
-              </ButtonsContainer>
+              <InnerContainer>
+                <div className="container">
+                  <div className="row">
+                    <Filters>
+                      {this.props.children}
+
+                      <ButtonsContainer>
+                        <Md>
+                          <CancelButton onClick={this.onCancelButtonClick}>
+                            Cancel
+                          </CancelButton>
+                        </Md>
+                        <ApplyButton onClick={this.onApplyButtonClick}>
+                          See homes
+                        </ApplyButton>
+                      </ButtonsContainer>
+                    </Filters>
+                  </div>
+                </div>
+              </InnerContainer>
             </Content>
           )}
-          {this.state.isOpen && <Background />}
         </div>
       </Container>
     );

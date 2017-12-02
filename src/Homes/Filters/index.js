@@ -62,35 +62,35 @@ export default class Filters extends React.Component {
   };
 
   onApplyClick = (key, data) => {
-    if (key === "more") {
-      this.setState({
-        price: data.price,
-        instant: data.instant,
-        superhost: data.superhost,
-        room: data.room,
-        amenities: data.amenities,
-        facilities: data.facilities,
-        roomsAndBeds: data.roomsAndBeds
-      });
-    } else {
-      this.setState({ [key]: data });
-    }
+    this.setState({ [key]: data });
+  };
+
+  onMoreApplyClick = data => {
+    this.setState({
+      price: data.price,
+      instant: data.instant,
+      superhost: data.superhost,
+      room: data.room,
+      amenities: data.amenities,
+      facilities: data.facilities,
+      roomsAndBeds: data.roomsAndBeds
+    });
   };
 
   onResetClick = key => {
-    if (key === "more") {
-      this.setState({
-        price: this.initialState.price,
-        instant: this.initialState.instant,
-        superhost: this.initialState.superhost,
-        room: this.initialState.room,
-        amenities: this.initialState.amenities,
-        facilities: this.initialState.facilities,
-        roomsAndBeds: this.initialState.roomsAndBeds
-      });
-    } else {
-      this.setState({ [key]: this.initialState[key] });
-    }
+    this.setState({ [key]: this.initialState[key] });
+  };
+
+  onMoreResetClick = () => {
+    this.setState({
+      price: this.initialState.price,
+      instant: this.initialState.instant,
+      superhost: this.initialState.superhost,
+      room: this.initialState.room,
+      amenities: this.initialState.amenities,
+      facilities: this.initialState.facilities,
+      roomsAndBeds: this.initialState.roomsAndBeds
+    });
   };
 
   render() {
@@ -146,9 +146,9 @@ export default class Filters extends React.Component {
               facilities={this.state.facilities}
               amenities={this.state.amenities}
               toggle={this.onFilterToggle}
-              apply={this.onApplyClick}
+              apply={this.onMoreApplyClick}
               cancel={this.onCancelClick}
-              reset={this.onResetClick}
+              reset={this.onMoreResetClick}
             />
           </Buttons>
         </div>

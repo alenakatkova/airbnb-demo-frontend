@@ -4,7 +4,7 @@ import Rheostat from "rheostat";
 import "./slider.css";
 import priceStats from "./price.svg";
 import Dropdown from "../SmallDropdown";
-import isEqual from "lodash.isequal";
+import isEqual from "lodash/isEqual";
 
 const Range = styled.p`
   margin: 0;

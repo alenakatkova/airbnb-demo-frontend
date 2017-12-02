@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { OptionCell, OptionTable } from "../styled";
+import { Cell, Table } from "../styled";
 import Counter from "../Counter";
 
-const OptionName = styled.span`
+const Option = styled.span`
   display: inline-block;
   font-family: "CircularAir-Light", "Arial Light", sans-serif;
   line-height: 19px;
@@ -20,11 +20,11 @@ export default class RoomsAndBeds extends React.Component {
   render() {
     return (
       <div>
-        <OptionTable>
-          <OptionCell>
-            <OptionName>Bedrooms</OptionName>
-          </OptionCell>
-          <OptionCell>
+        <Table>
+          <Cell>
+            <Option>Bedrooms</Option>
+          </Cell>
+          <Cell>
             <Counter
               id="bedrooms"
               value={this.props.roomsAndBeds.bedrooms}
@@ -32,14 +32,14 @@ export default class RoomsAndBeds extends React.Component {
               minimum={0}
               plus="+"
             />
-          </OptionCell>
-        </OptionTable>
+          </Cell>
+        </Table>
 
-        <OptionTable>
-          <OptionCell>
-            <OptionName>Beds</OptionName>
-          </OptionCell>
-          <OptionCell>
+        <Table>
+          <Cell>
+            <Option>Beds</Option>
+          </Cell>
+          <Cell>
             <Counter
               id="beds"
               value={this.props.roomsAndBeds.beds}
@@ -47,14 +47,14 @@ export default class RoomsAndBeds extends React.Component {
               minimum={0}
               plus="+"
             />
-          </OptionCell>
-        </OptionTable>
+          </Cell>
+        </Table>
 
-        <OptionTable>
-          <OptionCell>
-            <OptionName>Bathrooms</OptionName>
-          </OptionCell>
-          <OptionCell>
+        <Table>
+          <Cell>
+            <Option>Bathrooms</Option>
+          </Cell>
+          <Cell>
             <Counter
               id="bathrooms"
               value={this.props.roomsAndBeds.bathrooms}
@@ -62,8 +62,8 @@ export default class RoomsAndBeds extends React.Component {
               minimum={0}
               plus="+"
             />
-          </OptionCell>
-        </OptionTable>
+          </Cell>
+        </Table>
       </div>
     );
   }

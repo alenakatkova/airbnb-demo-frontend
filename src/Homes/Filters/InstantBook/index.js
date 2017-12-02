@@ -37,16 +37,6 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const LearnMore = styled.button`
-  border: none;
-  background: none;
-  padding: 0;
-  font-family: "CircularAir-Light", "Arial Bold", sans-serif;
-  line-height: 16px;
-  font-size: 14px;
-  color: #0f7276;
-`;
-
 const getLabel = state => {
   if (state.checked) {
     return `Instant book \u2713`;
@@ -100,11 +90,7 @@ export default class InstantBook extends React.Component {
           </Description>
 
           <Button onClick={this.onButtonClick}>
-            {this.state.checked ? (
-              <img src={checked} alt="button" />
-            ) : (
-              <img src={unchecked} alt="button" />
-            )}
+            <img src={this.state.checked ? checked : unchecked} alt="button" />
           </Button>
         </Container>
       </Dropdown>

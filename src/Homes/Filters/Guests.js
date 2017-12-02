@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  OptionCell,
-  OptionDescription,
-  OptionName,
-  OptionTable
-} from "./styled";
+import { Cell, Description, Option, Table } from "./styled";
 import Counter from "./Counter";
 import Dropdown from "./SmallDropdown";
 
@@ -58,53 +53,52 @@ export default class Guests extends React.Component {
         id="guests"
         label={getLabel(this.state) || "Guests"}
         xsHeading="Guests"
-        showApplyOnXs
       >
-        <OptionTable>
-          <OptionCell>
-            <OptionName>Adults</OptionName>
-          </OptionCell>
-          <OptionCell>
+        <Table>
+          <Cell>
+            <Option>Adults</Option>
+          </Cell>
+          <Cell>
             <Counter
               id="adults"
               value={this.state.adults}
               count={this.onCounterClick}
               minimum={1}
             />
-          </OptionCell>
-        </OptionTable>
+          </Cell>
+        </Table>
 
-        <OptionTable>
-          <OptionCell>
-            <OptionName>Children</OptionName>
+        <Table>
+          <Cell>
+            <Option>Children</Option>
             <br />
-            <OptionDescription>Ages 2 — 12</OptionDescription>
-          </OptionCell>
-          <OptionCell>
+            <Description>Ages 2 — 12</Description>
+          </Cell>
+          <Cell>
             <Counter
               id="children"
               value={this.state.children}
               count={this.onCounterClick}
               minimum={0}
             />
-          </OptionCell>
-        </OptionTable>
+          </Cell>
+        </Table>
 
-        <OptionTable>
-          <OptionCell>
-            <OptionName>Infants</OptionName>
+        <Table>
+          <Cell>
+            <Option>Infants</Option>
             <br />
-            <OptionDescription>Under 2</OptionDescription>
-          </OptionCell>
-          <OptionCell>
+            <Description>Under 2</Description>
+          </Cell>
+          <Cell>
             <Counter
               id="infants"
               value={this.state.infants}
               count={this.onCounterClick}
               minimum={0}
             />
-          </OptionCell>
-        </OptionTable>
+          </Cell>
+        </Table>
       </Dropdown>
     );
   }

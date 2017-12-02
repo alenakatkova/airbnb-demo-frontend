@@ -64,8 +64,6 @@ export default class RoomType extends React.Component {
         reset={this.props.reset}
         id="room"
         label={getLabel(this.state) || "Room type"}
-        xsHeading="Room type"
-        showApplyOnXs
       >
         <Checkbox
           id="entire"
@@ -75,7 +73,6 @@ export default class RoomType extends React.Component {
           src={entireIcon}
           alt="Entire home"
           check={this.checkCheckbox}
-          showIcon
         >
           <MainText>Entire home</MainText>
           <br />
@@ -90,7 +87,6 @@ export default class RoomType extends React.Component {
           src={privateIcon}
           alt="Private home"
           check={this.checkCheckbox}
-          showIcon
         >
           <MainText>Private room</MainText>
           <br />
@@ -107,7 +103,6 @@ export default class RoomType extends React.Component {
           src={sharedIcon}
           alt="Shared home"
           check={this.checkCheckbox}
-          showIcon
         >
           <MainText>Shared room</MainText>
           <br />

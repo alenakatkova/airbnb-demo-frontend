@@ -1,5 +1,5 @@
 import React from "react";
-import { OnlyXs, Md } from "../../mediaQueries";
+import { Md } from "../../mediaQueries";
 import {
   Button,
   TopContainer,
@@ -13,6 +13,12 @@ import {
   InnerContainer,
   Background
 } from "./styled";
+
+const SaveButtonContainer = ButtonsContainer.extend`
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
 
 export default class Dropdown extends React.Component {
   state = {
@@ -81,15 +87,13 @@ export default class Dropdown extends React.Component {
 
           {this.state.isOpen && (
             <Content>
-              <OnlyXs>
-                <TopContainer>
-                  <CancelButton onClick={this.onFilterClick} />
-                  <Heading>{this.props.xsHeading}</Heading>
-                  <ResetButton onClick={this.onResetButtonClick}>
-                    Reset
-                  </ResetButton>
-                </TopContainer>
-              </OnlyXs>
+              <TopContainer>
+                <CancelButton onClick={this.onFilterClick} />
+                <Heading>{this.props.label}</Heading>
+                <ResetButton onClick={this.onResetButtonClick}>
+                  Reset
+                </ResetButton>
+              </TopContainer>
 
               <InnerContainer>{this.props.children}</InnerContainer>
 
@@ -104,15 +108,11 @@ export default class Dropdown extends React.Component {
                 </ButtonsContainer>
               </Md>
 
-              {this.props.showApplyOnXs && (
-                <OnlyXs>
-                  <ButtonsContainer>
-                    <ApplyButton onClick={this.onApplyButtonClick}>
-                      Save
-                    </ApplyButton>
-                  </ButtonsContainer>
-                </OnlyXs>
-              )}
+              <SaveButtonContainer>
+                <ApplyButton onClick={this.onApplyButtonClick}>
+                  Save
+                </ApplyButton>
+              </SaveButtonContainer>
             </Content>
           )}
           {this.state.isOpen && <Background />}

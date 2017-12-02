@@ -100,7 +100,6 @@ export default class Dates extends React.Component {
         reset={this.props.reset}
         id="dates"
         label={getLabel(this.state, this.props.isSelected) || "Dates"}
-        xsHeading="When"
       >
         <MediaQuery query="(max-width: 767px)">
           <DateRange>

@@ -17,10 +17,6 @@ export const CardsContainer = styled.div`
   flex: 0 1 auto;
   margin: 0 -8px;
 
-  @media screen and (min-width: 768px) {
-    margin: 0 -16px;
-  }
-
   @media screen and (min-width: 992px) {
     flex-basis: 66.66666667%;
     max-width: 66.66666667%;

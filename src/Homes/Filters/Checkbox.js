@@ -59,8 +59,8 @@ export default class ArrowCheckbox extends React.Component {
 
   render() {
     return (
-      <Row onClick={this.onCheckboxClick}>
-        <Label>
+      <Row>
+        <Label onClick={this.onCheckboxClick}>
           <Checkbox
             type="checkbox"
             name={this.props.checkboxName}
@@ -69,7 +69,7 @@ export default class ArrowCheckbox extends React.Component {
           <FakeCheckbox checked={this.props.checked} />
           {this.props.children}
         </Label>
-        {this.props.showIcon && (
+        {this.props.src && (
           <IconContainer>
             <Icon src={this.props.src} alt={this.props.alt} />
           </IconContainer>

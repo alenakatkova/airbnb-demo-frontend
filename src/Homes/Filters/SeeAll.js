@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import arrow from "./arrow.svg";
-import { OnlyXs, Md } from "../../mediaQueries";
+import { Md } from "../../mediaQueries";
 
 const Button = styled.button`
   font-family: "CircularAir-Book", "Arial", sans-serif;
@@ -44,6 +44,10 @@ const Title = styled.h2`
   font-size: 18px;
   color: #383838;
   margin-bottom: 23px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const FlexContainer = styled.div`
@@ -69,9 +73,7 @@ export default class Dropdown extends React.Component {
     return (
       <div>
         <FlexContainer>
-          <OnlyXs>
-            <Title>{this.props.title}</Title>
-          </OnlyXs>
+          <Title>{this.props.title}</Title>
           <Button isOpen={this.state.isOpen} onClick={this.onSeAllClick}>
             {this.props.label}
           </Button>

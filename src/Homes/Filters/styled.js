@@ -17,10 +17,12 @@ export const Buttons = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   flex: 0 1 auto;
+`;
 
-  @media screen and (min-width: 768px) {
-    margin: 0 -8px;
-  }
+export const Container = styled.div`
+  position: relative;
+  margin-right: 16px;
+  display: inline-flex;
 `;
 
 export const Filter = styled.button`
@@ -60,6 +62,7 @@ export const Button = styled.button`
   line-height: 16px;
   font-family: "CircularAir-Book", "Arial", sans-serif;
   color: ${props => (props.isOpen ? "#ffffff" : "#383838")};
+  cursor: pointer;
 `;
 
 export const ApplyButton = styled.button`
@@ -70,8 +73,8 @@ export const ApplyButton = styled.button`
   font-size: 18px;
   color: #ffffff;
   cursor: pointer;
-  padding: 13px 0;
   width: 100%;
+  padding: 13px 0;
   text-align: center;
   background: #ff5a5f;
   border-radius: 4px;
@@ -80,13 +83,13 @@ export const ApplyButton = styled.button`
     position: static;
     font-family: "CircularAir-Book", "Arial", sans-serif;
     background: none;
-    padding: 0 12px;
     display: inline-flex;
     font-size: 16px;
     line-height: 19px;
     text-align: center;
     color: #008489;
     width: auto;
+    padding: 5px 20px;
   }
 `;
 
@@ -99,7 +102,7 @@ export const CancelButton = styled.button`
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
-    padding: 0 12px;
+    padding: 5px 20px;
     display: inline-block;
     font-size: 16px;
     line-height: 19px;
@@ -125,6 +128,10 @@ export const TopContainer = styled.div`
   box-sizing: border-box;
   background: #ffffff;
   box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -145,6 +152,7 @@ export const ButtonsContainer = styled.div`
     box-shadow: none;
     padding: 0;
     position: static;
+    margin-top: 8px;
   }
 `;
 
@@ -191,12 +199,6 @@ export const Content = styled.div`
   }
 `;
 
-export const Container = styled.div`
-  position: relative;
-  margin-right: 16px;
-  display: inline-flex;
-`;
-
 export const InnerContainer = styled.div`
   position: absolute;
   top: 48px;
@@ -216,21 +218,21 @@ export const InnerContainer = styled.div`
   }
 `;
 
-export const OptionTable = styled.div`
+export const Table = styled.div`
   display: table;
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 36px;
 `;
 
-export const OptionCell = styled.div`
+export const Cell = styled.div`
   display: table-cell;
   width: 100%;
   box-sizing: border-box;
   vertical-align: middle;
 `;
 
-export const OptionName = styled.span`
+export const Option = styled.span`
   display: inline-block;
   font-family: "CircularAir-Book", "Arial", sans-serif;
   line-height: 21px;
@@ -243,7 +245,7 @@ export const OptionName = styled.span`
   }
 `;
 
-export const OptionDescription = styled.span`
+export const Description = styled.span`
   display: inline-block;
   font-family: "CircularAir-Light", "Arial Light", sans-serif;
   line-height: 16px;

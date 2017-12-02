@@ -1,6 +1,6 @@
 import React from "react";
 import RoomsAndBeds from "./RoomsAndBeds";
-import { OnlyXsAndMd } from "../../../mediaQueries";
+import styled from "styled-components";
 import Dropdown from "../BigDropdown";
 import Checkbox from "../Checkbox";
 import entireIcon from "../RoomType/roomEntire.svg";
@@ -15,7 +15,6 @@ import {
   Range,
   Average,
   Stats,
-  Container,
   Section,
   Title,
   MainText,
@@ -28,6 +27,12 @@ import {
   Button,
   LearnMore
 } from "./styled";
+
+const FiltersContainer = styled.div`
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+`;
 
 export default class More extends React.Component {
   state = {
@@ -67,7 +72,7 @@ export default class More extends React.Component {
   };
 
   onApplyClick = () => {
-    this.props.apply("more", this.state);
+    this.props.apply(this.state);
   };
 
   onCancelClick = closeFilter => {
@@ -98,47 +103,51 @@ export default class More extends React.Component {
   };
 
   onRoomsAndBedCount = (key, value) => {
-    const roomsAndBeds = Object.assign({}, this.state.roomsAndBeds);
-    roomsAndBeds[key] = value;
-    this.setState({ roomsAndBeds: roomsAndBeds });
+    this.setState(prevState => ({
+      roomsAndBeds: {
+        ...prevState.roomsAndBeds,
+        [key]: value
+      }
+    }));
   };
 
   checkFacility = key => {
-    const copy = Object.assign({}, this.state.facilities);
-    copy[key] = !copy[key];
-    this.setState({ facilities: copy });
+    this.setState(prevState => ({
+      facilities: {
+        ...prevState.facilities,
+        [key]: !this.state.facilities[key]
+      }
+    }));
   };
 
   checkAmenity = key => {
-    const copy = Object.assign({}, this.state.amenities);
-    copy[key] = !copy[key];
-    this.setState({ amenities: copy });
+    this.setState(prevState => ({
+      amenities: { ...prevState.amenities, [key]: !this.state.amenities[key] }
+    }));
   };
 
   checkRoomType = key => {
-    const copy = Object.assign({}, this.state.room);
-    copy[key] = !copy[key];
-    this.setState({ room: copy });
+    this.setState(prevState => ({
+      room: { ...prevState.room, [key]: !this.state.room[key] }
+    }));
   };
 
   onPriceValuesChange = (sliderState, key) => {
-    const copy = Object.assign({}, this.state.price);
-    copy[key] = sliderState.values;
-    this.setState({
-      price: copy
-    });
+    this.setState(prevState => ({
+      price: { ...prevState.price, [key]: sliderState.values }
+    }));
   };
 
   onSuperhostClick = key => {
-    const copy = Object.assign({}, this.state.superhost);
-    copy[key] = !copy[key];
-    this.setState({ superhost: copy });
+    this.setState(prevState => ({
+      superhost: { ...prevState.superhost, [key]: !this.state.superhost[key] }
+    }));
   };
 
   onInstantClick = key => {
-    const copy = Object.assign({}, this.state.instant);
-    copy[key] = !copy[key];
-    this.setState({ instant: copy });
+    this.setState(prevState => ({
+      instant: { ...prevState.instant, [key]: !this.state.instant[key] }
+    }));
   };
 
   render() {
@@ -151,8 +160,8 @@ export default class More extends React.Component {
         id="more"
         label={"More filters"}
       >
-        <Container>
-          <OnlyXsAndMd>
+        <div>
+          <FiltersContainer>
             <Section>
               <Title>Room type</Title>
               <Checkbox
@@ -163,7 +172,6 @@ export default class More extends React.Component {
                 src={entireIcon}
                 alt="Entire home"
                 check={this.checkRoomType}
-                showIcon
               >
                 <MainText>Entire home</MainText>
                 <br />
@@ -178,7 +186,6 @@ export default class More extends React.Component {
                 src={privateIcon}
                 alt="Private home"
                 check={this.checkRoomType}
-                showIcon
               >
                 <MainText>Private room</MainText>
                 <br />
@@ -195,7 +202,6 @@ export default class More extends React.Component {
                 src={sharedIcon}
                 alt="Shared home"
                 check={this.checkRoomType}
-                showIcon
               >
                 <MainText>Shared room</MainText>
                 <br />
@@ -224,7 +230,7 @@ export default class More extends React.Component {
                 />
               </RheostatContainer>
             </Section>
-          </OnlyXsAndMd>
+          </FiltersContainer>
 
           <Section>
             <InnerContainer>
@@ -239,7 +245,7 @@ export default class More extends React.Component {
           <Section>
             <InnerContainer>
               <Title>More options</Title>
-              <OnlyXsAndMd>
+              <FiltersContainer>
                 <Div>
                   <Heading>Instant Book</Heading>
                   <Text>
@@ -248,14 +254,13 @@ export default class More extends React.Component {
                   </Text>
 
                   <Button onClick={() => this.onInstantClick("checked")}>
-                    {this.state.instant.checked ? (
-                      <img src={checked} alt="button" />
-                    ) : (
-                      <img src={unchecked} alt="button" />
-                    )}
+                    <img
+                      src={this.state.instant.checked ? checked : unchecked}
+                      alt="button"
+                    />
                   </Button>
                 </Div>
-              </OnlyXsAndMd>
+              </FiltersContainer>
 
               <Div>
                 <Heading>SuperHost</Heading>
@@ -264,11 +269,10 @@ export default class More extends React.Component {
                   <LearnMore>Learn more</LearnMore>
                 </Text>
                 <Button onClick={() => this.onSuperhostClick("checked")}>
-                  {this.state.superhost.checked ? (
-                    <img src={checked} alt="button" />
-                  ) : (
-                    <img src={unchecked} alt="button" />
-                  )}
+                  <img
+                    src={this.state.superhost.checked ? checked : unchecked}
+                    alt="button"
+                  />
                 </Button>
               </Div>
             </InnerContainer>
@@ -373,82 +377,8 @@ export default class More extends React.Component {
               </div>
             </div>
           </Section>
-        </Container>
+        </div>
       </Dropdown>
     );
   }
-}
-
-{
-  /* // render() 
-//     return (
-//       <Container>
-//         <OnlyXsAndMd>
-//           <Section>
-//             <Title>Room type</Title>
-//             <RoomType */
-}
-{
-  /* //               room={this.state.room}
-//               handlerFromParent={this.handleData}
-//             />
-//           </Section>
-
-//           <Section>
-//             <Title>Price range</Title>
-//             <Price
-//               handlerFromParent={this.handleData}
-//               price={this.state.price}
-//             />
-//           </Section>
-//         </OnlyXsAndMd>
-//         <Section>
-//           <InnerContainer>
-//             <Title>Rooms and beds</Title>
-//             <RoomsAndBeds
-//               handlerFromParent={this.handleData}
-//               roomsAndBeds={this.state.roomsAndBeds}
-//             />
-//           </InnerContainer>
-//         </Section>
-
-//         <Section>
-//           <InnerContainer>
-//             <Title>More options</Title>
-//             <OnlyXsAndMd>
-//               <InstantBook
-//                 instant={this.state.instant}
-//                 handlerFromParent={this.handleData}
-//                 inMoreFilters
-//               />
-//             </OnlyXsAndMd>
-//             <Superhost
-//               superhost={this.state.superhost}
-//               handlerFromParent={this.handleData}
-//             />
-//           </InnerContainer>
-//         </Section>
-
-//         <Section>
-//           <OnlyXs>
-//             <SeeAll title="Amenities" label="See all">
-//               <Amenities
-//                 handlerFromParent={this.handleData}
-//                 amenities={this.state.amenities}
-//               />
-//             </SeeAll>
-//           </OnlyXs>
-
-//           <Md>
-//             <Title>Amenities</Title>
-//             <Amenities
-//               handlerFromParent={this.handleData}
-//               amenities={this.state.amenities}
-//             />
-//             <SeeAll label="See all amenities" />
-//           </Md>
-//         </Section>
-
-
-//       </Container> */
 }
