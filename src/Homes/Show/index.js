@@ -14,6 +14,7 @@ import Explore from "./Explore";
 import StickyRequest from "./Request";
 import { Lg } from "../../mediaQueries";
 import { StickyContainer } from "react-sticky";
+import FooterRequest from "./Request/Footer";
 
 export default () => {
   return (
@@ -45,6 +46,7 @@ export default () => {
       </Main>
 
       <Footer />
+      <FooterRequest price={41} />
     </div>
   );
 };
