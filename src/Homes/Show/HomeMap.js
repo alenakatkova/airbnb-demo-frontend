@@ -2,10 +2,6 @@ import React from "react";
 import ReactMap from "../InteractiveMap";
 import styled from "styled-components";
 
-const Section = styled.section`
-  border-bottom: 1px solid rgba(118, 118, 118, 0.2);
-`;
-
 const MapContainer = styled.div`
   display: block;
   width: 100%;
@@ -50,8 +46,28 @@ const Disclaimer = styled.p`
   margin-bottom: 16px;
 `;
 
+const ReportButtonContainer = styled.div`
+  border-bottom: 1px solid rgba(118, 118, 118, 0.2);
+  border-top: 1px solid rgba(118, 118, 118, 0.2);
+  padding: 16px 0;
+
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+`;
+
+const ReportButton = styled.button`
+  font-family: "CircularAir-Light", "Arial Light", sans-serif;
+  line-height: 21px;
+  font-size: 18px;
+  color: #0f7276;
+  border: none;
+  background: none;
+  padding: 0;
+`;
+
 export default props => (
-  <Section>
+  <section>
     <MapContainer>
       <ReactMap center={{ lat: 59.95, lng: 30.33 }} zoom={8}>
         <Marker lat={59.95} lng={30.33} />
@@ -60,5 +76,8 @@ export default props => (
     <Disclaimer>
       Exact location information is provided after a booking is confirmed.
     </Disclaimer>
-  </Section>
+    <ReportButtonContainer>
+      <ReportButton>Report this listing</ReportButton>
+    </ReportButtonContainer>
+  </section>
 );
