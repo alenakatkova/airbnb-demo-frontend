@@ -1,59 +1,104 @@
 import React from "react";
-import {
-  OptionCell,
-  OptionDescription,
-  OptionName,
-  OptionTable
-} from "./styled";
+import { Cell, Description, Option, Table } from "./styled";
 import Counter from "./Counter";
-import Dropdown from "./Dropdown";
+import Dropdown from "./SmallDropdown";
+
+const getLabel = state => {
+  if (state.adults + state.children + state.infants > 1) {
+    return `Guests · ${state.adults + state.children + state.infants}`;
+  }
+};
 
 export default class Guests extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    adults: this.props.guests.adults,
+    children: this.props.guests.children,
+    infants: this.props.guests.infants
+  };
 
-    this.state = {
-      isSelected: false
-    };
-  }
+  onCounterClick = (key, value) => {
+    this.setState({ [key]: value });
+  };
 
-  onToggle = isSelected => {
-    this.setState({ isSelected: !this.state.isSelected });
+  onApplyClick = () => {
+    this.props.apply("guests", this.state);
+  };
+
+  onCancelClick = closeFilter => {
+    this.setState(
+      {
+        adults: this.props.guests.adults,
+        children: this.props.guests.children,
+        infants: this.props.guests.infants
+      },
+      closeFilter
+    );
+  };
+
+  componentWillReceiveProps = nextProps => {
+    this.setState({
+      adults: nextProps.guests.adults,
+      children: nextProps.guests.children,
+      infants: nextProps.guests.infants
+    });
   };
 
   render() {
     return (
-      <Dropdown label="Guests" onToggle={this.onToggle} xsHeading="Guests">
-        <OptionTable>
-          <OptionCell>
-            <OptionName>Adults</OptionName>
-          </OptionCell>
-          <OptionCell>
-            <Counter />
-          </OptionCell>
-        </OptionTable>
+      <Dropdown
+        apply={this.onApplyClick}
+        cancel={this.onCancelClick}
+        onToggle={this.props.toggle}
+        reset={this.props.reset}
+        id="guests"
+        label={getLabel(this.state) || "Guests"}
+        xsHeading="Guests"
+      >
+        <Table>
+          <Cell>
+            <Option>Adults</Option>
+          </Cell>
+          <Cell>
+            <Counter
+              id="adults"
+              value={this.state.adults}
+              count={this.onCounterClick}
+              minimum={1}
+            />
+          </Cell>
+        </Table>
 
-        <OptionTable>
-          <OptionCell>
-            <OptionName>Children</OptionName>
+        <Table>
+          <Cell>
+            <Option>Children</Option>
             <br />
-            <OptionDescription>Ages 2 — 12</OptionDescription>
-          </OptionCell>
-          <OptionCell>
-            <Counter />
-          </OptionCell>
-        </OptionTable>
+            <Description>Ages 2 — 12</Description>
+          </Cell>
+          <Cell>
+            <Counter
+              id="children"
+              value={this.state.children}
+              count={this.onCounterClick}
+              minimum={0}
+            />
+          </Cell>
+        </Table>
 
-        <OptionTable>
-          <OptionCell>
-            <OptionName>Infants</OptionName>
+        <Table>
+          <Cell>
+            <Option>Infants</Option>
             <br />
-            <OptionDescription>Under 2</OptionDescription>
-          </OptionCell>
-          <OptionCell>
-            <Counter />
-          </OptionCell>
-        </OptionTable>
+            <Description>Under 2</Description>
+          </Cell>
+          <Cell>
+            <Counter
+              id="infants"
+              value={this.state.infants}
+              count={this.onCounterClick}
+              minimum={0}
+            />
+          </Cell>
+        </Table>
       </Dropdown>
     );
   }

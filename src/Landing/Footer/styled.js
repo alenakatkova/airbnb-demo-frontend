@@ -9,6 +9,7 @@ export const PageFooter = styled.footer`
 export const Top = styled.div`
   padding-top: 16px;
   padding-bottom: 24px;
+  border-bottom: 1px solid rgba(72, 72, 72, 0.08);
 
   @media screen and (min-width: 768px) {
     padding: 48px 0;
@@ -16,9 +17,7 @@ export const Top = styled.div`
 `;
 
 export const Bottom = styled.div`
-  padding-top: 16px;
-  padding-bottom: 16px;
-  border-top: 1px solid rgba(72, 72, 72, 0.08);
+  padding: 16px 8px;
 
   @media screen and (min-width: 768px) {
     padding-top: 32px;
@@ -51,4 +50,12 @@ export const Copyright = styled.span`
     line-height: 18px;
     font-size: 15px;
   }
+`;
+
+export const CopyrightContainer = styled.div`
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: middle;
 `;

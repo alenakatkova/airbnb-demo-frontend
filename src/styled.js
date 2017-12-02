@@ -24,12 +24,26 @@ export const SectionTitle = styled.h2`
   }
 `;
 
+export const TitleContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 0 1 auto;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const CardsContainer = styled.div`
   position: relative;
   overflow-x: scroll;
   margin: 0 -8px;
-  padding: 2px 8px;
+  padding: 2px 0;
   box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
 `;
 
 export const Card = styled(Link)`
@@ -46,14 +60,14 @@ export const Image = styled.img`
 export const NextPage = styled.button`
   display: none;
 
-  @media screen and (min-width: 986px) {
+  @media screen and (min-width: 992px) {
     display: block;
     border-radius: 50%;
     padding: 0;
     margin: 0;
     border: none;
     position: absolute;
-    right: -20px;
+    right: -25px;
     z-index: 10;
     width: 40px;
     height: 40px;
@@ -62,4 +76,6 @@ export const NextPage = styled.button`
   }
 `;
 
-export const NextContainer = styled.div`position: relative;`;
+export const NextContainer = styled.div`
+  position: relative;
+`;
